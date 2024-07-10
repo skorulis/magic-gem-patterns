@@ -12,4 +12,13 @@ enum SpellPattern {
         let size = Math.polarToCartesian(r: r, theta: theta)
         return size
     }
+    
+    var basePower: CGFloat {
+        return 20
+    }
+    
+    // Rate at which the spell returns to normal
+    var normalisation: CGFloat {
+        return 0.5 // Normalise in half the time
+    }
 }

@@ -7,18 +7,18 @@ struct ActiveSpellView: View {
     
     let canvasSize: CGSize
     let pattern: SpellPattern
-    let time: CGFloat
+    let energy: SpellEnergy
     
     var body: some View {
         ZStack {
             spellIcon
-                .offset(pattern.position(time: time, size: canvasSize))
+                .offset(energy.position)
         }
         .frame(width: canvasSize.width, height: canvasSize.height)
     }
     
     var spellIcon: some View {
         Circle()
-            .frame(width: 40, height: 40)
+            .frame(width: energy.power, height: energy.power)
     }
 }

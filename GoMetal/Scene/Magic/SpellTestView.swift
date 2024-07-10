@@ -6,6 +6,7 @@ import SwiftUI
 struct SpellTestView: View {
     
     let pattern: SpellPattern = .circle
+    let service = SpellCastService()
     
     @State private var sliderValue: CGFloat = 0
     @State private var canvasSize: CGSize = .zero
@@ -29,10 +30,18 @@ struct SpellTestView: View {
                 ActiveSpellView(
                     canvasSize: canvasSize,
                     pattern: pattern,
-                    time: sliderValue
+                    energy: energy
                 )
             )
             .readSize(size: $canvasSize)
+    }
+    
+    private var energy: SpellEnergy {
+        service.calculateEnergy(
+            pattern: pattern,
+            time: sliderValue,
+            canvasSize: canvasSize
+        )
     }
     
     private var slider: some View {
