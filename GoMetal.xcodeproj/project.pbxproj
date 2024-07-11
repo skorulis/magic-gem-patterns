@@ -21,6 +21,7 @@
 		FAD929F42C3E8AA800B86690 /* ActiveSpellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929F32C3E8AA800B86690 /* ActiveSpellView.swift */; };
 		FAD929F62C3E8F1900B86690 /* PatternDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929F52C3E8F1900B86690 /* PatternDisplayView.swift */; };
 		FAD929F92C3E958700B86690 /* SpellCastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929F82C3E958700B86690 /* SpellCastService.swift */; };
+		FAD929FB2C3EA12600B86690 /* Spell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929FA2C3EA12600B86690 /* Spell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		FAD929F32C3E8AA800B86690 /* ActiveSpellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveSpellView.swift; sourceTree = "<group>"; };
 		FAD929F52C3E8F1900B86690 /* PatternDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternDisplayView.swift; sourceTree = "<group>"; };
 		FAD929F82C3E958700B86690 /* SpellCastService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellCastService.swift; sourceTree = "<group>"; };
+		FAD929FA2C3EA12600B86690 /* Spell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 			children = (
 				FAD929EB2C3E851A00B86690 /* SpellEnergy.swift */,
 				FAD929ED2C3E858F00B86690 /* SpellPattern.swift */,
+				FAD929FA2C3EA12600B86690 /* Spell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				FAD929F42C3E8AA800B86690 /* ActiveSpellView.swift in Sources */,
 				FAD929EC2C3E851A00B86690 /* SpellEnergy.swift in Sources */,
 				FAD929F62C3E8F1900B86690 /* PatternDisplayView.swift in Sources */,
+				FAD929FB2C3EA12600B86690 /* Spell.swift in Sources */,
 				FAD929F22C3E885800B86690 /* SpellTestView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

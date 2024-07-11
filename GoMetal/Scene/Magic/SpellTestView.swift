@@ -5,7 +5,7 @@ import SwiftUI
 
 struct SpellTestView: View {
     
-    let pattern: SpellPattern = .circle
+    let pattern: SpellPattern = .line
     let service = SpellCastService()
     
     @State private var sliderValue: CGFloat = 0
@@ -24,7 +24,7 @@ struct SpellTestView: View {
         Circle()
             .fill(Color.clear)
             .overlay(
-                PatternDisplayView(canvasSize: canvasSize)
+                PatternDisplayView(pattern: pattern, canvasSize: canvasSize)
             )
             .overlay(
                 ActiveSpellView(

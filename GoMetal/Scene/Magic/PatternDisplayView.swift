@@ -5,13 +5,14 @@ import SwiftUI
 
 struct PatternDisplayView: View {
     
+    let pattern: SpellPattern
     let canvasSize: CGSize
     @State private var rotation: CGFloat = 0
     @GestureState private var dragAmount: CGSize = .zero
     
     var body: some View {
         ZStack {
-            Circle()
+            AnyShape(pattern.shape)
                 .stroke(style: StrokeStyle(lineWidth: 4))
                 .foregroundColor(.blue)
             handle
@@ -53,4 +54,26 @@ struct PatternDisplayView: View {
                 self.rotation = handleAngle(translation: drag.translation)
             }
     }
+}
+
+extension SpellPattern {
+    var shape: any Shape {
+        switch self {
+        case .circle:
+            return Circle()
+        case .line:
+            return LinePatternShape()
+        }
+    }
+}
+
+struct LinePatternShape: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        path.move(to: .init(x: rect.midX, y: rect.maxY))
+        path.addLine(to: .init(x: rect.midX, y: rect.minY))
+        return path
+    }
+    
+    
 }
