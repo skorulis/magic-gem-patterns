@@ -25,4 +25,14 @@ extension Vector2 {
     init(_ point: CGPoint) {
         self.init(Float(point.x), Float(point.y))
     }
+    
+    /// Prevent the length being over a given value
+    func clamped(_ length: Float) -> Vector2 {
+        let l = self.length
+        if l <= length {
+            return self
+        }
+        let div = l / length
+        return .init(x/div, y/div)
+    }
 }

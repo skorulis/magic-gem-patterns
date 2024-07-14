@@ -24,8 +24,8 @@ struct DirectionalFieldView: View {
         var path = Path()
         path.move(to: point)
         
-        // TODO: Normalise the vector with a max size
-        let normalForce = force.normalized() * 12
+        let s = Float(spacing)
+        let normalForce = (force * s).clamped(s)
         let forceX = CGFloat(normalForce.x)
         let forceY = CGFloat(normalForce.y)
         path.addLine(to: .init(x: point.x + forceX, y: point.y + forceY))

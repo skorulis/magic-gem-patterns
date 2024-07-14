@@ -10,6 +10,7 @@
 		FA8F9B582C4365600004B88B /* CirclePattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B572C4365600004B88B /* CirclePattern.swift */; };
 		FA8F9B5A2C436A560004B88B /* LinePatternTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B592C436A560004B88B /* LinePatternTests.swift */; };
 		FA8F9B5E2C436E960004B88B /* VectorMath in Frameworks */ = {isa = PBXBuildFile; productRef = FA8F9B5D2C436E960004B88B /* VectorMath */; };
+		FA8F9B612C438CB80004B88B /* GemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B602C438CB80004B88B /* GemView.swift */; };
 		FAD929D02C3D384400B86690 /* GoMetalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929CF2C3D384400B86690 /* GoMetalApp.swift */; };
 		FAD929D22C3D384400B86690 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929D12C3D384400B86690 /* ContentView.swift */; };
 		FAD929D42C3D384500B86690 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD929D32C3D384500B86690 /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		FA8F9B572C4365600004B88B /* CirclePattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePattern.swift; sourceTree = "<group>"; };
 		FA8F9B592C436A560004B88B /* LinePatternTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinePatternTests.swift; sourceTree = "<group>"; };
+		FA8F9B602C438CB80004B88B /* GemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemView.swift; sourceTree = "<group>"; };
 		FAD929CC2C3D384400B86690 /* GoMetal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoMetal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD929CF2C3D384400B86690 /* GoMetalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoMetalApp.swift; sourceTree = "<group>"; };
 		FAD929D12C3D384400B86690 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -93,6 +95,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA8F9B5F2C438CA20004B88B /* Gem */ = {
+			isa = PBXGroup;
+			children = (
+				FA8F9B602C438CB80004B88B /* GemView.swift */,
+			);
+			path = Gem;
 			sourceTree = "<group>";
 		};
 		FAD929C32C3D384400B86690 = {
@@ -148,6 +158,7 @@
 		FAD929DE2C3D386B00B86690 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				FA8F9B5F2C438CA20004B88B /* Gem */,
 				FAD929E42C3D429B00B86690 /* Magic */,
 				FAD929E12C3D3B7000B86690 /* Shader */,
 				FAD929DD2C3D386B00B86690 /* Metal */,
@@ -351,6 +362,7 @@
 				FAD92A3B2C435E6500B86690 /* LinePattern.swift in Sources */,
 				FAD929FD2C3FD94900B86690 /* DirectionalFieldView.swift in Sources */,
 				FAD92A392C435D9900B86690 /* PatternProtocol.swift in Sources */,
+				FA8F9B612C438CB80004B88B /* GemView.swift in Sources */,
 				FAD929E02C3D387200B86690 /* MetalView.swift in Sources */,
 				FAD929F02C3E874700B86690 /* Math.swift in Sources */,
 				FAD929D22C3D384400B86690 /* ContentView.swift in Sources */,

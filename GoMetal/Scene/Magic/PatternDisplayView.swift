@@ -22,8 +22,7 @@ struct PatternDisplayView: View {
     }
     
     private var handle: some View {
-        Circle()
-            .frame(width: 32, height: 32)
+        GemView()
             .offset(handleOffset(translation: dragAmount))
     }
     

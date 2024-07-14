@@ -5,7 +5,7 @@ import SwiftUI
 
 struct SpellTestView: View {
     
-    let pattern: SpellPattern = .line
+    @State var pattern: SpellPattern = .line
     let service = SpellCastService()
     
     @State private var sliderValue: CGFloat = 0
@@ -13,6 +13,12 @@ struct SpellTestView: View {
     
     var body: some View {
         VStack(spacing: 16) {
+            Picker("Pattern", selection: $pattern) {
+                ForEach(SpellPattern.allCases) { pattern in
+                    Text(pattern.rawValue)
+                        .tag(pattern)
+                }
+            }
             canvas
             slider
         }

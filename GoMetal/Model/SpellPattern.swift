@@ -2,9 +2,11 @@
 
 import Foundation
 
-enum SpellPattern {
+enum SpellPattern: String, CaseIterable, Identifiable {
     case circle
     case line
+    
+    var id: String { rawValue }
     
     var pattern: PatternProtocol {
         switch self {
