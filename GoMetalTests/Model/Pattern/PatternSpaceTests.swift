@@ -7,7 +7,7 @@ import XCTest
 final class PatternSpaceTests: XCTestCase {
     
     func testScreenSpaceConversion() {
-        let space = PatternSpace(screenSize: .init(width: 100, height: 200))
+        let space = PatternSpace(canvasSize: .init(width: 100, height: 200))
         
         XCTAssertEqual(
             space.toScreenSpace(point: .zero),
@@ -31,7 +31,7 @@ final class PatternSpaceTests: XCTestCase {
     }
     
     func testPatternSpaceConversion() {
-        let space = PatternSpace(screenSize: .init(width: 100, height: 200))
+        let space = PatternSpace(canvasSize: .init(width: 100, height: 200))
         XCTAssertEqual(
             space.toPatternSpace(point: .zero),
             .init(x: -1, y: 1)
@@ -45,6 +45,29 @@ final class PatternSpaceTests: XCTestCase {
         XCTAssertEqual(
             space.toPatternSpace(point: .init(x: 50, y: 50)),
             .init(x: 0, y: 0.5)
+        )
+    }
+    
+    func testScreenSpaceSizeConversion() {
+        let space = PatternSpace(canvasSize: .init(width: 100, height: 200))
+        XCTAssertEqual(
+            space.toScreenSpace(size: .zero),
+            .zero
+        )
+        
+        XCTAssertEqual(
+            space.toScreenSpace(size: .init(width: 1, height: -1)),
+            .init(width: 50, height: 100)
+        )
+        
+        XCTAssertEqual(
+            space.toScreenSpace(size: .init(width: -1, height: 1)),
+            .init(width: -50, height: -100)
+        )
+        
+        XCTAssertEqual(
+            space.toScreenSpace(size: .init(width: 0.5, height: 0.5)),
+            .init(width: 25, height: -50)
         )
     }
 }

@@ -16,8 +16,7 @@ struct PatternSpace {
     }
     
     func toScreenSpace(size: CGSize) -> CGSize {
-        let point = Self.toScreenSpace(point: .init(x: size.width, y: size.height), size: canvasSize)
-        return .init(width: point.x, height: point.y)
+        return Self.toScreenSpace(size: size, screenSize: canvasSize)
     }
     
     static func toPatternSpace(point: CGPoint, size: CGSize) -> CGPoint {
@@ -30,5 +29,11 @@ struct PatternSpace {
         let x = (point.x + 1)/2 * size.width
         let y = (point.y - 1)/2 * -size.height
         return .init(x: x, y: y)
+    }
+    
+    static func toScreenSpace(size: CGSize, screenSize: CGSize) -> CGSize {
+        let width = screenSize.width * size.width / 2
+        let height = -screenSize.height * size.height / 2
+        return .init(width: width, height: height)
     }
 }

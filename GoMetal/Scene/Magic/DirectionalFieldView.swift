@@ -23,10 +23,13 @@ struct DirectionalFieldView: View {
         let force = screenPattern.force(at: point)
         var path = Path()
         path.move(to: point)
+        
+        // TODO: Normalise the vector with a max size
         let forceX = max(min(force.width, spacing / 2), -spacing / 2)
         let forceY = max(min(force.height, spacing / 2), -spacing / 2)
         path.addLine(to: .init(x: point.x + forceX, y: point.y + forceY))
-        context.stroke(path, with: .color(.green), lineWidth: 2)
+        let color: Color = forceX > 0 ? .red : .blue
+        context.stroke(path, with: .color(color), lineWidth: 2)
     }
     
     var screenPattern: ScreenPattern {
