@@ -21,7 +21,13 @@ enum SpellPattern {
     }
     
     func force(at point: CGPoint, size: CGSize) -> CGSize {
-        return .init(width: 5, height: 5)
+        switch self {
+        case .circle:
+            return .zero // TODO
+        case .line:
+            
+            return .init(width: 5, height: 5)
+        }
     }
     
     var basePower: CGFloat {

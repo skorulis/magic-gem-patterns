@@ -23,7 +23,21 @@
 		FAD929F92C3E958700B86690 /* SpellCastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929F82C3E958700B86690 /* SpellCastService.swift */; };
 		FAD929FB2C3EA12600B86690 /* Spell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929FA2C3EA12600B86690 /* Spell.swift */; };
 		FAD929FD2C3FD94900B86690 /* DirectionalFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929FC2C3FD94900B86690 /* DirectionalFieldView.swift */; };
+		FAD92A392C435D9900B86690 /* PatternProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD92A382C435D9900B86690 /* PatternProtocol.swift */; };
+		FAD92A3B2C435E6500B86690 /* LinePattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD92A3A2C435E6500B86690 /* LinePattern.swift */; };
+		FAD92A4C2C435F6F00B86690 /* PatternSpaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD92A4B2C435F6F00B86690 /* PatternSpaceTests.swift */; };
+		FAD92A4E2C43617A00B86690 /* PatternSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD92A4D2C43617A00B86690 /* PatternSpace.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FAD92A442C435F1000B86690 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAD929C42C3D384400B86690 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAD929CB2C3D384400B86690;
+			remoteInfo = GoMetal;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		FAD929CC2C3D384400B86690 /* GoMetal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoMetal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,10 +57,22 @@
 		FAD929F82C3E958700B86690 /* SpellCastService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellCastService.swift; sourceTree = "<group>"; };
 		FAD929FA2C3EA12600B86690 /* Spell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spell.swift; sourceTree = "<group>"; };
 		FAD929FC2C3FD94900B86690 /* DirectionalFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionalFieldView.swift; sourceTree = "<group>"; };
+		FAD92A382C435D9900B86690 /* PatternProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternProtocol.swift; sourceTree = "<group>"; };
+		FAD92A3A2C435E6500B86690 /* LinePattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinePattern.swift; sourceTree = "<group>"; };
+		FAD92A402C435F1000B86690 /* GoMetalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoMetalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAD92A4B2C435F6F00B86690 /* PatternSpaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternSpaceTests.swift; sourceTree = "<group>"; };
+		FAD92A4D2C43617A00B86690 /* PatternSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternSpace.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		FAD929C92C3D384400B86690 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAD92A3D2C435F1000B86690 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -60,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				FAD929CE2C3D384400B86690 /* GoMetal */,
+				FAD92A412C435F1000B86690 /* GoMetalTests */,
 				FAD929CD2C3D384400B86690 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				FAD929CC2C3D384400B86690 /* GoMetal.app */,
+				FAD92A402C435F1000B86690 /* GoMetalTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -144,6 +172,7 @@
 		FAD929EA2C3E84DC00B86690 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FAD92A372C435D9200B86690 /* Pattern */,
 				FAD929EB2C3E851A00B86690 /* SpellEnergy.swift */,
 				FAD929ED2C3E858F00B86690 /* SpellPattern.swift */,
 				FAD929FA2C3EA12600B86690 /* Spell.swift */,
@@ -157,6 +186,40 @@
 				FAD929F82C3E958700B86690 /* SpellCastService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		FAD92A372C435D9200B86690 /* Pattern */ = {
+			isa = PBXGroup;
+			children = (
+				FAD92A382C435D9900B86690 /* PatternProtocol.swift */,
+				FAD92A3A2C435E6500B86690 /* LinePattern.swift */,
+				FAD92A4D2C43617A00B86690 /* PatternSpace.swift */,
+			);
+			path = Pattern;
+			sourceTree = "<group>";
+		};
+		FAD92A412C435F1000B86690 /* GoMetalTests */ = {
+			isa = PBXGroup;
+			children = (
+				FAD92A4A2C435F1F00B86690 /* Model */,
+			);
+			path = GoMetalTests;
+			sourceTree = "<group>";
+		};
+		FAD92A492C435F1F00B86690 /* Pattern */ = {
+			isa = PBXGroup;
+			children = (
+				FAD92A4B2C435F6F00B86690 /* PatternSpaceTests.swift */,
+			);
+			path = Pattern;
+			sourceTree = "<group>";
+		};
+		FAD92A4A2C435F1F00B86690 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FAD92A492C435F1F00B86690 /* Pattern */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +242,24 @@
 			productReference = FAD929CC2C3D384400B86690 /* GoMetal.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FAD92A3F2C435F1000B86690 /* GoMetalTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAD92A462C435F1000B86690 /* Build configuration list for PBXNativeTarget "GoMetalTests" */;
+			buildPhases = (
+				FAD92A3C2C435F1000B86690 /* Sources */,
+				FAD92A3D2C435F1000B86690 /* Frameworks */,
+				FAD92A3E2C435F1000B86690 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FAD92A452C435F1000B86690 /* PBXTargetDependency */,
+			);
+			name = GoMetalTests;
+			productName = GoMetalTests;
+			productReference = FAD92A402C435F1000B86690 /* GoMetalTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -191,6 +272,11 @@
 				TargetAttributes = {
 					FAD929CB2C3D384400B86690 = {
 						CreatedOnToolsVersion = 15.4;
+					};
+					FAD92A3F2C435F1000B86690 = {
+						CreatedOnToolsVersion = 15.4;
+						LastSwiftMigration = 1540;
+						TestTargetID = FAD929CB2C3D384400B86690;
 					};
 				};
 			};
@@ -208,6 +294,7 @@
 			projectRoot = "";
 			targets = (
 				FAD929CB2C3D384400B86690 /* GoMetal */,
+				FAD92A3F2C435F1000B86690 /* GoMetalTests */,
 			);
 		};
 /* End PBXProject section */
@@ -222,6 +309,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FAD92A3E2C435F1000B86690 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -231,11 +325,14 @@
 			files = (
 				FAD929E92C3D445E00B86690 /* ChildSizeReader.swift in Sources */,
 				FAD929F92C3E958700B86690 /* SpellCastService.swift in Sources */,
+				FAD92A3B2C435E6500B86690 /* LinePattern.swift in Sources */,
 				FAD929FD2C3FD94900B86690 /* DirectionalFieldView.swift in Sources */,
+				FAD92A392C435D9900B86690 /* PatternProtocol.swift in Sources */,
 				FAD929E02C3D387200B86690 /* MetalView.swift in Sources */,
 				FAD929F02C3E874700B86690 /* Math.swift in Sources */,
 				FAD929D22C3D384400B86690 /* ContentView.swift in Sources */,
 				FAD929EE2C3E858F00B86690 /* SpellPattern.swift in Sources */,
+				FAD92A4E2C43617A00B86690 /* PatternSpace.swift in Sources */,
 				FAD929E32C3D3B9100B86690 /* Shader1.metal in Sources */,
 				FAD929D02C3D384400B86690 /* GoMetalApp.swift in Sources */,
 				FAD929F42C3E8AA800B86690 /* ActiveSpellView.swift in Sources */,
@@ -246,7 +343,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FAD92A3C2C435F1000B86690 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAD92A4C2C435F6F00B86690 /* PatternSpaceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FAD92A452C435F1000B86690 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAD929CB2C3D384400B86690 /* GoMetal */;
+			targetProxy = FAD92A442C435F1000B86690 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		FAD929D82C3D384500B86690 /* Debug */ = {
@@ -426,6 +539,45 @@
 			};
 			name = Release;
 		};
+		FAD92A472C435F1000B86690 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X4S6MUZL2D;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.GoMetalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoMetal.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GoMetal";
+			};
+			name = Debug;
+		};
+		FAD92A482C435F1000B86690 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X4S6MUZL2D;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.GoMetalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoMetal.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GoMetal";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -443,6 +595,15 @@
 			buildConfigurations = (
 				FAD929DB2C3D384500B86690 /* Debug */,
 				FAD929DC2C3D384500B86690 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAD92A462C435F1000B86690 /* Build configuration list for PBXNativeTarget "GoMetalTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAD92A472C435F1000B86690 /* Debug */,
+				FAD92A482C435F1000B86690 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
