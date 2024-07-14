@@ -4,12 +4,12 @@ import Foundation
 
 struct LinePattern: PatternProtocol {
     func position(time: CGFloat) -> CGPoint {
-        
-        .zero
+        let y = -1 + time * 2
+        return .init(x: 0, y: y)
     }
     
     func force(at point: CGPoint) -> CGSize {
-        .zero
+        .init(width: 0.005, height: 0.005)
     }
     
     

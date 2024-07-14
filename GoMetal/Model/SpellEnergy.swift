@@ -4,7 +4,7 @@ import Foundation
 
 struct SpellEnergy {
     let time: TimeInterval
-    var position: CGSize
+    var position: CGPoint
     let power: CGFloat
     
 }

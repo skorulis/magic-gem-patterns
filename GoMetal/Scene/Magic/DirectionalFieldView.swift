@@ -20,10 +20,16 @@ struct DirectionalFieldView: View {
     }
     
     private func addFlow(context: GraphicsContext, point: CGPoint, size: CGSize) {
-        let force = pattern.force(at: point, size: size)
+        let force = screenPattern.force(at: point)
         var path = Path()
         path.move(to: point)
-        path.addLine(to: .init(x: point.x + force.width, y: point.y + force.height))
+        let forceX = max(min(force.width, spacing / 2), -spacing / 2)
+        let forceY = max(min(force.height, spacing / 2), -spacing / 2)
+        path.addLine(to: .init(x: point.x + forceX, y: point.y + forceY))
         context.stroke(path, with: .color(.green), lineWidth: 2)
+    }
+    
+    var screenPattern: ScreenPattern {
+        return .init(pattern: pattern.pattern, canvasSize: canvasSize)
     }
 }

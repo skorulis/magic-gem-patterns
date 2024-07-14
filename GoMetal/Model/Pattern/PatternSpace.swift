@@ -5,14 +5,19 @@ import Foundation
 // Patterns are normalised into a -1...1 square.
 struct PatternSpace {
     
-    let screenSize: CGSize
+    let canvasSize: CGSize
     
     func toPatternSpace(point: CGPoint) -> CGPoint {
-        return Self.toPatternSpace(point: point, size: screenSize)
+        return Self.toPatternSpace(point: point, size: canvasSize)
     }
     
     func toScreenSpace(point: CGPoint) -> CGPoint {
-        return Self.toScreenSpace(point: point, size: screenSize)
+        return Self.toScreenSpace(point: point, size: canvasSize)
+    }
+    
+    func toScreenSpace(size: CGSize) -> CGSize {
+        let point = Self.toScreenSpace(point: .init(x: size.width, y: size.height), size: canvasSize)
+        return .init(width: point.x, height: point.y)
     }
     
     static func toPatternSpace(point: CGPoint, size: CGSize) -> CGPoint {

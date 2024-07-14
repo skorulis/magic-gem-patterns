@@ -6,27 +6,12 @@ enum SpellPattern {
     case circle
     case line
     
-    // The position relative to the centre of the pattern
-    // time is between 0 and 1
-    func position(time: CGFloat, size: CGSize) -> CGSize {
+    var pattern: PatternProtocol {
         switch self {
         case .circle:
-            let theta = time * .pi * 2
-            let r = size.width / 2
-            return Math.polarToCartesian(r: r, theta: theta)
+            return CirclePattern()
         case .line:
-            let y = size.height * (1 - time) - size.height / 2
-            return .init(width: 0, height: y)
-        }
-    }
-    
-    func force(at point: CGPoint, size: CGSize) -> CGSize {
-        switch self {
-        case .circle:
-            return .zero // TODO
-        case .line:
-            
-            return .init(width: 5, height: 5)
+            return LinePattern()
         }
     }
     

@@ -8,3 +8,23 @@ protocol PatternProtocol {
     func force(at point: CGPoint) -> CGSize
 }
 
+struct ScreenPattern {
+    let space: PatternSpace
+    let pattern: PatternProtocol
+    
+    init(pattern: PatternProtocol, canvasSize: CGSize) {
+        self.pattern = pattern
+        self.space = .init(canvasSize: canvasSize)
+    }
+    
+    func position(time: CGFloat) -> CGPoint {
+        let pos = pattern.position(time: time)
+        return space.toScreenSpace(point: pos)
+    }
+    
+    // Return the force in screen coordinates
+    func force(at point: CGPoint) -> CGSize {
+        let normalisedForce = pattern.force(at: space.toPatternSpace(point: point))
+        return space.toScreenSpace(size: normalisedForce)
+    }
+}

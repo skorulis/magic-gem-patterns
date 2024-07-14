@@ -11,9 +11,10 @@ final class SpellCastService {
         time: CGFloat,
         canvasSize: CGSize
     ) -> SpellEnergy {
+        let screenPattern = ScreenPattern(pattern: pattern.pattern, canvasSize: canvasSize)
         var energy = SpellEnergy(
             time: 0,
-            position: pattern.position(time: 0, size: canvasSize),
+            position: screenPattern.position(time: 0),
             power: pattern.basePower
         )
         
@@ -21,7 +22,7 @@ final class SpellCastService {
             let nextTime = min(energy.time + stepSize, time)
             energy = .init(
                 time: nextTime,
-                position: pattern.position(time: nextTime, size: canvasSize),
+                position: screenPattern.position(time: nextTime),
                 power: pattern.basePower + nextTime * 20
             )
         }
