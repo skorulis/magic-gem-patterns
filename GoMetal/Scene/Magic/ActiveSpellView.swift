@@ -12,7 +12,7 @@ struct ActiveSpellView: View {
     var body: some View {
         ZStack {
             spellIcon
-                .offset(x: energy.position.x - canvasSize.width/2, y: energy.position.y - canvasSize.height/2)
+                .offset(energy.position.viewOffset(canvasSize))
         }
         .frame(width: canvasSize.width, height: canvasSize.height)
     }

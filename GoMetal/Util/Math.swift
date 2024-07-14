@@ -4,13 +4,13 @@ import Foundation
 import VectorMath
 
 enum Math {
-    static func polarToCartesian(r: CGFloat, theta: CGFloat) -> CGSize {
+    static func polarToCartesian(r: Float, theta: Float) -> Vector2 {
         let x = r * cos(theta)
         let y = r * sin(theta)
-        return .init(width: x, height: y)
+        return .init(x, y)
     }
     
-    static func cartesianToPolar(x: Double, y: Double) -> (r: Double, theta: Double) {
+    static func cartesianToPolar(x: Float, y: Float) -> (r: Float, theta: Float) {
         let r = sqrt(x * x + y * y)
         let theta = atan2(y, x)
         return (r, theta)
@@ -26,6 +26,10 @@ extension Vector2 {
         self.init(Float(point.x), Float(point.y))
     }
     
+    init(_ size: CGSize) {
+        self.init(Float(size.width), Float(size.height))
+    }
+    
     /// Prevent the length being over a given value
     func clamped(_ length: Float) -> Vector2 {
         let l = self.length
@@ -34,5 +38,9 @@ extension Vector2 {
         }
         let div = l / length
         return .init(x/div, y/div)
+    }
+    
+    func viewOffset(_ viewSize: CGSize) -> CGSize {
+        .init(width: CGFloat(x) - viewSize.width/2, height: CGFloat(y) - viewSize.height/2)
     }
 }

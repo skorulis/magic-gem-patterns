@@ -4,21 +4,20 @@ import Foundation
 import VectorMath
 
 struct LinePattern: PatternProtocol {
-    func position(time: CGFloat) -> CGPoint {
+    func position(time: CGFloat) -> Vector2 {
         let y = -1 + time * 2
-        return .init(x: 0, y: y)
+        return .init(0, Float(y))
     }
     
-    func force(at point: CGPoint) -> Vector2 {
+    func force(at point: Vector2) -> Vector2 {
         let lf = lineForce(x: Float(point.x))
         let ef = endForce(point: point)
         return lf + ef
     }
     
-    private func endForce(point: CGPoint) -> Vector2 {
+    private func endForce(point: Vector2) -> Vector2 {
         let end = Vector2(0, 1)
-        let p = Vector2(point)
-        return (end - p).normalized() * 0.25
+        return (end - point).normalized() * 0.25
     }
     
     private func lineForce(x: Float) -> Vector2 {
@@ -29,9 +28,9 @@ struct LinePattern: PatternProtocol {
         return .init(xPower * xDirection, 0)
     }
     
-    func closestPoint(to: CGPoint) -> CGPoint {
+    func closestPoint(to: Vector2) -> Vector2 {
         let y = max(min(to.y, 1), -1)
-        return .init(x: 0, y: y)
+        return .init(0, y)
     }
     
 }

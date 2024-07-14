@@ -2,6 +2,7 @@
 
 import Foundation
 import SwiftUI
+import VectorMath
 
 struct GemPositionEditView: View {
     
@@ -25,25 +26,14 @@ struct GemPositionEditView: View {
     
     private var handle: some View {
         GemView()
-            .offset(handleOffset(translation: dragAmount))
+            .offset(currentGemPosition(index: 0).viewOffset(canvasSize))
     }
     
-    private func handleAngle(translation: CGSize) -> CGFloat {
-        let orig = originalHandleOffset
-        let draggedTo = CGSize(
-            width: orig.width + translation.width,
-            height: orig.height + translation.height
-        )
-        return Math.cartesianToPolar(x: draggedTo.width, y: draggedTo.height).theta
-    }
-    
-    private func handleOffset(translation: CGSize) -> CGSize {
-        let p = screenPattern.closestPoint(to: .init(x: translation.width, y: translation.height))
-        return .init(width: p.x - canvasSize.width / 2, height: p.y - canvasSize.height / 2)
-    }
-    
-    private var originalHandleOffset: CGSize {
-        gemOffset
+    private func currentGemPosition(index: Int) -> Vector2 {
+        var orig = gemPosition(index: index)
+        orig.x += Float(dragAmount.width)
+        orig.y += Float(dragAmount.height)
+        return screenPattern.closestPoint(to: orig)
     }
     
     private var dragGesture: some Gesture {
@@ -56,10 +46,9 @@ struct GemPositionEditView: View {
             }
     }
     
-    private var gemOffset: CGSize {
-        let gem = spell.gems[0]
-        let position = screenPattern.position(time: gem.time)
-        return .init(width: position.x - canvasSize.width/2, height: position.y - canvasSize.height/2)
+    private func gemPosition(index: Int) -> Vector2 {
+        let gem = spell.gems[index]
+        return screenPattern.position(time: gem.time)
     }
 }
 

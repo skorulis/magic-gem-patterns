@@ -4,20 +4,18 @@ import Foundation
 import VectorMath
 
 struct CirclePattern: PatternProtocol {
-    func position(time: CGFloat) -> CGPoint {
+    func position(time: CGFloat) -> Vector2 {
         let theta = time * .pi * 2
-        let size =  Math.polarToCartesian(r: 1, theta: theta)
-        return .init(x: size.width, y: size.height)
+        return Math.polarToCartesian(r: 1, theta: Float(theta))
     }
     
-    func force(at point: CGPoint) -> Vector2 {
+    func force(at point: Vector2) -> Vector2 {
         .zero
     }
     
-    func closestPoint(to: CGPoint) -> CGPoint {
+    func closestPoint(to: Vector2) -> Vector2 {
         let angle = Math.cartesianToPolar(x: to.x, y: to.y).theta
-        let size = Math.polarToCartesian(r: 1, theta: angle)
-        return .init(x: size.width, y: size.height)
+        return Math.polarToCartesian(r: 1, theta: angle)
     }
     
 }
