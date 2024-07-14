@@ -25,8 +25,9 @@ struct DirectionalFieldView: View {
         path.move(to: point)
         
         // TODO: Normalise the vector with a max size
-        let forceX = max(min(force.width, spacing / 2), -spacing / 2)
-        let forceY = max(min(force.height, spacing / 2), -spacing / 2)
+        let normalForce = force.normalized() * 12
+        let forceX = CGFloat(normalForce.x)
+        let forceY = CGFloat(normalForce.y)
         path.addLine(to: .init(x: point.x + forceX, y: point.y + forceY))
         let color: Color = forceX > 0 ? .red : .blue
         context.stroke(path, with: .color(color), lineWidth: 2)

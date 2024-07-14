@@ -1,0 +1,15 @@
+{
+  "originHash" : "fc2eef7ef08de8223e7d3806a97c972f79d685272759392c9129759943845bdf",
+  "pins" : [
+    {
+      "identity" : "vectormath",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:nicklockwood/VectorMath.git",
+      "state" : {
+        "revision" : "2de2585f455dc8e15d642ca51b29b1917e68fd1e",
+        "version" : "0.4.1"
+      }
+    }
+  ],
+  "version" : 3
+}

@@ -1,6 +1,7 @@
 //  Created by Alexander Skorulis on 14/7/2024.
 
 import Foundation
+import VectorMath
 
 // Patterns are normalised into a -1...1 square.
 struct PatternSpace {
@@ -15,7 +16,7 @@ struct PatternSpace {
         return Self.toScreenSpace(point: point, size: canvasSize)
     }
     
-    func toScreenSpace(size: CGSize) -> CGSize {
+    func toScreenSpace(size: Vector2) -> Vector2 {
         return Self.toScreenSpace(size: size, screenSize: canvasSize)
     }
     
@@ -31,9 +32,9 @@ struct PatternSpace {
         return .init(x: x, y: y)
     }
     
-    static func toScreenSpace(size: CGSize, screenSize: CGSize) -> CGSize {
-        let width = screenSize.width * size.width / 2
-        let height = -screenSize.height * size.height / 2
-        return .init(width: width, height: height)
+    static func toScreenSpace(size: Vector2, screenSize: CGSize) -> Vector2 {
+        let width = Float(screenSize.width) * size.x / 2
+        let height = -Float(screenSize.height) * size.y / 2
+        return .init(width, height)
     }
 }

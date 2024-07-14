@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FA8F9B582C4365600004B88B /* CirclePattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B572C4365600004B88B /* CirclePattern.swift */; };
 		FA8F9B5A2C436A560004B88B /* LinePatternTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B592C436A560004B88B /* LinePatternTests.swift */; };
+		FA8F9B5E2C436E960004B88B /* VectorMath in Frameworks */ = {isa = PBXBuildFile; productRef = FA8F9B5D2C436E960004B88B /* VectorMath */; };
 		FAD929D02C3D384400B86690 /* GoMetalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929CF2C3D384400B86690 /* GoMetalApp.swift */; };
 		FAD929D22C3D384400B86690 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929D12C3D384400B86690 /* ContentView.swift */; };
 		FAD929D42C3D384500B86690 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD929D32C3D384500B86690 /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA8F9B5E2C436E960004B88B /* VectorMath in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,12 +88,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA8F9B5C2C436E960004B88B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FAD929C32C3D384400B86690 = {
 			isa = PBXGroup;
 			children = (
 				FAD929CE2C3D384400B86690 /* GoMetal */,
 				FAD92A412C435F1000B86690 /* GoMetalTests */,
 				FAD929CD2C3D384400B86690 /* Products */,
+				FA8F9B5C2C436E960004B88B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -244,6 +254,9 @@
 			dependencies = (
 			);
 			name = GoMetal;
+			packageProductDependencies = (
+				FA8F9B5D2C436E960004B88B /* VectorMath */,
+			);
 			productName = GoMetal;
 			productReference = FAD929CC2C3D384400B86690 /* GoMetal.app */;
 			productType = "com.apple.product-type.application";
@@ -295,6 +308,9 @@
 				Base,
 			);
 			mainGroup = FAD929C32C3D384400B86690;
+			packageReferences = (
+				FA8F9B5B2C436E760004B88B /* XCRemoteSwiftPackageReference "VectorMath" */,
+			);
 			productRefGroup = FAD929CD2C3D384400B86690 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -617,6 +633,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FA8F9B5B2C436E760004B88B /* XCRemoteSwiftPackageReference "VectorMath" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:nicklockwood/VectorMath.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FA8F9B5D2C436E960004B88B /* VectorMath */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA8F9B5B2C436E760004B88B /* XCRemoteSwiftPackageReference "VectorMath" */;
+			productName = VectorMath;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FAD929C42C3D384400B86690 /* Project object */;
 }

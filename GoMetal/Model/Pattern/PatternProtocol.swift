@@ -1,11 +1,12 @@
 //  Created by Alexander Skorulis on 14/7/2024.
 
 import Foundation
+import VectorMath
 
 // A Spell pattern inside a normalised card with a -1...1 range in the X and Y direction.
 protocol PatternProtocol {
     func position(time: CGFloat) -> CGPoint
-    func force(at point: CGPoint) -> CGSize
+    func force(at point: CGPoint) -> Vector2
 }
 
 struct ScreenPattern {
@@ -23,7 +24,7 @@ struct ScreenPattern {
     }
     
     // Return the force in screen coordinates
-    func force(at point: CGPoint) -> CGSize {
+    func force(at point: CGPoint) -> Vector2 {
         let normalisedForce = pattern.force(at: space.toPatternSpace(point: point))
         return space.toScreenSpace(size: normalisedForce)
     }

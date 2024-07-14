@@ -1,6 +1,7 @@
 //  Created by Alexander Skorulis on 14/7/2024.
 
 import Foundation
+import VectorMath
 
 struct CirclePattern: PatternProtocol {
     func position(time: CGFloat) -> CGPoint {
@@ -9,7 +10,7 @@ struct CirclePattern: PatternProtocol {
         return .init(x: size.width, y: size.height)
     }
     
-    func force(at point: CGPoint) -> CGSize {
+    func force(at point: CGPoint) -> Vector2 {
         .zero
     }
     

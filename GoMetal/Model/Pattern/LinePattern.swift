@@ -1,6 +1,7 @@
 //  Created by Alexander Skorulis on 14/7/2024.
 
 import Foundation
+import VectorMath
 
 struct LinePattern: PatternProtocol {
     func position(time: CGFloat) -> CGPoint {
@@ -8,25 +9,24 @@ struct LinePattern: PatternProtocol {
         return .init(x: 0, y: y)
     }
     
-    func force(at point: CGPoint) -> CGSize {
-        let lf = lineForce(x: point.x)
+    func force(at point: CGPoint) -> Vector2 {
+        let lf = lineForce(x: Float(point.x))
         let ef = endForce(point: point)
-        return .init(width: lf.width + ef.width, height: lf.height + ef.height)
+        return lf + ef
     }
     
-    private func endForce(point: CGPoint) -> CGSize {
-        let end = CGPoint(x: 0, y: 1)
-        let dir = CGPoint(x: end.x - point.x, y: end.y - point.y)
-        
-        return .init(width: dir.x, height: dir.y)
+    private func endForce(point: CGPoint) -> Vector2 {
+        let end = Vector2(0, 1)
+        let p = Vector2(point)
+        return (end - p).normalized() * 0.25
     }
     
-    private func lineForce(x: CGFloat) -> CGSize {
+    private func lineForce(x: Float) -> Vector2 {
         if x == 0 { return .zero }
         let xDistance = abs(x)
         let xPower = pow(1 - xDistance, 2)
-        let xDirection: CGFloat = x > 0 ? -1 : 1
-        return .init(width: xPower * xDirection, height: 0)
+        let xDirection: Float = x > 0 ? -1 : 1
+        return .init(xPower * xDirection, 0)
     }
     
     
