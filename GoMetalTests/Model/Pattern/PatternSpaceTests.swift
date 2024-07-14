@@ -11,22 +11,22 @@ final class PatternSpaceTests: XCTestCase {
         
         XCTAssertEqual(
             space.toScreenSpace(point: .zero),
-            .init(x: 50, y: 100)
+            .init(50, 100)
         )
         
         XCTAssertEqual(
-            space.toScreenSpace(point: .init(x: 1, y: 1)),
-            .init(x: 100, y: 0)
+            space.toScreenSpace(point: .init(1, 1)),
+            .init(100, 0)
         )
         
         XCTAssertEqual(
-            space.toScreenSpace(point: .init(x: -1, y: -1)),
-            .init(x: 0, y: 200)
+            space.toScreenSpace(point: .init(-1, -1)),
+            .init(0, 200)
         )
         
         XCTAssertEqual(
-            space.toScreenSpace(point: .init(x: 0.5, y: -0.5)),
-            .init(x: 75, y: 150)
+            space.toScreenSpace(point: .init(0.5, -0.5)),
+            .init(75, 150)
         )
     }
     
@@ -34,17 +34,17 @@ final class PatternSpaceTests: XCTestCase {
         let space = PatternSpace(canvasSize: .init(width: 100, height: 200))
         XCTAssertEqual(
             space.toPatternSpace(point: .zero),
-            .init(x: -1, y: 1)
+            .init(-1, 1)
         )
         
         XCTAssertEqual(
-            space.toPatternSpace(point: .init(x: 100, y: 200)),
-            .init(x: 1, y: -1)
+            space.toPatternSpace(point: .init(100, 200)),
+            .init(1, -1)
         )
         
         XCTAssertEqual(
-            space.toPatternSpace(point: .init(x: 50, y: 50)),
-            .init(x: 0, y: 0.5)
+            space.toPatternSpace(point: .init(50, 50)),
+            .init(0, 0.5)
         )
     }
     
@@ -56,18 +56,18 @@ final class PatternSpaceTests: XCTestCase {
         )
         
         XCTAssertEqual(
-            space.toScreenSpace(size: .init(width: 1, height: -1)),
-            .init(width: 50, height: 100)
+            space.toScreenSpace(size: .init(1, -1)),
+            .init(50, 100)
         )
         
         XCTAssertEqual(
-            space.toScreenSpace(size: .init(width: -1, height: 1)),
-            .init(width: -50, height: -100)
+            space.toScreenSpace(size: .init(-1, 1)),
+            .init(-50, -100)
         )
         
         XCTAssertEqual(
-            space.toScreenSpace(size: .init(width: 0.5, height: 0.5)),
-            .init(width: 25, height: -50)
+            space.toScreenSpace(size: .init(0.5, 0.5)),
+            .init(25, -50)
         )
     }
 }

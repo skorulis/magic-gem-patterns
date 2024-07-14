@@ -7,7 +7,7 @@ struct SpellTestView: View {
     
     @State var spell: Spell = .init(
         pattern: .line,
-        gems: [.init(time: 0)]
+        gems: [.init(time: 0.5)]
     )
     let service = SpellCastService()
     

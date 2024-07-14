@@ -14,13 +14,26 @@ struct CirclePattern: PatternProtocol {
         return polar.theta / (2 * .pi)
     }
     
-    func force(at point: Vector2) -> Vector2 {
-        .zero
-    }
-    
     func closestPoint(to: Vector2) -> Vector2 {
         let angle = Math.cartesianToPolar(x: to.x, y: to.y).theta
         return Math.polarToCartesian(r: 1, theta: angle)
+    }
+    
+    func force(at point: Vector2) -> Vector2 {
+        return lineForce(point: point)
+    }
+    
+    func lineForce(point: Vector2) -> Vector2 {
+        let centerDist = point.length
+        if centerDist == 1 {
+            return .zero
+        } else if centerDist > 1 {
+            let overshoot = centerDist - 1
+            let power = max(1 - overshoot, 0)
+            return point.normalized() * pow(power, 2)
+        } else {
+            return point.normalized() * pow(centerDist, 2)
+        }
     }
     
 }

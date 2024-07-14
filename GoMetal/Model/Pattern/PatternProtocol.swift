@@ -34,8 +34,8 @@ struct ScreenPattern {
     
     // Return the force in screen coordinates
     func force(at point: Vector2) -> Vector2 {
-        let normalisedForce = pattern.force(at: space.toPatternSpace(point: point))
-        return space.toScreenSpace(size: normalisedForce)
+        let f = pattern.force(at: space.toPatternSpace(point: point))
+        return PatternSpace.toScreenSpace(size: f, screenSize: .init(width: 2, height: 2))
     }
     
     func closestPoint(to: Vector2) -> Vector2 {

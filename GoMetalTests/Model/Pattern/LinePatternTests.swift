@@ -8,17 +8,17 @@ final class LinePatternTests: XCTestCase {
     
     func testPosition() {
         let pattern = LinePattern()
-        XCTAssertEqual(pattern.position(time: 0), .init(x: 0, y: -1))
-        XCTAssertEqual(pattern.position(time: 1), .init(x: 0, y: 1))
-        XCTAssertEqual(pattern.position(time: 0.5), .init(x: 0, y: 0))
+        XCTAssertEqual(pattern.position(time: 0), .init(0, -1))
+        XCTAssertEqual(pattern.position(time: 1), .init(0, 1))
+        XCTAssertEqual(pattern.position(time: 0.5), .init(0, 0))
     }
     
     func testForce() {
         let pattern = LinePattern()
-        XCTAssertEqual(pattern.force(at: .init(x: 0, y: 0)), .init(width: 0, height: 0))
-        XCTAssertEqual(pattern.force(at: .init(x: 0, y: 1)), .init(width: 0, height: 0))
-        XCTAssertEqual(pattern.force(at: .init(x: 1, y: 0)), .init(width: 0, height: 0))
-        XCTAssertEqual(pattern.force(at: .init(x: 0.5, y: 0)), .init(width: -0.25, height: 0))
-        XCTAssertEqual(pattern.force(at: .init(x: -0.5, y: 0)), .init(width: 0.25, height: 0))
+        XCTAssertEqual(pattern.lineForce(at: .init(0, 0)), .init(0, 0))
+        XCTAssertEqual(pattern.lineForce(at: .init(0, 1)), .init(0, 0))
+        XCTAssertEqual(pattern.lineForce(at: .init(1, 0)), .init(0, 0))
+        XCTAssertEqual(pattern.lineForce(at: .init(0.5, 0)), .init(-0.25, 0))
+        XCTAssertEqual(pattern.lineForce(at: .init(-0.5, 0)), .init(0.25, 0))
     }
 }
