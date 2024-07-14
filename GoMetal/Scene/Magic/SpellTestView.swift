@@ -24,6 +24,9 @@ struct SpellTestView: View {
         Circle()
             .fill(Color.clear)
             .overlay(
+                DirectionalFieldView(pattern: pattern, canvasSize: canvasSize)
+            )
+            .overlay(
                 PatternDisplayView(pattern: pattern, canvasSize: canvasSize)
             )
             .overlay(

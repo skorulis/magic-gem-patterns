@@ -18,7 +18,10 @@ enum SpellPattern {
             let y = size.height * (1 - time) - size.height / 2
             return .init(width: 0, height: y)
         }
-        
+    }
+    
+    func force(at point: CGPoint, size: CGSize) -> CGSize {
+        return .init(width: 5, height: 5)
     }
     
     var basePower: CGFloat {

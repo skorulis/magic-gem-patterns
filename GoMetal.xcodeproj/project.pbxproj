@@ -22,6 +22,7 @@
 		FAD929F62C3E8F1900B86690 /* PatternDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929F52C3E8F1900B86690 /* PatternDisplayView.swift */; };
 		FAD929F92C3E958700B86690 /* SpellCastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929F82C3E958700B86690 /* SpellCastService.swift */; };
 		FAD929FB2C3EA12600B86690 /* Spell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929FA2C3EA12600B86690 /* Spell.swift */; };
+		FAD929FD2C3FD94900B86690 /* DirectionalFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929FC2C3FD94900B86690 /* DirectionalFieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		FAD929F52C3E8F1900B86690 /* PatternDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternDisplayView.swift; sourceTree = "<group>"; };
 		FAD929F82C3E958700B86690 /* SpellCastService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellCastService.swift; sourceTree = "<group>"; };
 		FAD929FA2C3EA12600B86690 /* Spell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spell.swift; sourceTree = "<group>"; };
+		FAD929FC2C3FD94900B86690 /* DirectionalFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionalFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				FAD929F12C3E885800B86690 /* SpellTestView.swift */,
 				FAD929F32C3E8AA800B86690 /* ActiveSpellView.swift */,
 				FAD929F52C3E8F1900B86690 /* PatternDisplayView.swift */,
+				FAD929FC2C3FD94900B86690 /* DirectionalFieldView.swift */,
 			);
 			path = Magic;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			files = (
 				FAD929E92C3D445E00B86690 /* ChildSizeReader.swift in Sources */,
 				FAD929F92C3E958700B86690 /* SpellCastService.swift in Sources */,
+				FAD929FD2C3FD94900B86690 /* DirectionalFieldView.swift in Sources */,
 				FAD929E02C3D387200B86690 /* MetalView.swift in Sources */,
 				FAD929F02C3E874700B86690 /* Math.swift in Sources */,
 				FAD929D22C3D384400B86690 /* ContentView.swift in Sources */,
