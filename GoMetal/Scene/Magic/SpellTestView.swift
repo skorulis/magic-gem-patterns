@@ -51,7 +51,7 @@ struct SpellTestView: View {
     private var energy: SpellEnergy {
         service.calculateEnergy(
             pattern: spell.pattern,
-            time: sliderValue,
+            time: Float(sliderValue),
             canvasSize: canvasSize
         )
     }

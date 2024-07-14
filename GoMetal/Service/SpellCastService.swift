@@ -4,11 +4,11 @@ import Foundation
 
 final class SpellCastService {
     
-    private let stepSize = 0.1
+    private let stepSize: Float = 0.1
     
     func calculateEnergy(
         pattern: SpellPattern,
-        time: CGFloat,
+        time: Float,
         canvasSize: CGSize
     ) -> SpellEnergy {
         let screenPattern = ScreenPattern(pattern: pattern.pattern, canvasSize: canvasSize)

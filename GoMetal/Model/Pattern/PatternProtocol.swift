@@ -5,9 +5,17 @@ import VectorMath
 
 // A Spell pattern inside a normalised card with a -1...1 range in the X and Y direction.
 protocol PatternProtocol {
-    func position(time: CGFloat) -> Vector2
+    // Return the position on the pattern line for the given time
+    func position(time: Float) -> Vector2
+    
+    // Return the energy directional force at a given point
     func force(at point: Vector2) -> Vector2
+    
+    // Return the closest point on the line to the given point
     func closestPoint(to: Vector2) -> Vector2
+    
+    // Return the time that corresponds to the given point
+    func time(position: Vector2) -> Float
 }
 
 struct ScreenPattern {
@@ -19,7 +27,7 @@ struct ScreenPattern {
         self.space = .init(canvasSize: canvasSize)
     }
     
-    func position(time: CGFloat) -> Vector2 {
+    func position(time: Float) -> Vector2 {
         let pos = pattern.position(time: time)
         return space.toScreenSpace(point: pos)
     }
@@ -34,5 +42,10 @@ struct ScreenPattern {
         let patternPoint = space.toPatternSpace(point: to)
         let result = pattern.closestPoint(to: patternPoint)
         return space.toScreenSpace(point: result)
+    }
+    
+    func time(position: Vector2) -> Float {
+        let patternPoint = space.toPatternSpace(point: position)
+        return pattern.time(position: patternPoint)
     }
 }

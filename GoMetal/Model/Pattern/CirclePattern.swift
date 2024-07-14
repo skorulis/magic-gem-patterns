@@ -4,9 +4,14 @@ import Foundation
 import VectorMath
 
 struct CirclePattern: PatternProtocol {
-    func position(time: CGFloat) -> Vector2 {
+    func position(time: Float) -> Vector2 {
         let theta = time * .pi * 2
         return Math.polarToCartesian(r: 1, theta: Float(theta))
+    }
+    
+    func time(position: Vector2) -> Float {
+        let polar = Math.cartesianToPolar(x: position.x, y: position.y)
+        return polar.theta / (2 * .pi)
     }
     
     func force(at point: Vector2) -> Vector2 {

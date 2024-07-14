@@ -26,13 +26,13 @@ struct GemPositionEditView: View {
     
     private var handle: some View {
         GemView()
-            .offset(currentGemPosition(index: 0).viewOffset(canvasSize))
+            .offset(gemPosition(index: 0, drag: dragAmount).viewOffset(canvasSize))
     }
     
-    private func currentGemPosition(index: Int) -> Vector2 {
+    private func gemPosition(index: Int, drag: CGSize) -> Vector2 {
         var orig = gemPosition(index: index)
-        orig.x += Float(dragAmount.width)
-        orig.y += Float(dragAmount.height)
+        orig.x += Float(drag.width)
+        orig.y += Float(drag.height)
         return screenPattern.closestPoint(to: orig)
     }
     
@@ -42,7 +42,9 @@ struct GemPositionEditView: View {
                 state = value.translation
             }
             .onEnded { drag in
-                //self.rotation = handleAngle(translation: drag.translation)
+                let endPosition = gemPosition(index: 0, drag: drag.translation)
+                let time = screenPattern.time(position: endPosition)
+                spell.gems[0].time = time
             }
     }
     

@@ -17,12 +17,12 @@ enum SpellPattern: String, CaseIterable, Identifiable {
         }
     }
     
-    var basePower: CGFloat {
+    var basePower: Float {
         return 20
     }
     
     // Rate at which the spell returns to normal
-    var normalisation: CGFloat {
+    var normalisation: Float {
         return 0.5 // Normalise in half the time
     }
 }

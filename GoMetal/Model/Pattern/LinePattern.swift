@@ -4,9 +4,13 @@ import Foundation
 import VectorMath
 
 struct LinePattern: PatternProtocol {
-    func position(time: CGFloat) -> Vector2 {
+    func position(time: Float) -> Vector2 {
         let y = -1 + time * 2
         return .init(0, Float(y))
+    }
+    
+    func time(position: Vector2) -> Float {
+        return (position.y + 1) / 2
     }
     
     func force(at point: Vector2) -> Vector2 {

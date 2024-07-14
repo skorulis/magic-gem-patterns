@@ -19,6 +19,6 @@ struct ActiveSpellView: View {
     
     var spellIcon: some View {
         Circle()
-            .frame(width: energy.power, height: energy.power)
+            .frame(width: CGFloat(energy.power), height: CGFloat(energy.power))
     }
 }

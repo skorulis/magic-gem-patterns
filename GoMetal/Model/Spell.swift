@@ -11,5 +11,5 @@ struct Spell {
 }
 
 struct GemPosition {
-    let time: TimeInterval
+    var time: Float
 }

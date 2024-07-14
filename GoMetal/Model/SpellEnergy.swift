@@ -4,8 +4,8 @@ import Foundation
 import VectorMath
 
 struct SpellEnergy {
-    let time: TimeInterval
+    let time: Float
     var position: Vector2
-    let power: CGFloat
+    let power: Float
     
 }
