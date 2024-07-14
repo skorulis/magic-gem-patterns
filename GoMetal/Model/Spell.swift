@@ -4,10 +4,10 @@ import Foundation
 
 struct Spell {
     // The pattern this spell is built on
-    let pattern: SpellPattern
+    var pattern: SpellPattern
     
     // Where the gems are placed
-    let gems: [GemPosition]
+    var gems: [GemPosition]
 }
 
 struct GemPosition {

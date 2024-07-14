@@ -29,5 +29,9 @@ struct LinePattern: PatternProtocol {
         return .init(xPower * xDirection, 0)
     }
     
+    func closestPoint(to: CGPoint) -> CGPoint {
+        let y = max(min(to.y, 1), -1)
+        return .init(x: 0, y: y)
+    }
     
 }

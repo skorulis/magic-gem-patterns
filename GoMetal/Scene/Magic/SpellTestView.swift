@@ -5,7 +5,10 @@ import SwiftUI
 
 struct SpellTestView: View {
     
-    @State var pattern: SpellPattern = .line
+    @State var spell: Spell = .init(
+        pattern: .line,
+        gems: [.init(time: 0)]
+    )
     let service = SpellCastService()
     
     @State private var sliderValue: CGFloat = 0
@@ -13,7 +16,7 @@ struct SpellTestView: View {
     
     var body: some View {
         VStack(spacing: 16) {
-            Picker("Pattern", selection: $pattern) {
+            Picker("Pattern", selection: $spell.pattern) {
                 ForEach(SpellPattern.allCases) { pattern in
                     Text(pattern.rawValue)
                         .tag(pattern)
@@ -30,15 +33,15 @@ struct SpellTestView: View {
         Circle()
             .fill(Color.clear)
             .overlay(
-                DirectionalFieldView(pattern: pattern, canvasSize: canvasSize)
+                DirectionalFieldView(pattern: spell.pattern, canvasSize: canvasSize)
             )
             .overlay(
-                PatternDisplayView(pattern: pattern, canvasSize: canvasSize)
+                GemPositionEditView(spell: $spell, canvasSize: canvasSize)
             )
             .overlay(
                 ActiveSpellView(
                     canvasSize: canvasSize,
-                    pattern: pattern,
+                    pattern: spell.pattern,
                     energy: energy
                 )
             )
@@ -47,7 +50,7 @@ struct SpellTestView: View {
     
     private var energy: SpellEnergy {
         service.calculateEnergy(
-            pattern: pattern,
+            pattern: spell.pattern,
             time: sliderValue,
             canvasSize: canvasSize
         )

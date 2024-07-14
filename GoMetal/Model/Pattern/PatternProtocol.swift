@@ -7,6 +7,7 @@ import VectorMath
 protocol PatternProtocol {
     func position(time: CGFloat) -> CGPoint
     func force(at point: CGPoint) -> Vector2
+    func closestPoint(to: CGPoint) -> CGPoint
 }
 
 struct ScreenPattern {
@@ -27,5 +28,11 @@ struct ScreenPattern {
     func force(at point: CGPoint) -> Vector2 {
         let normalisedForce = pattern.force(at: space.toPatternSpace(point: point))
         return space.toScreenSpace(size: normalisedForce)
+    }
+    
+    func closestPoint(to: CGPoint) -> CGPoint {
+        let patternPoint = space.toPatternSpace(point: to)
+        let result = pattern.closestPoint(to: patternPoint)
+        return space.toScreenSpace(point: result)
     }
 }

@@ -3,16 +3,18 @@
 import Foundation
 import SwiftUI
 
-struct PatternDisplayView: View {
+struct GemPositionEditView: View {
     
-    let pattern: SpellPattern
+    @Binding var spell: Spell
     let canvasSize: CGSize
-    @State private var rotation: CGFloat = 0
     @GestureState private var dragAmount: CGSize = .zero
+    var screenPattern: ScreenPattern {
+        .init(pattern: spell.pattern.pattern, canvasSize: canvasSize)
+    }
     
     var body: some View {
         ZStack {
-            AnyShape(pattern.shape)
+            AnyShape(spell.pattern.shape)
                 .stroke(style: StrokeStyle(lineWidth: 4))
                 .foregroundColor(.blue)
             handle
@@ -36,12 +38,12 @@ struct PatternDisplayView: View {
     }
     
     private func handleOffset(translation: CGSize) -> CGSize {
-        let angle = handleAngle(translation: translation)
-        return Math.polarToCartesian(r: canvasSize.width/2, theta: angle)
+        let p = screenPattern.closestPoint(to: .init(x: translation.width, y: translation.height))
+        return .init(width: p.x - canvasSize.width / 2, height: p.y - canvasSize.height / 2)
     }
     
     private var originalHandleOffset: CGSize {
-        return Math.polarToCartesian(r: canvasSize.width/2, theta: rotation)
+        gemOffset
     }
     
     private var dragGesture: some Gesture {
@@ -50,8 +52,14 @@ struct PatternDisplayView: View {
                 state = value.translation
             }
             .onEnded { drag in
-                self.rotation = handleAngle(translation: drag.translation)
+                //self.rotation = handleAngle(translation: drag.translation)
             }
+    }
+    
+    private var gemOffset: CGSize {
+        let gem = spell.gems[0]
+        let position = screenPattern.position(time: gem.time)
+        return .init(width: position.x - canvasSize.width/2, height: position.y - canvasSize.height/2)
     }
 }
 

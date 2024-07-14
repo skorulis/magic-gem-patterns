@@ -23,7 +23,7 @@
 		FAD929F02C3E874700B86690 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929EF2C3E874700B86690 /* Math.swift */; };
 		FAD929F22C3E885800B86690 /* SpellTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929F12C3E885800B86690 /* SpellTestView.swift */; };
 		FAD929F42C3E8AA800B86690 /* ActiveSpellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929F32C3E8AA800B86690 /* ActiveSpellView.swift */; };
-		FAD929F62C3E8F1900B86690 /* PatternDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929F52C3E8F1900B86690 /* PatternDisplayView.swift */; };
+		FAD929F62C3E8F1900B86690 /* GemPositionEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929F52C3E8F1900B86690 /* GemPositionEditView.swift */; };
 		FAD929F92C3E958700B86690 /* SpellCastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929F82C3E958700B86690 /* SpellCastService.swift */; };
 		FAD929FB2C3EA12600B86690 /* Spell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929FA2C3EA12600B86690 /* Spell.swift */; };
 		FAD929FD2C3FD94900B86690 /* DirectionalFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929FC2C3FD94900B86690 /* DirectionalFieldView.swift */; };
@@ -60,7 +60,7 @@
 		FAD929EF2C3E874700B86690 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		FAD929F12C3E885800B86690 /* SpellTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellTestView.swift; sourceTree = "<group>"; };
 		FAD929F32C3E8AA800B86690 /* ActiveSpellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveSpellView.swift; sourceTree = "<group>"; };
-		FAD929F52C3E8F1900B86690 /* PatternDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternDisplayView.swift; sourceTree = "<group>"; };
+		FAD929F52C3E8F1900B86690 /* GemPositionEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemPositionEditView.swift; sourceTree = "<group>"; };
 		FAD929F82C3E958700B86690 /* SpellCastService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellCastService.swift; sourceTree = "<group>"; };
 		FAD929FA2C3EA12600B86690 /* Spell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spell.swift; sourceTree = "<group>"; };
 		FAD929FC2C3FD94900B86690 /* DirectionalFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionalFieldView.swift; sourceTree = "<group>"; };
@@ -179,7 +179,7 @@
 			children = (
 				FAD929F12C3E885800B86690 /* SpellTestView.swift */,
 				FAD929F32C3E8AA800B86690 /* ActiveSpellView.swift */,
-				FAD929F52C3E8F1900B86690 /* PatternDisplayView.swift */,
+				FAD929F52C3E8F1900B86690 /* GemPositionEditView.swift */,
 				FAD929FC2C3FD94900B86690 /* DirectionalFieldView.swift */,
 			);
 			path = Magic;
@@ -218,8 +218,8 @@
 			children = (
 				FAD92A382C435D9900B86690 /* PatternProtocol.swift */,
 				FAD92A3A2C435E6500B86690 /* LinePattern.swift */,
-				FAD92A4D2C43617A00B86690 /* PatternSpace.swift */,
 				FA8F9B572C4365600004B88B /* CirclePattern.swift */,
+				FAD92A4D2C43617A00B86690 /* PatternSpace.swift */,
 			);
 			path = Pattern;
 			sourceTree = "<group>";
@@ -372,7 +372,7 @@
 				FAD929D02C3D384400B86690 /* GoMetalApp.swift in Sources */,
 				FAD929F42C3E8AA800B86690 /* ActiveSpellView.swift in Sources */,
 				FAD929EC2C3E851A00B86690 /* SpellEnergy.swift in Sources */,
-				FAD929F62C3E8F1900B86690 /* PatternDisplayView.swift in Sources */,
+				FAD929F62C3E8F1900B86690 /* GemPositionEditView.swift in Sources */,
 				FAD929FB2C3EA12600B86690 /* Spell.swift in Sources */,
 				FAD929F22C3E885800B86690 /* SpellTestView.swift in Sources */,
 			);
