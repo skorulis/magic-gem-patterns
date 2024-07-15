@@ -43,4 +43,10 @@ extension Vector2 {
     func viewOffset(_ viewSize: CGSize) -> CGSize {
         .init(width: CGFloat(x) - viewSize.width/2, height: CGFloat(y) - viewSize.height/2)
     }
+    
+    func cleaned(_ minValue: Float = 0.000001) -> Self {
+        let x = abs(x) < minValue ? 0 : x
+        let y = abs(y) < minValue ? 0 : y
+        return .init(x, y)
+    }
 }

@@ -12,6 +12,8 @@
 		FA8F9B5E2C436E960004B88B /* VectorMath in Frameworks */ = {isa = PBXBuildFile; productRef = FA8F9B5D2C436E960004B88B /* VectorMath */; };
 		FA8F9B612C438CB80004B88B /* GemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B602C438CB80004B88B /* GemView.swift */; };
 		FA8F9B632C43C1990004B88B /* CirclePatternTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B622C43C1990004B88B /* CirclePatternTests.swift */; };
+		FA8F9B652C4524FE0004B88B /* SpellContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B642C4524FE0004B88B /* SpellContext.swift */; };
+		FA8F9B672C4527AA0004B88B /* SimulationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B662C4527AA0004B88B /* SimulationService.swift */; };
 		FAD929D02C3D384400B86690 /* GoMetalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929CF2C3D384400B86690 /* GoMetalApp.swift */; };
 		FAD929D22C3D384400B86690 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929D12C3D384400B86690 /* ContentView.swift */; };
 		FAD929D42C3D384500B86690 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD929D32C3D384500B86690 /* Assets.xcassets */; };
@@ -49,6 +51,8 @@
 		FA8F9B592C436A560004B88B /* LinePatternTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinePatternTests.swift; sourceTree = "<group>"; };
 		FA8F9B602C438CB80004B88B /* GemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemView.swift; sourceTree = "<group>"; };
 		FA8F9B622C43C1990004B88B /* CirclePatternTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePatternTests.swift; sourceTree = "<group>"; };
+		FA8F9B642C4524FE0004B88B /* SpellContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellContext.swift; sourceTree = "<group>"; };
+		FA8F9B662C4527AA0004B88B /* SimulationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationService.swift; sourceTree = "<group>"; };
 		FAD929CC2C3D384400B86690 /* GoMetal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoMetal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD929CF2C3D384400B86690 /* GoMetalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoMetalApp.swift; sourceTree = "<group>"; };
 		FAD929D12C3D384400B86690 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -203,6 +207,7 @@
 				FAD929EB2C3E851A00B86690 /* SpellEnergy.swift */,
 				FAD929ED2C3E858F00B86690 /* SpellPattern.swift */,
 				FAD929FA2C3EA12600B86690 /* Spell.swift */,
+				FA8F9B642C4524FE0004B88B /* SpellContext.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				FAD929F82C3E958700B86690 /* SpellCastService.swift */,
+				FA8F9B662C4527AA0004B88B /* SimulationService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -361,12 +367,14 @@
 			files = (
 				FA8F9B582C4365600004B88B /* CirclePattern.swift in Sources */,
 				FAD929E92C3D445E00B86690 /* ChildSizeReader.swift in Sources */,
+				FA8F9B652C4524FE0004B88B /* SpellContext.swift in Sources */,
 				FAD929F92C3E958700B86690 /* SpellCastService.swift in Sources */,
 				FAD92A3B2C435E6500B86690 /* LinePattern.swift in Sources */,
 				FAD929FD2C3FD94900B86690 /* DirectionalFieldView.swift in Sources */,
 				FAD92A392C435D9900B86690 /* PatternProtocol.swift in Sources */,
 				FA8F9B612C438CB80004B88B /* GemView.swift in Sources */,
 				FAD929E02C3D387200B86690 /* MetalView.swift in Sources */,
+				FA8F9B672C4527AA0004B88B /* SimulationService.swift in Sources */,
 				FAD929F02C3E874700B86690 /* Math.swift in Sources */,
 				FAD929D22C3D384400B86690 /* ContentView.swift in Sources */,
 				FAD929EE2C3E858F00B86690 /* SpellPattern.swift in Sources */,

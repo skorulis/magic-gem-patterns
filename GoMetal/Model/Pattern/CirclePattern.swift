@@ -20,7 +20,7 @@ struct CirclePattern: PatternProtocol {
     }
     
     func force(at point: Vector2) -> Vector2 {
-        return lineForce(point: point)
+        return lineForce(point: point) + endForce(point: point)
     }
     
     func lineForce(point: Vector2) -> Vector2 {
@@ -34,6 +34,14 @@ struct CirclePattern: PatternProtocol {
         } else {
             return point.normalized() * pow(centerDist, 2)
         }
+    }
+    
+    func endForce(point: Vector2) -> Vector2 {
+        if point == .zero {
+            return .zero
+        }
+        let onLine = closestPoint(to: point)
+        return onLine.rotated(by: .halfPi).normalized()
     }
     
 }

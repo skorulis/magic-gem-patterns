@@ -14,6 +14,8 @@ struct SpellTestView: View {
     @State private var sliderValue: CGFloat = 0
     @State private var canvasSize: CGSize = .zero
     
+    @State private var simulation = SimulationService()
+    
     var body: some View {
         VStack(spacing: 16) {
             Picker("Pattern", selection: $spell.pattern) {
@@ -22,11 +24,18 @@ struct SpellTestView: View {
                         .tag(pattern)
                 }
             }
-            canvas
-            slider
+            animation
+            Toggle(isOn: $simulation.active) {
+                Text("Active")
+            }
         }
         .padding(.horizontal, 16)
-        
+    }
+    
+    private var animation: some View {
+        TimelineView(.animation) { timeline in
+            canvas
+        }
     }
     
     private var canvas: some View {
