@@ -5,7 +5,8 @@ import QuartzCore
 
 @Observable final class SimulationService {
     
-    let mainStore: MainStore
+    private let mainStore: MainStore
+    private let spellCastService: SpellCastService
     
     var context: SpellContext? { mainStore.spellContext }
     var displaylink: CADisplayLink!
@@ -17,8 +18,9 @@ import QuartzCore
     var lastTime: TimeInterval = 0
     var spell: Spell { mainStore.spell }
     
-    init(mainStore: MainStore) {
+    init(mainStore: MainStore, spellCastService: SpellCastService) {
         self.mainStore = mainStore
+        self.spellCastService = spellCastService
         displaylink = .init(target: self, selector: #selector(step))
         displaylink.add(to: .current, forMode: .default)
         displaylink.isPaused = true
@@ -45,11 +47,7 @@ import QuartzCore
         lastTime = t
         guard delta < 0.5 else { return }
         print(delta)
-        var energy = context.energy
-        let force = spell.pattern.pattern.force(at: energy.position)
-        energy.position += (energy.velocity * delta)
-        energy.velocity += (force * delta)
-        context.energy = energy
+        spellCastService.update(context: &context, delta: delta)
         mainStore.spellContext = context
     }
     

@@ -7,7 +7,6 @@ struct SpellTestView: View {
     
     let service = SpellCastService()
     
-    @State private var sliderValue: CGFloat = 0
     @State private var canvasSize: CGSize = .zero
     
     @State var mainStore: MainStore
@@ -59,18 +58,6 @@ struct SpellTestView: View {
                 context: context
             )
         }
-    }
-    
-    private var energy: SpellEnergy {
-        service.calculateEnergy(
-            pattern: mainStore.spell.pattern,
-            time: Float(sliderValue),
-            canvasSize: canvasSize
-        )
-    }
-    
-    private var slider: some View {
-        Slider(value: $sliderValue)
     }
     
 }

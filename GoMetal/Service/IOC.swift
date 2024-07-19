@@ -18,8 +18,13 @@ final class IOC: IOCService {
     }
     
     func registerServices() {
+        container.register(SpellCastService.self) { _ in SpellCastService() }
+        
         container.register(SimulationService.self) { r in
-            SimulationService(mainStore: r.resolve(MainStore.self)!)
+            SimulationService(
+                mainStore: r.resolve(MainStore.self)!,
+                spellCastService: r.resolve(SpellCastService.self)!
+            )
         }
     }
 }
