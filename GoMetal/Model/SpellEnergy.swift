@@ -3,7 +3,8 @@
 import Foundation
 import VectorMath
 
-struct SpellEnergy {
+struct SpellEnergy: Identifiable {
+    let id: UUID = .init()
     let time: Float
     var position: Vector2
     let power: Float

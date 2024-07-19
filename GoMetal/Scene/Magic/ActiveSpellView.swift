@@ -7,26 +7,30 @@ import VectorMath
 struct ActiveSpellView: View {
     
     let canvasSize: CGSize
-    let pattern: SpellPattern
-    let energy: SpellEnergy
-    var screenPattern: ScreenPattern { .init(pattern: pattern.pattern, canvasSize: canvasSize) }
+    let context: SpellContext
+    var pattern: PatternProtocol { context.spell.pattern.pattern }
+    var screenPattern: ScreenPattern { .init(pattern: pattern, canvasSize: canvasSize) }
     
     var body: some View {
         ZStack {
-            spellIcon
-                .offset(energy.position.viewOffset(canvasSize))
+            energyView(energy: context.energy)
         }
         .frame(width: canvasSize.width, height: canvasSize.height)
     }
     
-    var spellIcon: some View {
+    private func energyView(energy: SpellEnergy) -> some View {
+        spellIcon(energy)
+            .offset(screenPattern.space.toScreenSpace(point: energy.position).viewOffset(canvasSize))
+    }
+    
+    func spellIcon(_ energy: SpellEnergy) -> some View {
         Image(systemName: "arrow.up.circle.fill")
             .resizable()
             .frame(width: CGFloat(energy.power), height: CGFloat(energy.power))
-            .rotationEffect(rotation)
+            .rotationEffect(rotation(energy))
     }
     
-    var rotation: Angle {
+    private func rotation(_ energy: SpellEnergy) -> Angle {
         let force = screenPattern.force(at: energy.position)
         let radians = Math.cartesianToPolar(x: force.x, y: force.y).theta
         return .radians(CGFloat(radians + .halfPi))

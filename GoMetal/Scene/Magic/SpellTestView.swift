@@ -28,6 +28,9 @@ struct SpellTestView: View {
             Toggle(isOn: $simulation.active) {
                 Text("Active")
             }
+            Button(action: {simulation.start(spell: spell) }) {
+                Text("Start")
+            }
         }
         .padding(.horizontal, 16)
     }
@@ -47,14 +50,18 @@ struct SpellTestView: View {
             .overlay(
                 GemPositionEditView(spell: $spell, canvasSize: canvasSize)
             )
-            .overlay(
-                ActiveSpellView(
-                    canvasSize: canvasSize,
-                    pattern: spell.pattern,
-                    energy: energy
-                )
-            )
+            .overlay(maybeActiveSpell)
             .readSize(size: $canvasSize)
+    }
+    
+    @ViewBuilder
+    private var maybeActiveSpell: some View {
+        if let context = simulation.context {
+            ActiveSpellView(
+                canvasSize: canvasSize,
+                context: context
+            )
+        }
     }
     
     private var energy: SpellEnergy {
