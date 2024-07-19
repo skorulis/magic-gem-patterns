@@ -14,7 +14,7 @@ struct SpellTestView: View {
     @State private var sliderValue: CGFloat = 0
     @State private var canvasSize: CGSize = .zero
     
-    @State private var simulation = SimulationService()
+    @State var simulation: SimulationService
     
     var body: some View {
         VStack(spacing: 16) {
@@ -79,5 +79,6 @@ struct SpellTestView: View {
 }
 
 #Preview {
-    SpellTestView()
+    let ioc = IOC()
+    return SpellTestView(simulation: ioc.resolve())
 }

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA34DAF92C4A4CFF00B5CDC9 /* MainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34DAF82C4A4CFF00B5CDC9 /* MainStore.swift */; };
+		FA34DAFD2C4A4ECC00B5CDC9 /* ASKCore in Frameworks */ = {isa = PBXBuildFile; productRef = FA34DAFC2C4A4ECC00B5CDC9 /* ASKCore */; };
+		FA34DAFF2C4A4F0100B5CDC9 /* IOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34DAFE2C4A4F0100B5CDC9 /* IOC.swift */; };
+		FA34DB082C4A52C300B5CDC9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34DB052C4A52C300B5CDC9 /* ContentView.swift */; };
+		FA34DB092C4A52C300B5CDC9 /* GoMetalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34DB062C4A52C300B5CDC9 /* GoMetalApp.swift */; };
 		FA8F9B582C4365600004B88B /* CirclePattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B572C4365600004B88B /* CirclePattern.swift */; };
 		FA8F9B5A2C436A560004B88B /* LinePatternTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B592C436A560004B88B /* LinePatternTests.swift */; };
 		FA8F9B5E2C436E960004B88B /* VectorMath in Frameworks */ = {isa = PBXBuildFile; productRef = FA8F9B5D2C436E960004B88B /* VectorMath */; };
@@ -14,8 +19,6 @@
 		FA8F9B632C43C1990004B88B /* CirclePatternTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B622C43C1990004B88B /* CirclePatternTests.swift */; };
 		FA8F9B652C4524FE0004B88B /* SpellContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B642C4524FE0004B88B /* SpellContext.swift */; };
 		FA8F9B672C4527AA0004B88B /* SimulationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B662C4527AA0004B88B /* SimulationService.swift */; };
-		FAD929D02C3D384400B86690 /* GoMetalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929CF2C3D384400B86690 /* GoMetalApp.swift */; };
-		FAD929D22C3D384400B86690 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929D12C3D384400B86690 /* ContentView.swift */; };
 		FAD929D42C3D384500B86690 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD929D32C3D384500B86690 /* Assets.xcassets */; };
 		FAD929D72C3D384500B86690 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD929D62C3D384500B86690 /* Preview Assets.xcassets */; };
 		FAD929E02C3D387200B86690 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929DF2C3D387200B86690 /* MetalView.swift */; };
@@ -47,6 +50,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA34DAF82C4A4CFF00B5CDC9 /* MainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStore.swift; sourceTree = "<group>"; };
+		FA34DAFE2C4A4F0100B5CDC9 /* IOC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOC.swift; sourceTree = "<group>"; };
+		FA34DB052C4A52C300B5CDC9 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FA34DB062C4A52C300B5CDC9 /* GoMetalApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoMetalApp.swift; sourceTree = "<group>"; };
 		FA8F9B572C4365600004B88B /* CirclePattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePattern.swift; sourceTree = "<group>"; };
 		FA8F9B592C436A560004B88B /* LinePatternTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinePatternTests.swift; sourceTree = "<group>"; };
 		FA8F9B602C438CB80004B88B /* GemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemView.swift; sourceTree = "<group>"; };
@@ -54,8 +61,6 @@
 		FA8F9B642C4524FE0004B88B /* SpellContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellContext.swift; sourceTree = "<group>"; };
 		FA8F9B662C4527AA0004B88B /* SimulationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationService.swift; sourceTree = "<group>"; };
 		FAD929CC2C3D384400B86690 /* GoMetal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoMetal.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FAD929CF2C3D384400B86690 /* GoMetalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoMetalApp.swift; sourceTree = "<group>"; };
-		FAD929D12C3D384400B86690 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FAD929D32C3D384500B86690 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAD929D62C3D384500B86690 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FAD929DF2C3D387200B86690 /* MetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
@@ -83,6 +88,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA8F9B5E2C436E960004B88B /* VectorMath in Frameworks */,
+				FA34DAFD2C4A4ECC00B5CDC9 /* ASKCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +102,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA34DAF72C4A4CF400B5CDC9 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				FA34DAF82C4A4CFF00B5CDC9 /* MainStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		FA34DAFA2C4A4DB700B5CDC9 /* App */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FA34DB072C4A52C300B5CDC9 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FA34DB052C4A52C300B5CDC9 /* ContentView.swift */,
+				FA34DB062C4A52C300B5CDC9 /* GoMetalApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		FA8F9B5C2C436E960004B88B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,12 +163,11 @@
 		FAD929CE2C3D384400B86690 /* GoMetal */ = {
 			isa = PBXGroup;
 			children = (
+				FA34DAF72C4A4CF400B5CDC9 /* Store */,
 				FAD929F72C3E957F00B86690 /* Service */,
 				FAD929EA2C3E84DC00B86690 /* Model */,
 				FAD929E72C3D445600B86690 /* Util */,
 				FAD929DE2C3D386B00B86690 /* Scene */,
-				FAD929CF2C3D384400B86690 /* GoMetalApp.swift */,
-				FAD929D12C3D384400B86690 /* ContentView.swift */,
 				FAD929D32C3D384500B86690 /* Assets.xcassets */,
 				FAD929D52C3D384500B86690 /* Preview Content */,
 			);
@@ -164,6 +193,7 @@
 		FAD929DE2C3D386B00B86690 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				FA34DB072C4A52C300B5CDC9 /* App */,
 				FA8F9B5F2C438CA20004B88B /* Gem */,
 				FAD929E42C3D429B00B86690 /* Magic */,
 				FAD929E12C3D3B7000B86690 /* Shader */,
@@ -215,8 +245,10 @@
 		FAD929F72C3E957F00B86690 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				FA34DAFA2C4A4DB700B5CDC9 /* App */,
 				FAD929F82C3E958700B86690 /* SpellCastService.swift */,
 				FA8F9B662C4527AA0004B88B /* SimulationService.swift */,
+				FA34DAFE2C4A4F0100B5CDC9 /* IOC.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -276,6 +308,7 @@
 			name = GoMetal;
 			packageProductDependencies = (
 				FA8F9B5D2C436E960004B88B /* VectorMath */,
+				FA34DAFC2C4A4ECC00B5CDC9 /* ASKCore */,
 			);
 			productName = GoMetal;
 			productReference = FAD929CC2C3D384400B86690 /* GoMetal.app */;
@@ -330,6 +363,7 @@
 			mainGroup = FAD929C32C3D384400B86690;
 			packageReferences = (
 				FA8F9B5B2C436E760004B88B /* XCRemoteSwiftPackageReference "VectorMath" */,
+				FA34DAFB2C4A4ECC00B5CDC9 /* XCRemoteSwiftPackageReference "ASKCore" */,
 			);
 			productRefGroup = FAD929CD2C3D384400B86690 /* Products */;
 			projectDirPath = "";
@@ -373,19 +407,21 @@
 				FAD929FD2C3FD94900B86690 /* DirectionalFieldView.swift in Sources */,
 				FAD92A392C435D9900B86690 /* PatternProtocol.swift in Sources */,
 				FA8F9B612C438CB80004B88B /* GemView.swift in Sources */,
+				FA34DB092C4A52C300B5CDC9 /* GoMetalApp.swift in Sources */,
+				FA34DAF92C4A4CFF00B5CDC9 /* MainStore.swift in Sources */,
 				FAD929E02C3D387200B86690 /* MetalView.swift in Sources */,
 				FA8F9B672C4527AA0004B88B /* SimulationService.swift in Sources */,
 				FAD929F02C3E874700B86690 /* Math.swift in Sources */,
-				FAD929D22C3D384400B86690 /* ContentView.swift in Sources */,
+				FA34DB082C4A52C300B5CDC9 /* ContentView.swift in Sources */,
 				FAD929EE2C3E858F00B86690 /* SpellPattern.swift in Sources */,
 				FAD92A4E2C43617A00B86690 /* PatternSpace.swift in Sources */,
 				FAD929E32C3D3B9100B86690 /* Shader1.metal in Sources */,
-				FAD929D02C3D384400B86690 /* GoMetalApp.swift in Sources */,
 				FAD929F42C3E8AA800B86690 /* ActiveSpellView.swift in Sources */,
 				FAD929EC2C3E851A00B86690 /* SpellEnergy.swift in Sources */,
 				FAD929F62C3E8F1900B86690 /* GemPositionEditView.swift in Sources */,
 				FAD929FB2C3EA12600B86690 /* Spell.swift in Sources */,
 				FAD929F22C3E885800B86690 /* SpellTestView.swift in Sources */,
+				FA34DAFF2C4A4F0100B5CDC9 /* IOC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -659,6 +695,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FA34DAFB2C4A4ECC00B5CDC9 /* XCRemoteSwiftPackageReference "ASKCore" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/skorulis/ASKCore";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		FA8F9B5B2C436E760004B88B /* XCRemoteSwiftPackageReference "VectorMath" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:nicklockwood/VectorMath.git";
@@ -670,6 +714,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FA34DAFC2C4A4ECC00B5CDC9 /* ASKCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA34DAFB2C4A4ECC00B5CDC9 /* XCRemoteSwiftPackageReference "ASKCore" */;
+			productName = ASKCore;
+		};
 		FA8F9B5D2C436E960004B88B /* VectorMath */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FA8F9B5B2C436E760004B88B /* XCRemoteSwiftPackageReference "VectorMath" */;

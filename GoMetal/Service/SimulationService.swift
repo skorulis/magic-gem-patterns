@@ -5,6 +5,8 @@ import QuartzCore
 
 @Observable final class SimulationService {
     
+    let mainStore: MainStore
+    
     var context: SpellContext?
     var displaylink: CADisplayLink!
     var active: Bool = false {
@@ -14,7 +16,8 @@ import QuartzCore
     }
     var lastTime: TimeInterval = 0
     
-    init() {
+    init(mainStore: MainStore) {
+        self.mainStore = mainStore
         displaylink = .init(target: self, selector: #selector(step))
         displaylink.add(to: .current, forMode: .default)
         displaylink.isPaused = true
@@ -35,8 +38,8 @@ import QuartzCore
     @objc func step(displaylink: CADisplayLink) {
         let t = displaylink.targetTimestamp
         let delta = t - lastTime
-        print(delta)
         lastTime = t
+        print(delta)
     }
     
 }
