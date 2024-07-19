@@ -5,20 +5,17 @@ import SwiftUI
 
 struct SpellTestView: View {
     
-    @State var spell: Spell = .init(
-        pattern: .line,
-        gems: [.init(time: 0.5)]
-    )
     let service = SpellCastService()
     
     @State private var sliderValue: CGFloat = 0
     @State private var canvasSize: CGSize = .zero
     
+    @State var mainStore: MainStore
     @State var simulation: SimulationService
     
     var body: some View {
         VStack(spacing: 16) {
-            Picker("Pattern", selection: $spell.pattern) {
+            Picker("Pattern", selection: $mainStore.spell.pattern) {
                 ForEach(SpellPattern.allCases) { pattern in
                     Text(pattern.rawValue)
                         .tag(pattern)
@@ -28,7 +25,7 @@ struct SpellTestView: View {
             Toggle(isOn: $simulation.active) {
                 Text("Active")
             }
-            Button(action: {simulation.start(spell: spell) }) {
+            Button(action: {simulation.start() }) {
                 Text("Start")
             }
         }
@@ -45,10 +42,10 @@ struct SpellTestView: View {
         Circle()
             .fill(Color.clear)
             .overlay(
-                DirectionalFieldView(pattern: spell.pattern, canvasSize: canvasSize)
+                DirectionalFieldView(pattern: mainStore.spell.pattern, canvasSize: canvasSize)
             )
             .overlay(
-                GemPositionEditView(spell: $spell, canvasSize: canvasSize)
+                GemPositionEditView(spell: $mainStore.spell, canvasSize: canvasSize)
             )
             .overlay(maybeActiveSpell)
             .readSize(size: $canvasSize)
@@ -66,7 +63,7 @@ struct SpellTestView: View {
     
     private var energy: SpellEnergy {
         service.calculateEnergy(
-            pattern: spell.pattern,
+            pattern: mainStore.spell.pattern,
             time: Float(sliderValue),
             canvasSize: canvasSize
         )
@@ -80,5 +77,8 @@ struct SpellTestView: View {
 
 #Preview {
     let ioc = IOC()
-    return SpellTestView(simulation: ioc.resolve())
+    return SpellTestView(
+        mainStore: ioc.resolve(),
+        simulation: ioc.resolve()
+    )
 }

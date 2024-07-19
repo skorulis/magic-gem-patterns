@@ -15,6 +15,7 @@ final class SpellCastService {
         var energy = SpellEnergy(
             time: 0,
             position: screenPattern.position(time: 0),
+            velocity: .zero,
             power: pattern.basePower
         )
         
@@ -23,6 +24,7 @@ final class SpellCastService {
             energy = .init(
                 time: nextTime,
                 position: screenPattern.position(time: nextTime),
+                velocity: .zero,
                 power: pattern.basePower + nextTime * 20
             )
         }

@@ -7,6 +7,7 @@ struct SpellEnergy: Identifiable {
     let id: UUID = .init()
     let time: Float
     var position: Vector2
+    var velocity: Vector2
     let power: Float
     
 }

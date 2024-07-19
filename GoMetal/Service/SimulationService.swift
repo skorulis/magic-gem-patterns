@@ -7,7 +7,7 @@ import QuartzCore
     
     let mainStore: MainStore
     
-    var context: SpellContext?
+    var context: SpellContext? { mainStore.spellContext }
     var displaylink: CADisplayLink!
     var active: Bool = false {
         didSet {
@@ -15,6 +15,7 @@ import QuartzCore
         }
     }
     var lastTime: TimeInterval = 0
+    var spell: Spell { mainStore.spell }
     
     init(mainStore: MainStore) {
         self.mainStore = mainStore
@@ -24,10 +25,12 @@ import QuartzCore
         lastTime = displaylink.targetTimestamp
     }
     
-    func start(spell: Spell) {
+    func start() {
+        lastTime = displaylink.targetTimestamp
+        let spell = mainStore.spell
         let pos = spell.pattern.pattern.position(time: 0)
-        let initialEnergy = SpellEnergy(time: 0, position: pos, power: 20)
-        self.context = .init(
+        let initialEnergy = SpellEnergy(time: 0, position: pos, velocity: .zero, power: 20)
+        self.mainStore.spellContext = .init(
             spell: spell,
             startTime: Date(),
             energy: initialEnergy
@@ -36,10 +39,18 @@ import QuartzCore
     }
     
     @objc func step(displaylink: CADisplayLink) {
+        guard var context else { return }
         let t = displaylink.targetTimestamp
-        let delta = t - lastTime
+        let delta = Float(t - lastTime)
         lastTime = t
+        guard delta < 0.5 else { return }
         print(delta)
+        var energy = context.energy
+        let force = spell.pattern.pattern.force(at: energy.position)
+        energy.position += (energy.velocity * delta)
+        energy.velocity += (force * delta)
+        context.energy = energy
+        mainStore.spellContext = context
     }
     
 }
