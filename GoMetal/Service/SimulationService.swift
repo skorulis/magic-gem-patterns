@@ -30,7 +30,7 @@ import QuartzCore
     func start() {
         lastTime = displaylink.targetTimestamp
         let spell = mainStore.spell
-        let pos = spell.pattern.pattern.position(time: 0)
+        let pos = spell.pattern.position(time: 0)
         let initialEnergy = SpellEnergy(time: 0, position: pos, velocity: .zero, power: 20)
         self.mainStore.spellContext = .init(
             spell: spell,

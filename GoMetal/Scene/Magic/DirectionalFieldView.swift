@@ -6,7 +6,7 @@ import VectorMath
 
 struct DirectionalFieldView: View {
     
-    let pattern: SpellPattern
+    let pattern: PatternProtocol
     let canvasSize: CGSize
     let spacing: CGFloat = 24
     
@@ -46,7 +46,7 @@ struct DirectionalFieldView: View {
     }
     
     var screenPattern: ScreenPattern {
-        return .init(pattern: pattern.pattern, canvasSize: canvasSize)
+        return .init(pattern: pattern, canvasSize: canvasSize)
     }
 }
 

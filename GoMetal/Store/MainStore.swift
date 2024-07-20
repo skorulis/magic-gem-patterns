@@ -5,7 +5,7 @@ import Foundation
 @Observable final class MainStore {
     
     var spell: Spell = .init(
-        pattern: .line,
+        patternType: .line,
         gems: [.init(gem: .square, time: 0.5)]
     )
     

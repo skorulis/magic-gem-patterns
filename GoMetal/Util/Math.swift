@@ -22,6 +22,10 @@ extension Vector2 {
         return .init(lhs.x + rhs.x, lhs.y + rhs.y)
     }
     
+    static func - (lhs: Vector2, rhs: Vector2) -> Vector2 {
+        return .init(lhs.x - rhs.x, lhs.y - rhs.y)
+    }
+    
     static func += (lhs: inout Vector2, rhs: Vector2) {
         lhs = lhs + rhs
     }

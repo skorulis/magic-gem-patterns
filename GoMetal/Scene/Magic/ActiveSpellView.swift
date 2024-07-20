@@ -8,7 +8,7 @@ struct ActiveSpellView: View {
     
     let canvasSize: CGSize
     let context: SpellContext
-    var pattern: PatternProtocol { context.spell.pattern.pattern }
+    var pattern: PatternProtocol { context.spell.pattern }
     var screenPattern: ScreenPattern { .init(pattern: pattern, canvasSize: canvasSize) }
     
     var body: some View {
@@ -30,6 +30,7 @@ struct ActiveSpellView: View {
             .resizable()
             .frame(width: CGFloat(energy.power), height: CGFloat(energy.power))
             .rotationEffect(rotation(energy))
+            .foregroundColor(energy.color)
     }
     
     private func rotation(_ energy: SpellEnergy) -> Angle {

@@ -13,12 +13,12 @@ struct SpellTestView: View {
     @State var simulation: SimulationService
     
     var pattern: PatternProtocol {
-        return mainStore.spell.pattern.pattern
+        return mainStore.spell.pattern
     }
     
     var body: some View {
         VStack(spacing: 16) {
-            Picker("Pattern", selection: $mainStore.spell.pattern) {
+            Picker("Pattern", selection: $mainStore.spell.patternType) {
                 ForEach(SpellPattern.allCases) { pattern in
                     Text(pattern.rawValue)
                         .tag(pattern)

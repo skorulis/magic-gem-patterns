@@ -18,6 +18,9 @@ protocol PatternProtocol {
     // Return the time that corresponds to the given point
     func time(position: Vector2) -> Float
     
+    // The forward direction of the pattern at this point
+    func forwardsDirection(at: Vector2) -> Vector2
+    
     var shape: any Shape { get }
 }
 

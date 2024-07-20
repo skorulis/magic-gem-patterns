@@ -10,7 +10,7 @@ struct GemPositionEditView: View {
     let canvasSize: CGSize
     @GestureState private var dragAmount: CGSize = .zero
     var screenPattern: ScreenPattern {
-        .init(pattern: spell.pattern.pattern, canvasSize: canvasSize)
+        .init(pattern: spell.pattern, canvasSize: canvasSize)
     }
     
     var body: some View {

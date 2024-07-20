@@ -2,12 +2,18 @@
 
 import Foundation
 import VectorMath
+import SwiftUI
 
 struct SpellEnergy: Identifiable {
     let id: UUID = .init()
+    var gemIDs: Set<UUID> = []
     let time: Float
     var position: Vector2
     var velocity: Vector2
     let power: Float
+    
+    var color: Color {
+        gemIDs.isEmpty ? .black : .orange
+    }
     
 }

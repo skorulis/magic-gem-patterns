@@ -45,6 +45,11 @@ struct CirclePattern: PatternProtocol {
         return onLine.rotated(by: .halfPi).normalized()
     }
     
+    func forwardsDirection(at: Vector2) -> Vector2 {
+        // TODO: Confirm this is correct
+        return endForce(point: at)
+    }
+    
     var shape: any Shape {
         return Circle()
     }

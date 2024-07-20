@@ -5,7 +5,11 @@ import VectorMath
 
 struct Spell {
     // The pattern this spell is built on
-    var pattern: SpellPattern
+    var patternType: SpellPattern
+    
+    var pattern: PatternProtocol {
+        patternType.pattern
+    }
     
     // Where the gems are placed
     var gems: [GemPosition]
