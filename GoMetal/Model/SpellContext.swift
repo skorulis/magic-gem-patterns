@@ -5,5 +5,6 @@ import Foundation
 struct SpellContext {
     let spell: Spell
     let startTime: Date
-    var energy: SpellEnergy
+    var energy: [SpellEnergy]
+    var completeness: Float = 0
 }

@@ -2,6 +2,7 @@
 
 import Foundation
 import VectorMath
+import SwiftUI
 
 // A Spell pattern inside a normalised card with a -1...1 range in the X and Y direction.
 protocol PatternProtocol {
@@ -16,6 +17,8 @@ protocol PatternProtocol {
     
     // Return the time that corresponds to the given point
     func time(position: Vector2) -> Float
+    
+    var shape: any Shape { get }
 }
 
 struct ScreenPattern {

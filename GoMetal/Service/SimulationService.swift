@@ -35,7 +35,7 @@ import QuartzCore
         self.mainStore.spellContext = .init(
             spell: spell,
             startTime: Date(),
-            energy: initialEnergy
+            energy: [initialEnergy]
         )
         active = true
     }
@@ -48,7 +48,13 @@ import QuartzCore
         guard delta < 0.5 else { return }
         print(delta)
         spellCastService.update(context: &context, delta: delta)
-        mainStore.spellContext = context
+        
+        if context.completeness >= 1 {
+            // Spell is finished. Effects need to be calculated
+            start()
+        } else {
+            mainStore.spellContext = context
+        }
     }
     
 }

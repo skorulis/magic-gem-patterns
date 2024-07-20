@@ -2,6 +2,7 @@
 
 import Foundation
 import VectorMath
+import SwiftUI
 
 struct LinePattern: PatternProtocol {
     func position(time: Float) -> Vector2 {
@@ -37,4 +38,17 @@ struct LinePattern: PatternProtocol {
         return .init(0, y)
     }
     
+    var shape: any Shape {
+        return LinePatternShape()
+    }
+    
+}
+
+struct LinePatternShape: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        path.move(to: .init(x: rect.midX, y: rect.maxY))
+        path.addLine(to: .init(x: rect.midX, y: rect.minY))
+        return path
+    }
 }

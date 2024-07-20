@@ -13,7 +13,9 @@ struct ActiveSpellView: View {
     
     var body: some View {
         ZStack {
-            energyView(energy: context.energy)
+            ForEach(context.energy) { energy in
+                energyView(energy: energy)
+            }
         }
         .frame(width: canvasSize.width, height: canvasSize.height)
     }

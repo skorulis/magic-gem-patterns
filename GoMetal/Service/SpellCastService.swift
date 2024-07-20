@@ -5,12 +5,16 @@ import Foundation
 final class SpellCastService {
     
     func update(context: inout SpellContext, delta: Float) {
-        var energy = context.energy
         let pattern = context.spell.pattern.pattern
-        let force = pattern.force(at: energy.position)
-        energy.position += (energy.velocity * delta)
-        energy.velocity += (force * delta)
-        context.energy = energy
+        for (i, var energy) in context.energy.enumerated() {
+            let force = pattern.force(at: energy.position)
+            energy.position += (energy.velocity * delta)
+            energy.velocity += (force * delta)
+            context.energy[i] = energy
+            
+            let t = pattern.time(position: energy.position)
+            context.completeness = max(context.completeness, t)
+        }
     }
     
 }

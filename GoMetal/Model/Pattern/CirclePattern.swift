@@ -2,6 +2,7 @@
 
 import Foundation
 import VectorMath
+import SwiftUI
 
 struct CirclePattern: PatternProtocol {
     func position(time: Float) -> Vector2 {
@@ -44,4 +45,7 @@ struct CirclePattern: PatternProtocol {
         return onLine.rotated(by: .halfPi).normalized()
     }
     
+    var shape: any Shape {
+        return Circle()
+    }
 }

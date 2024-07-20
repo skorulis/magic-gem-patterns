@@ -12,6 +12,10 @@ struct SpellTestView: View {
     @State var mainStore: MainStore
     @State var simulation: SimulationService
     
+    var pattern: PatternProtocol {
+        return mainStore.spell.pattern.pattern
+    }
+    
     var body: some View {
         VStack(spacing: 16) {
             Picker("Pattern", selection: $mainStore.spell.pattern) {
@@ -20,7 +24,7 @@ struct SpellTestView: View {
                         .tag(pattern)
                 }
             }
-            animation
+            canvas
             Toggle(isOn: $simulation.active) {
                 Text("Active")
             }
@@ -31,15 +35,16 @@ struct SpellTestView: View {
         .padding(.horizontal, 16)
     }
     
-    private var animation: some View {
-        TimelineView(.animation) { timeline in
-            canvas
-        }
-    }
-    
     private var canvas: some View {
         Circle()
             .fill(Color.clear)
+            .overlay(
+                PatternView(
+                    pattern: pattern,
+                    canvasSize: canvasSize,
+                    fillPct: simulation.context?.completeness ?? 0
+                )
+            )
             .overlay(
                 DirectionalFieldView(pattern: mainStore.spell.pattern, canvasSize: canvasSize)
             )

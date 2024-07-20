@@ -15,17 +15,17 @@ struct GemPositionEditView: View {
     
     var body: some View {
         ZStack {
-            AnyShape(spell.pattern.shape)
-                .stroke(style: StrokeStyle(lineWidth: 4))
-                .foregroundColor(.blue)
-            handle
+            ForEach(spell.gems) { gemPos in
+                handle(gemPos: gemPos)
+            }
         }
+        .frame(width: canvasSize.width, height: canvasSize.height)
         .contentShape(Rectangle())
         .gesture(dragGesture)
     }
     
-    private var handle: some View {
-        GemView()
+    private func handle(gemPos: GemPosition) -> some View {
+        GemView(gem: gemPos.gem, canvasSize: canvasSize)
             .offset(gemPosition(index: 0, drag: dragAmount).viewOffset(canvasSize))
     }
     
@@ -52,26 +52,4 @@ struct GemPositionEditView: View {
         let gem = spell.gems[index]
         return screenPattern.position(time: gem.time)
     }
-}
-
-extension SpellPattern {
-    var shape: any Shape {
-        switch self {
-        case .circle:
-            return Circle()
-        case .line:
-            return LinePatternShape()
-        }
-    }
-}
-
-struct LinePatternShape: Shape {
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-        path.move(to: .init(x: rect.midX, y: rect.maxY))
-        path.addLine(to: .init(x: rect.midX, y: rect.minY))
-        return path
-    }
-    
-    
 }

@@ -19,6 +19,7 @@
 		FA8F9B632C43C1990004B88B /* CirclePatternTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B622C43C1990004B88B /* CirclePatternTests.swift */; };
 		FA8F9B652C4524FE0004B88B /* SpellContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B642C4524FE0004B88B /* SpellContext.swift */; };
 		FA8F9B672C4527AA0004B88B /* SimulationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B662C4527AA0004B88B /* SimulationService.swift */; };
+		FAC2292D2C4B33D7009498E1 /* PatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2292C2C4B33D7009498E1 /* PatternView.swift */; };
 		FAD929D42C3D384500B86690 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD929D32C3D384500B86690 /* Assets.xcassets */; };
 		FAD929D72C3D384500B86690 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD929D62C3D384500B86690 /* Preview Assets.xcassets */; };
 		FAD929E02C3D387200B86690 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929DF2C3D387200B86690 /* MetalView.swift */; };
@@ -60,6 +61,7 @@
 		FA8F9B622C43C1990004B88B /* CirclePatternTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePatternTests.swift; sourceTree = "<group>"; };
 		FA8F9B642C4524FE0004B88B /* SpellContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellContext.swift; sourceTree = "<group>"; };
 		FA8F9B662C4527AA0004B88B /* SimulationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationService.swift; sourceTree = "<group>"; };
+		FAC2292C2C4B33D7009498E1 /* PatternView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternView.swift; sourceTree = "<group>"; };
 		FAD929CC2C3D384400B86690 /* GoMetal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoMetal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD929D32C3D384500B86690 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAD929D62C3D384500B86690 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				FAD929F32C3E8AA800B86690 /* ActiveSpellView.swift */,
 				FAD929F52C3E8F1900B86690 /* GemPositionEditView.swift */,
 				FAD929FC2C3FD94900B86690 /* DirectionalFieldView.swift */,
+				FAC2292C2C4B33D7009498E1 /* PatternView.swift */,
 			);
 			path = Magic;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				FA8F9B652C4524FE0004B88B /* SpellContext.swift in Sources */,
 				FAD929F92C3E958700B86690 /* SpellCastService.swift in Sources */,
 				FAD92A3B2C435E6500B86690 /* LinePattern.swift in Sources */,
+				FAC2292D2C4B33D7009498E1 /* PatternView.swift in Sources */,
 				FAD929FD2C3FD94900B86690 /* DirectionalFieldView.swift in Sources */,
 				FAD92A392C435D9900B86690 /* PatternProtocol.swift in Sources */,
 				FA8F9B612C438CB80004B88B /* GemView.swift in Sources */,
