@@ -34,7 +34,7 @@ struct ActiveSpellView: View {
     }
     
     private func rotation(_ energy: SpellEnergy) -> Angle {
-        let force = screenPattern.force(at: energy.position)
+        let force = screenPattern.force(at: energy.position).total
         let radians = Math.cartesianToPolar(x: force.x, y: force.y).theta
         return .radians(CGFloat(radians + .halfPi))
     }

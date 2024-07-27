@@ -20,8 +20,11 @@ struct CirclePattern: PatternProtocol {
         return Math.polarToCartesian(r: 1, theta: angle)
     }
     
-    func force(at point: Vector2) -> Vector2 {
-        return lineForce(point: point) + endForce(point: point)
+    func force(at point: Vector2) -> ForceComponents {
+        return .init(
+            towardsEnd: endForce(point: point),
+            towardsLine: forceTowardsLine(at: point)
+        )
     }
     
     func lineForce(point: Vector2) -> Vector2 {

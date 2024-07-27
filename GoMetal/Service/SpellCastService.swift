@@ -11,7 +11,7 @@ final class SpellCastService {
         for (i, var energy) in context.energy.enumerated() {
             let force = pattern.force(at: energy.position)
             energy.position += (energy.velocity * delta)
-            energy.velocity += (force * delta)
+            energy.velocity += (force.total * delta)
             
             if let gem = hitGem(spell: context.spell, energy: energy) {
                 energy.gemIDs.insert(gem.id)

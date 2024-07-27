@@ -10,7 +10,7 @@ protocol PatternProtocol {
     func position(time: Float) -> Vector2
     
     // Return the energy directional force at a given point
-    func force(at point: Vector2) -> Vector2
+    func force(at point: Vector2) -> ForceComponents
     
     // Return the closest point on the line to the given point
     func closestPoint(to: Vector2) -> Vector2
@@ -22,6 +22,16 @@ protocol PatternProtocol {
     func forwardsDirection(at: Vector2) -> Vector2
     
     var shape: any Shape { get }
+}
+
+extension PatternProtocol {
+    func forceTowardsLine(at point: Vector2) -> Vector2 {
+        let linePoint = closestPoint(to: point)
+        let dir = (linePoint - point)
+        let dist = max(dir.length, 0.4)
+        let power = 1 / (dist * dist)
+        return dir.normalized() * power
+    }
 }
 
 struct ScreenPattern {
@@ -39,9 +49,13 @@ struct ScreenPattern {
     }
     
     // Return the force in screen coordinates
-    func force(at point: Vector2) -> Vector2 {
+    func force(at point: Vector2) -> ForceComponents {
         let f = pattern.force(at: space.toPatternSpace(point: point))
-        return PatternSpace.toScreenSpace(size: f, screenSize: .init(width: 2, height: 2))
+        let ss = CGSize(width: 2, height: 2)
+        return .init(
+            towardsEnd: PatternSpace.toScreenSpace(size: f.towardsEnd, screenSize: ss),
+            towardsLine: PatternSpace.toScreenSpace(size: f.towardsLine, screenSize: ss)
+        )
     }
     
     func closestPoint(to: Vector2) -> Vector2 {

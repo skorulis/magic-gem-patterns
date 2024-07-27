@@ -46,7 +46,11 @@ struct SpellTestView: View {
                 )
             )
             .overlay(
-                DirectionalFieldView(pattern: mainStore.spell.pattern, canvasSize: canvasSize)
+                DirectionalFieldView(
+                    pattern: mainStore.spell.pattern,
+                    canvasSize: canvasSize,
+                    forceType: .all
+                )
             )
             .overlay(
                 GemPositionEditView(spell: $mainStore.spell, canvasSize: canvasSize)

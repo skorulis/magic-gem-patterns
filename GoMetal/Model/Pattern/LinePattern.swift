@@ -14,10 +14,11 @@ struct LinePattern: PatternProtocol {
         return (position.y + 1) / 2
     }
     
-    func force(at point: Vector2) -> Vector2 {
-        let lf = lineForce(at: point)
-        let ef = endForce(point: point)
-        return lf + ef
+    func force(at point: Vector2) -> ForceComponents {
+        return .init(
+            towardsEnd: endForce(point: point),
+            towardsLine: lineForce(at: point)
+        )
     }
     
     func endForce(point: Vector2) -> Vector2 {

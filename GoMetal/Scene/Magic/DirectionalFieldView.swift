@@ -9,6 +9,7 @@ struct DirectionalFieldView: View {
     let pattern: PatternProtocol
     let canvasSize: CGSize
     let spacing: CGFloat = 24
+    let forceType: ForceType
     
     var body: some View {
         Canvas { context, size in
@@ -21,16 +22,23 @@ struct DirectionalFieldView: View {
     }
     
     private func addFlow(context: GraphicsContext, point: CGPoint, size: CGSize) {
-        let force = screenPattern.force(at: .init(point))
+        let p1 = Vector2(point)
+        let force = forceType.force(components: screenPattern.force(at: p1))
         var path = Path()
         path.move(to: point)
         
         let s = Float(spacing / 2)
         let normalForce = (force * s).clamped(s)
-        let forceX = CGFloat(normalForce.x)
-        let forceY = CGFloat(normalForce.y)
-        let endPos = CGPoint(x: point.x + forceX, y: point.y + forceY)
-        path.addLine(to: endPos)
+        let endPos = p1 + normalForce
+        
+        path.addLine(to: CGPoint(endPos))
+        
+        let arrowLength: Float = 3
+        let arrowLeft = normalForce.rotated(by: 0.8 * .pi).normalized() * 3
+        let arrowRight = normalForce.rotated(by: -0.8 * .pi).normalized() * 3
+        path.addLine(to: CGPoint(endPos + arrowLeft))
+        path.move(to: CGPoint(endPos))
+        path.addLine(to: CGPoint(endPos + arrowRight))
         
         context.stroke(path, with: .color(color(dir: normalForce)), lineWidth: 2)
     }
@@ -47,6 +55,23 @@ struct DirectionalFieldView: View {
     
     var screenPattern: ScreenPattern {
         return .init(pattern: pattern, canvasSize: canvasSize)
+    }
+}
+
+extension DirectionalFieldView {
+    enum ForceType {
+        case all, toEnd, toLine
+        
+        func force(components: ForceComponents) -> Vector2 {
+            switch self {
+            case .all:
+                return components.total
+            case .toEnd:
+                return components.towardsEnd
+            case .toLine:
+                return components.towardsLine
+            }
+        }
     }
 }
 

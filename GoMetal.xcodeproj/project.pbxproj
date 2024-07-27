@@ -20,12 +20,13 @@
 		FA8F9B652C4524FE0004B88B /* SpellContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B642C4524FE0004B88B /* SpellContext.swift */; };
 		FA8F9B672C4527AA0004B88B /* SimulationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B662C4527AA0004B88B /* SimulationService.swift */; };
 		FAC2292D2C4B33D7009498E1 /* PatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2292C2C4B33D7009498E1 /* PatternView.swift */; };
+		FAC229302C4B6460009498E1 /* SpellEnergy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2292E2C4B6460009498E1 /* SpellEnergy.swift */; };
+		FAC229322C4B6469009498E1 /* ForceComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC229312C4B6469009498E1 /* ForceComponents.swift */; };
 		FAD929D42C3D384500B86690 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD929D32C3D384500B86690 /* Assets.xcassets */; };
 		FAD929D72C3D384500B86690 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD929D62C3D384500B86690 /* Preview Assets.xcassets */; };
 		FAD929E02C3D387200B86690 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929DF2C3D387200B86690 /* MetalView.swift */; };
 		FAD929E32C3D3B9100B86690 /* Shader1.metal in Sources */ = {isa = PBXBuildFile; fileRef = FAD929E22C3D3B9100B86690 /* Shader1.metal */; };
 		FAD929E92C3D445E00B86690 /* ChildSizeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929E82C3D445E00B86690 /* ChildSizeReader.swift */; };
-		FAD929EC2C3E851A00B86690 /* SpellEnergy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929EB2C3E851A00B86690 /* SpellEnergy.swift */; };
 		FAD929EE2C3E858F00B86690 /* SpellPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929ED2C3E858F00B86690 /* SpellPattern.swift */; };
 		FAD929F02C3E874700B86690 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929EF2C3E874700B86690 /* Math.swift */; };
 		FAD929F22C3E885800B86690 /* SpellTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929F12C3E885800B86690 /* SpellTestView.swift */; };
@@ -62,13 +63,14 @@
 		FA8F9B642C4524FE0004B88B /* SpellContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellContext.swift; sourceTree = "<group>"; };
 		FA8F9B662C4527AA0004B88B /* SimulationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationService.swift; sourceTree = "<group>"; };
 		FAC2292C2C4B33D7009498E1 /* PatternView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternView.swift; sourceTree = "<group>"; };
+		FAC2292E2C4B6460009498E1 /* SpellEnergy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpellEnergy.swift; sourceTree = "<group>"; };
+		FAC229312C4B6469009498E1 /* ForceComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceComponents.swift; sourceTree = "<group>"; };
 		FAD929CC2C3D384400B86690 /* GoMetal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoMetal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD929D32C3D384500B86690 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAD929D62C3D384500B86690 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FAD929DF2C3D387200B86690 /* MetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
 		FAD929E22C3D3B9100B86690 /* Shader1.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shader1.metal; sourceTree = "<group>"; };
 		FAD929E82C3D445E00B86690 /* ChildSizeReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildSizeReader.swift; sourceTree = "<group>"; };
-		FAD929EB2C3E851A00B86690 /* SpellEnergy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellEnergy.swift; sourceTree = "<group>"; };
 		FAD929ED2C3E858F00B86690 /* SpellPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellPattern.swift; sourceTree = "<group>"; };
 		FAD929EF2C3E874700B86690 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		FAD929F12C3E885800B86690 /* SpellTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellTestView.swift; sourceTree = "<group>"; };
@@ -141,6 +143,15 @@
 				FA8F9B602C438CB80004B88B /* GemView.swift */,
 			);
 			path = Gem;
+			sourceTree = "<group>";
+		};
+		FAC2292F2C4B6460009498E1 /* Cast */ = {
+			isa = PBXGroup;
+			children = (
+				FAC2292E2C4B6460009498E1 /* SpellEnergy.swift */,
+				FAC229312C4B6469009498E1 /* ForceComponents.swift */,
+			);
+			path = Cast;
 			sourceTree = "<group>";
 		};
 		FAD929C32C3D384400B86690 = {
@@ -236,8 +247,8 @@
 		FAD929EA2C3E84DC00B86690 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FAC2292F2C4B6460009498E1 /* Cast */,
 				FAD92A372C435D9200B86690 /* Pattern */,
-				FAD929EB2C3E851A00B86690 /* SpellEnergy.swift */,
 				FAD929ED2C3E858F00B86690 /* SpellPattern.swift */,
 				FAD929FA2C3EA12600B86690 /* Spell.swift */,
 				FA8F9B642C4524FE0004B88B /* SpellContext.swift */,
@@ -414,6 +425,7 @@
 				FA34DB092C4A52C300B5CDC9 /* GoMetalApp.swift in Sources */,
 				FA34DAF92C4A4CFF00B5CDC9 /* MainStore.swift in Sources */,
 				FAD929E02C3D387200B86690 /* MetalView.swift in Sources */,
+				FAC229322C4B6469009498E1 /* ForceComponents.swift in Sources */,
 				FA8F9B672C4527AA0004B88B /* SimulationService.swift in Sources */,
 				FAD929F02C3E874700B86690 /* Math.swift in Sources */,
 				FA34DB082C4A52C300B5CDC9 /* ContentView.swift in Sources */,
@@ -421,9 +433,9 @@
 				FAD92A4E2C43617A00B86690 /* PatternSpace.swift in Sources */,
 				FAD929E32C3D3B9100B86690 /* Shader1.metal in Sources */,
 				FAD929F42C3E8AA800B86690 /* ActiveSpellView.swift in Sources */,
-				FAD929EC2C3E851A00B86690 /* SpellEnergy.swift in Sources */,
 				FAD929F62C3E8F1900B86690 /* GemPositionEditView.swift in Sources */,
 				FAD929FB2C3EA12600B86690 /* Spell.swift in Sources */,
+				FAC229302C4B6460009498E1 /* SpellEnergy.swift in Sources */,
 				FAD929F22C3E885800B86690 /* SpellTestView.swift in Sources */,
 				FA34DAFF2C4A4F0100B5CDC9 /* IOC.swift in Sources */,
 			);
