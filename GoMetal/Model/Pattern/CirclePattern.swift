@@ -12,7 +12,12 @@ struct CirclePattern: PatternProtocol {
     
     func time(position: Vector2) -> Float {
         let polar = Math.cartesianToPolar(x: position.x, y: position.y)
-        return polar.theta / (2 * .pi)
+        let t = polar.theta / (2 * .pi)
+        if t < 0 {
+            return 1 + t
+        } else {
+            return t
+        }
     }
     
     func closestPoint(to: Vector2) -> Vector2 {
@@ -25,19 +30,6 @@ struct CirclePattern: PatternProtocol {
             towardsEnd: endForce(point: point),
             towardsLine: forceTowardsLine(at: point)
         )
-    }
-    
-    func lineForce(point: Vector2) -> Vector2 {
-        let centerDist = point.length
-        if centerDist == 1 {
-            return .zero
-        } else if centerDist > 1 {
-            let overshoot = centerDist - 1
-            let power = max(1 - overshoot, 0)
-            return point.normalized() * pow(power, 2)
-        } else {
-            return point.normalized() * pow(centerDist, 2)
-        }
     }
     
     func endForce(point: Vector2) -> Vector2 {
@@ -54,6 +46,21 @@ struct CirclePattern: PatternProtocol {
     }
     
     var shape: any Shape {
-        return Circle()
+        return CirclePatternShape()
+    }
+}
+
+struct CirclePatternShape: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        path.move(to: .init(x: rect.maxX, y: rect.midY))
+        path.addArc(
+            center: .init(x: rect.midX, y: rect.midY),
+            radius: rect.midX,
+            startAngle: .zero,
+            endAngle: .radians(.pi * 2),
+            clockwise: true
+        )
+        return path
     }
 }

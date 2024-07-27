@@ -46,7 +46,6 @@ import QuartzCore
         let delta = Float(t - lastTime)
         lastTime = t
         guard delta < 0.5 else { return }
-        print(delta)
         spellCastService.update(context: &context, delta: delta)
         
         if context.completeness >= 1 {

@@ -2,11 +2,18 @@
 
 import VectorMath
 
-struct ForceComponents {
+struct ForceComponents: Equatable {
     let towardsEnd: Vector2
     let towardsLine: Vector2
     
     var total: Vector2 {
         return towardsEnd + towardsLine
+    }
+    
+    func cleaned() -> ForceComponents {
+        return .init(
+            towardsEnd: towardsEnd.cleaned(),
+            towardsLine: towardsLine.cleaned()
+        )
     }
 }

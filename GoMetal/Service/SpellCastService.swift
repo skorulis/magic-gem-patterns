@@ -11,6 +11,7 @@ final class SpellCastService {
         for (i, var energy) in context.energy.enumerated() {
             let force = pattern.force(at: energy.position)
             energy.position += (energy.velocity * delta)
+            energy.velocity -= energy.velocity * 0.9 * delta
             energy.velocity += (force.total * delta)
             
             if let gem = hitGem(spell: context.spell, energy: energy) {
@@ -22,7 +23,11 @@ final class SpellCastService {
             }
             
             let t = pattern.time(position: energy.position)
-            context.completeness = max(context.completeness, t)
+            if t <= 0.1 && context.completeness >= 0.9 {
+                context.completeness = 1
+            } else {
+                context.completeness = max(context.completeness, t)
+            }
         }
         for i in removedIndexes.reversed() {
             context.energy.remove(at: i)

@@ -22,16 +22,24 @@ extension Vector2 {
         return .init(lhs.x + rhs.x, lhs.y + rhs.y)
     }
     
-    static func - (lhs: Vector2, rhs: Vector2) -> Vector2 {
-        return .init(lhs.x - rhs.x, lhs.y - rhs.y)
-    }
-    
     static func += (lhs: inout Vector2, rhs: Vector2) {
         lhs = lhs + rhs
     }
     
+    static func - (lhs: Vector2, rhs: Vector2) -> Vector2 {
+        return .init(lhs.x - rhs.x, lhs.y - rhs.y)
+    }
+    
+    static func -= (lhs: inout Vector2, rhs: Vector2) {
+        lhs = lhs - rhs
+    }
+    
     static func * (lhs: Vector2, rhs: Float) -> Vector2 {
         .init(lhs.x * rhs, lhs.y * rhs)
+    }
+    
+    static func *= (lhs: inout Vector2, rhs: Float) {
+        lhs = lhs * rhs
     }
     
     init(_ point: CGPoint) {
