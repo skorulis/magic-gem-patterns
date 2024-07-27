@@ -49,7 +49,11 @@ import QuartzCore
         spellCastService.update(context: &context, delta: delta)
         
         if context.completeness >= 1 {
-            // Spell is finished. Effects need to be calculated
+            let result = spellCastService.result(context: context)
+            
+            print("FINISHED SPELL")
+            print("RESULT = \(result)")
+            
             start()
         } else {
             mainStore.spellContext = context

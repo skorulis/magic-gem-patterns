@@ -11,7 +11,7 @@ final class SpellCastService {
         for (i, var energy) in context.energy.enumerated() {
             let force = pattern.force(at: energy.position)
             energy.position += (energy.velocity * delta)
-            energy.velocity -= energy.velocity * 0.9 * delta
+            energy.velocity -= energy.velocity * 0.5 * delta
             energy.velocity += (force.total * delta)
             
             if let gem = hitGem(spell: context.spell, energy: energy) {
@@ -64,6 +64,22 @@ final class SpellCastService {
             }
         }
         return nil
+    }
+    
+    func result(context: SpellContext) -> CastResult {
+        var power: Float = 0
+        var maxDistance: Float = 0
+        let pattern = context.spell.pattern
+        for energy in context.energy {
+            power += energy.power
+            let distance = (energy.position - pattern.position(time: 1)).length
+            maxDistance = max(distance, maxDistance)
+        }
+        
+        return .init(
+            power: power,
+            deviance: maxDistance
+        )
     }
     
 }
