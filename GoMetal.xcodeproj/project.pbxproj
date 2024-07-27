@@ -20,6 +20,7 @@
 		FA8F9B652C4524FE0004B88B /* SpellContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B642C4524FE0004B88B /* SpellContext.swift */; };
 		FA8F9B672C4527AA0004B88B /* SimulationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B662C4527AA0004B88B /* SimulationService.swift */; };
 		FA9ABC8D2C54A238007BA24A /* CastResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9ABC8C2C54A238007BA24A /* CastResult.swift */; };
+		FA9ABC8F2C54B965007BA24A /* Gem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9ABC8E2C54B965007BA24A /* Gem.swift */; };
 		FAC2292D2C4B33D7009498E1 /* PatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2292C2C4B33D7009498E1 /* PatternView.swift */; };
 		FAC229302C4B6460009498E1 /* SpellEnergy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2292E2C4B6460009498E1 /* SpellEnergy.swift */; };
 		FAC229322C4B6469009498E1 /* ForceComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC229312C4B6469009498E1 /* ForceComponents.swift */; };
@@ -64,6 +65,7 @@
 		FA8F9B642C4524FE0004B88B /* SpellContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellContext.swift; sourceTree = "<group>"; };
 		FA8F9B662C4527AA0004B88B /* SimulationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationService.swift; sourceTree = "<group>"; };
 		FA9ABC8C2C54A238007BA24A /* CastResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastResult.swift; sourceTree = "<group>"; };
+		FA9ABC8E2C54B965007BA24A /* Gem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gem.swift; sourceTree = "<group>"; };
 		FAC2292C2C4B33D7009498E1 /* PatternView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternView.swift; sourceTree = "<group>"; };
 		FAC2292E2C4B6460009498E1 /* SpellEnergy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpellEnergy.swift; sourceTree = "<group>"; };
 		FAC229312C4B6469009498E1 /* ForceComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceComponents.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				FAD929ED2C3E858F00B86690 /* SpellPattern.swift */,
 				FAD929FA2C3EA12600B86690 /* Spell.swift */,
 				FA8F9B642C4524FE0004B88B /* SpellContext.swift */,
+				FA9ABC8E2C54B965007BA24A /* Gem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				FAC229302C4B6460009498E1 /* SpellEnergy.swift in Sources */,
 				FAD929F22C3E885800B86690 /* SpellTestView.swift in Sources */,
 				FA34DAFF2C4A4F0100B5CDC9 /* IOC.swift in Sources */,
+				FA9ABC8F2C54B965007BA24A /* Gem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

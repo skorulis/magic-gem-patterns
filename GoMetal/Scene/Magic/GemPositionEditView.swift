@@ -8,48 +8,68 @@ struct GemPositionEditView: View {
     
     @Binding var spell: Spell
     let canvasSize: CGSize
-    @GestureState private var dragAmount: CGSize = .zero
+    @GestureState private var dragAmount: [Int: CGSize] = [:]
     var screenPattern: ScreenPattern {
         .init(pattern: spell.pattern, canvasSize: canvasSize)
     }
     
     var body: some View {
+        canvas
+    }
+    
+    private var canvas: some View {
         ZStack {
-            ForEach(spell.gems) { gemPos in
-                handle(gemPos: gemPos)
+            ForEach(Array(spell.gems.enumerated()), id: \.offset) { index, gemPos in
+                handle(index: index, gemPos: gemPos)
+                    .gesture(dragGesture(index: index))
             }
         }
         .frame(width: canvasSize.width, height: canvasSize.height)
         .contentShape(Rectangle())
-        .gesture(dragGesture)
+        
     }
     
-    private func handle(gemPos: GemPosition) -> some View {
+    private func handle(index: Int, gemPos: GemPosition) -> some View {
         GemView(gem: gemPos.gem, canvasSize: canvasSize)
-            .offset(gemPosition(index: 0, drag: dragAmount).viewOffset(canvasSize))
+            .offset(gemPosition(index: index, drag: dragAmount[index]).viewOffset(canvasSize))
     }
     
-    private func gemPosition(index: Int, drag: CGSize) -> Vector2 {
+    private func gemPosition(index: Int, drag: CGSize?) -> Vector2 {
         var orig = gemPosition(index: index)
-        orig.x += Float(drag.width)
-        orig.y += Float(drag.height)
-        return screenPattern.closestPoint(to: orig)
+        orig.x += Float(drag?.width ?? 0)
+        orig.y += Float(drag?.height ?? 0)
+        
+        let patternPosition = screenPattern.closestPoint(to: orig)
+        let distance = (orig - patternPosition).length
+        if distance < Float(canvasSize.width / 8) {
+            return patternPosition
+        } else {
+            return orig
+        }
     }
     
-    private var dragGesture: some Gesture {
+    private func dragGesture(index: Int) -> some Gesture {
         DragGesture()
             .updating($dragAmount) { value, state, transaction in
-                state = value.translation
+                state[index] = value.translation
             }
             .onEnded { drag in
-                let endPosition = gemPosition(index: 0, drag: drag.translation)
+                let endPosition = gemPosition(index: index, drag: drag.translation)
                 let time = screenPattern.time(position: endPosition)
-                spell.gems[0].time = time
+                spell.gems[index].time = time
             }
     }
     
     private func gemPosition(index: Int) -> Vector2 {
         let gem = spell.gems[index]
         return screenPattern.position(time: gem.time)
+    }
+    
+    private var gemContainer: some View {
+        HStack {
+            Circle()
+                .frame(width: 50, height: 50)
+                .draggable("Test")
+        }
     }
 }

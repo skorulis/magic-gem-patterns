@@ -15,12 +15,6 @@ struct Spell {
     var gems: [GemPosition]
 }
 
-enum Gem {
-    case square
-    
-    var size: Vector2 { .init(0.2, 0.2) }
-}
-
 struct GemPosition: Identifiable {
     let id = UUID()
     let gem: Gem

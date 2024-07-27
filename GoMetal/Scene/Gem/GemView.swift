@@ -10,7 +10,7 @@ struct GemView: View {
     var space: PatternSpace { PatternSpace(canvasSize: canvasSize) }
     
     var body: some View {
-        Rectangle()
+        gem.shape.displayShape
             .fill(Color.red)
             .frame(
                 width: abs(CGFloat(space.toScreenSpace(size: gem.size).x)),

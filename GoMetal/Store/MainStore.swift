@@ -6,7 +6,10 @@ import Foundation
     
     var spell: Spell = .init(
         patternType: .line,
-        gems: [.init(gem: .square, time: 0.5)]
+        gems: [
+            .init(gem: .baseDiamond, time: 0.25),
+            .init(gem: .baseHexagon, time: 0.75)
+        ]
     )
     
     var spellContext: SpellContext?
