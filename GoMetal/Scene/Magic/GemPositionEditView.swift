@@ -39,10 +39,8 @@ struct GemPositionEditView: View {
         orig.x += Float(drag?.width ?? 0)
         orig.y += Float(drag?.height ?? 0)
         
-        let patternPosition = screenPattern.closestPoint(to: orig)
-        let distance = (orig - patternPosition).length
-        if distance < Float(canvasSize.width / 8) {
-            return patternPosition
+        if isNearPattern(position: orig) {
+            return screenPattern.closestPoint(to: orig)
         } else {
             return orig
         }
@@ -55,9 +53,19 @@ struct GemPositionEditView: View {
             }
             .onEnded { drag in
                 let endPosition = gemPosition(index: index, drag: drag.translation)
-                let time = screenPattern.time(position: endPosition)
-                spell.gems[index].time = time
+                if isNearPattern(position: endPosition) {
+                    let time = screenPattern.time(position: endPosition)
+                    spell.gems[index].time = time
+                } else {
+                    spell.gems.remove(at: index)
+                }
             }
+    }
+    
+    private func isNearPattern(position: Vector2) -> Bool {
+        let patternPosition = screenPattern.closestPoint(to: position)
+        let distance = (position - patternPosition).length
+        return distance < Float(canvasSize.width / 8)
     }
     
     private func gemPosition(index: Int) -> Vector2 {

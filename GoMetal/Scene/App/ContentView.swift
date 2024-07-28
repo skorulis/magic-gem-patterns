@@ -10,8 +10,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             SpellTestView(
-                mainStore: factory.resolve(),
-                simulation: factory.resolve()
+                viewModel: factory.resolve()
             )
         }
         .padding()

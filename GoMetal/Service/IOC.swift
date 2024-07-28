@@ -8,16 +8,17 @@ final class IOC: IOCService {
         super.init(purpose: purpose)
         registerStores()
         registerServices()
+        registerViewModels()
     }
     
-    func registerStores() {
+    private func registerStores() {
         container.register(MainStore.self) { _ in
             MainStore()
         }
         .inObjectScope(.container)
     }
     
-    func registerServices() {
+    private func registerServices() {
         container.register(SpellCastService.self) { _ in SpellCastService() }
         
         container.register(SimulationService.self) { r in
@@ -25,6 +26,20 @@ final class IOC: IOCService {
                 mainStore: r.resolve(MainStore.self)!,
                 spellCastService: r.resolve(SpellCastService.self)!
             )
+        }
+    }
+    
+    private func registerViewModels() {
+        container.register(SpellTestViewModel.self) { r in
+            SpellTestViewModel(
+                service: r.resolve(SpellCastService.self)!,
+                mainStore: r.resolve(MainStore.self)!,
+                simulation: r.resolve(SimulationService.self)!
+            )
+        }
+        
+        container.register(SelectGemViewModel.self) { r in
+            SelectGemViewModel(mainView: r.resolve(MainStore.self)!)
         }
     }
 }

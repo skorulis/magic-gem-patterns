@@ -13,4 +13,6 @@ import Foundation
     )
     
     var spellContext: SpellContext?
+    
+    var inventory: Inventory = .starting
 }

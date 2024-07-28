@@ -3,7 +3,7 @@
 import SwiftUI
 import VectorMath
 
-struct Gem {
+struct Gem: Identifiable {
 
     let id = UUID()
     let shape: GemShape

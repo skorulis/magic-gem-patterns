@@ -5,15 +5,20 @@ import SwiftUI
 
 struct SpellTestView: View {
     
-    let service = SpellCastService()
-    
-    @State private var canvasSize: CGSize = .zero
-    
+    @State var viewModel: SpellTestViewModel
     @State var mainStore: MainStore
     @State var simulation: SimulationService
     
+    init(viewModel: SpellTestViewModel) {
+        self.viewModel = viewModel
+        self.mainStore = viewModel.mainStore
+        self.simulation = viewModel.simulation
+    }
+    
+    @State private var canvasSize: CGSize = .zero
+    
     var pattern: PatternProtocol {
-        return mainStore.spell.pattern
+        return viewModel.mainStore.spell.pattern
     }
     
     var body: some View {
@@ -25,14 +30,33 @@ struct SpellTestView: View {
                 }
             }
             canvas
+            buttonsView
             Toggle(isOn: $simulation.active) {
                 Text("Active")
             }
-            Button(action: {simulation.start() }) {
+            Button(action: { viewModel.simulation.start() }) {
                 Text("Start")
             }
         }
         .padding(.horizontal, 16)
+        .sheet(isPresented: $viewModel.showingGems) {
+            GemInventoryView(
+                inventory: viewModel.mainStore.inventory,
+                canvasSize: canvasSize
+            )
+        }
+    }
+    
+    private var buttonsView: some View {
+        HStack {
+            Button(action: viewModel.addPressed) {
+                Image(systemName: "plus")
+                    .resizable()
+                    .fontWeight(.bold)
+                    .padding(16)
+            }
+            .buttonStyle(CircularButtonStyle())
+        }
     }
     
     private var canvas: some View {
@@ -74,7 +98,6 @@ struct SpellTestView: View {
 #Preview {
     let ioc = IOC()
     return SpellTestView(
-        mainStore: ioc.resolve(),
-        simulation: ioc.resolve()
+        viewModel: ioc.resolve()
     )
 }

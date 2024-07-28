@@ -21,6 +21,12 @@
 		FA8F9B672C4527AA0004B88B /* SimulationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B662C4527AA0004B88B /* SimulationService.swift */; };
 		FA9ABC8D2C54A238007BA24A /* CastResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9ABC8C2C54A238007BA24A /* CastResult.swift */; };
 		FA9ABC8F2C54B965007BA24A /* Gem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9ABC8E2C54B965007BA24A /* Gem.swift */; };
+		FA9ABC912C55FAFF007BA24A /* GemInventoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9ABC902C55FAFF007BA24A /* GemInventoryView.swift */; };
+		FA9ABC932C55FB1D007BA24A /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9ABC922C55FB1D007BA24A /* Inventory.swift */; };
+		FA9ABC962C560922007BA24A /* CircularButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9ABC952C560922007BA24A /* CircularButtonStyle.swift */; };
+		FA9ABC982C5609B0007BA24A /* SpellTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9ABC972C5609B0007BA24A /* SpellTestViewModel.swift */; };
+		FA9ABC9A2C56110A007BA24A /* SelectGemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9ABC992C56110A007BA24A /* SelectGemView.swift */; };
+		FA9ABC9C2C56120D007BA24A /* SelectGemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9ABC9B2C56120D007BA24A /* SelectGemViewModel.swift */; };
 		FAC2292D2C4B33D7009498E1 /* PatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2292C2C4B33D7009498E1 /* PatternView.swift */; };
 		FAC229302C4B6460009498E1 /* SpellEnergy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2292E2C4B6460009498E1 /* SpellEnergy.swift */; };
 		FAC229322C4B6469009498E1 /* ForceComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC229312C4B6469009498E1 /* ForceComponents.swift */; };
@@ -66,6 +72,12 @@
 		FA8F9B662C4527AA0004B88B /* SimulationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationService.swift; sourceTree = "<group>"; };
 		FA9ABC8C2C54A238007BA24A /* CastResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastResult.swift; sourceTree = "<group>"; };
 		FA9ABC8E2C54B965007BA24A /* Gem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gem.swift; sourceTree = "<group>"; };
+		FA9ABC902C55FAFF007BA24A /* GemInventoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemInventoryView.swift; sourceTree = "<group>"; };
+		FA9ABC922C55FB1D007BA24A /* Inventory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
+		FA9ABC952C560922007BA24A /* CircularButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularButtonStyle.swift; sourceTree = "<group>"; };
+		FA9ABC972C5609B0007BA24A /* SpellTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellTestViewModel.swift; sourceTree = "<group>"; };
+		FA9ABC992C56110A007BA24A /* SelectGemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGemView.swift; sourceTree = "<group>"; };
+		FA9ABC9B2C56120D007BA24A /* SelectGemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGemViewModel.swift; sourceTree = "<group>"; };
 		FAC2292C2C4B33D7009498E1 /* PatternView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternView.swift; sourceTree = "<group>"; };
 		FAC2292E2C4B6460009498E1 /* SpellEnergy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpellEnergy.swift; sourceTree = "<group>"; };
 		FAC229312C4B6469009498E1 /* ForceComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceComponents.swift; sourceTree = "<group>"; };
@@ -145,8 +157,19 @@
 			isa = PBXGroup;
 			children = (
 				FA8F9B602C438CB80004B88B /* GemView.swift */,
+				FA9ABC902C55FAFF007BA24A /* GemInventoryView.swift */,
+				FA9ABC992C56110A007BA24A /* SelectGemView.swift */,
+				FA9ABC9B2C56120D007BA24A /* SelectGemViewModel.swift */,
 			);
 			path = Gem;
+			sourceTree = "<group>";
+		};
+		FA9ABC942C56091A007BA24A /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				FA9ABC952C560922007BA24A /* CircularButtonStyle.swift */,
+			);
+			path = DesignSystem;
 			sourceTree = "<group>";
 		};
 		FAC2292F2C4B6460009498E1 /* Cast */ = {
@@ -181,6 +204,7 @@
 		FAD929CE2C3D384400B86690 /* GoMetal */ = {
 			isa = PBXGroup;
 			children = (
+				FA9ABC942C56091A007BA24A /* DesignSystem */,
 				FA34DAF72C4A4CF400B5CDC9 /* Store */,
 				FAD929F72C3E957F00B86690 /* Service */,
 				FAD929EA2C3E84DC00B86690 /* Model */,
@@ -232,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				FAD929F12C3E885800B86690 /* SpellTestView.swift */,
+				FA9ABC972C5609B0007BA24A /* SpellTestViewModel.swift */,
 				FAD929F32C3E8AA800B86690 /* ActiveSpellView.swift */,
 				FAD929F52C3E8F1900B86690 /* GemPositionEditView.swift */,
 				FAD929FC2C3FD94900B86690 /* DirectionalFieldView.swift */,
@@ -258,6 +283,7 @@
 				FAD929FA2C3EA12600B86690 /* Spell.swift */,
 				FA8F9B642C4524FE0004B88B /* SpellContext.swift */,
 				FA9ABC8E2C54B965007BA24A /* Gem.swift */,
+				FA9ABC922C55FB1D007BA24A /* Inventory.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -419,6 +445,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA9ABC962C560922007BA24A /* CircularButtonStyle.swift in Sources */,
+				FA9ABC982C5609B0007BA24A /* SpellTestViewModel.swift in Sources */,
+				FA9ABC9A2C56110A007BA24A /* SelectGemView.swift in Sources */,
+				FA9ABC912C55FAFF007BA24A /* GemInventoryView.swift in Sources */,
 				FA8F9B582C4365600004B88B /* CirclePattern.swift in Sources */,
 				FAD929E92C3D445E00B86690 /* ChildSizeReader.swift in Sources */,
 				FA8F9B652C4524FE0004B88B /* SpellContext.swift in Sources */,
@@ -435,7 +465,9 @@
 				FAC229322C4B6469009498E1 /* ForceComponents.swift in Sources */,
 				FA8F9B672C4527AA0004B88B /* SimulationService.swift in Sources */,
 				FAD929F02C3E874700B86690 /* Math.swift in Sources */,
+				FA9ABC9C2C56120D007BA24A /* SelectGemViewModel.swift in Sources */,
 				FA34DB082C4A52C300B5CDC9 /* ContentView.swift in Sources */,
+				FA9ABC932C55FB1D007BA24A /* Inventory.swift in Sources */,
 				FAD929EE2C3E858F00B86690 /* SpellPattern.swift in Sources */,
 				FAD92A4E2C43617A00B86690 /* PatternSpace.swift in Sources */,
 				FAD929E32C3D3B9100B86690 /* Shader1.metal in Sources */,
