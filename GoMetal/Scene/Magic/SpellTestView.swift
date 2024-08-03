@@ -42,7 +42,8 @@ struct SpellTestView: View {
         .sheet(isPresented: $viewModel.showingGems) {
             GemInventoryView(
                 inventory: viewModel.mainStore.inventory,
-                canvasSize: canvasSize
+                canvasSize: canvasSize,
+                didSelect: {_ in }
             )
         }
     }
