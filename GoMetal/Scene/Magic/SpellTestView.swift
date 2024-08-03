@@ -43,8 +43,9 @@ struct SpellTestView: View {
             GemInventoryView(
                 inventory: viewModel.mainStore.inventory,
                 canvasSize: canvasSize,
-                didSelect: {_ in }
+                didSelect: viewModel.selectedGem
             )
+            .presentationDetents([.medium])
         }
     }
     

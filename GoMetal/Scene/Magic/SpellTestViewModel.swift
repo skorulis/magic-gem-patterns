@@ -20,4 +20,10 @@ extension SpellTestViewModel {
     func addPressed() {
         showingGems = true
     }
+    
+    func selectedGem(_ gem: Gem) {
+        self.showingGems = false
+        mainStore.inventory.remove(gem: gem)
+        mainStore.spell.gems.append(.init(gem: gem, time: 0))
+    }
 }

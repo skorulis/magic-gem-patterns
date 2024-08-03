@@ -11,7 +11,7 @@ struct GemView: View {
     
     var body: some View {
         gem.shape.displayShape
-            .fill(Color.red)
+            .fill(gem.color)
             .frame(
                 width: abs(CGFloat(space.toScreenSpace(size: gem.size).x)),
                 height: abs(CGFloat(space.toScreenSpace(size: gem.size).y))
@@ -19,3 +19,13 @@ struct GemView: View {
     }
 }
 
+extension Gem {
+    var color: Color {
+        switch type {
+        case .fire:
+            return .red
+        case .water:
+            return .blue
+        }
+    }
+}

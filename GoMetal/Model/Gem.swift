@@ -10,8 +10,8 @@ struct Gem: Identifiable {
     let type: GemType
     var size: Vector2 { .init(0.2, 0.2) }
     
-    static let baseDiamond: Self = .init(shape: .diamond, type: .fire)
-    static let baseHexagon: Self = .init(shape: .hexagon, type: .water)
+    static var baseDiamond: Self { .init(shape: .diamond, type: .fire) }
+    static var baseHexagon: Self { .init(shape: .hexagon, type: .water) }
     
 }
 
