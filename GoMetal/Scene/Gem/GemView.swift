@@ -22,6 +22,8 @@ struct GemView: View {
 extension Gem {
     var color: Color {
         switch type {
+        case .raw:
+            return .gray
         case .fire:
             return .red
         case .water:

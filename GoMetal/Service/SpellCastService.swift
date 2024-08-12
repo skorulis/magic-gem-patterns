@@ -47,7 +47,8 @@ final class SpellCastService {
                 time: energy.time,
                 position: pos,
                 velocity: vel,
-                power: energy.power/2
+                power: energy.power/2,
+                energyDistribution: [gem.gem.type: 1]
             )
         }
     }

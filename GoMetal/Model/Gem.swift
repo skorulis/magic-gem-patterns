@@ -7,7 +7,7 @@ struct Gem: Identifiable {
 
     let id = UUID()
     let shape: GemShape
-    let type: GemType
+    let type: EnergyType
     var size: Vector2 { .init(0.2, 0.2) }
     
     static var baseDiamond: Self { .init(shape: .diamond, type: .fire) }
@@ -43,11 +43,6 @@ enum GemShape: Codable {
             ]
         }
     }
-}
-
-enum GemType: Codable {
-    case fire
-    case water
 }
 
 public struct Polygon: Shape {

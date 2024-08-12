@@ -27,6 +27,7 @@
 		FA9ABC9A2C56110A007BA24A /* SelectGemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9ABC992C56110A007BA24A /* SelectGemView.swift */; };
 		FA9ABC9C2C56120D007BA24A /* SelectGemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9ABC9B2C56120D007BA24A /* SelectGemViewModel.swift */; };
 		FA9ABCA42C5616BB007BA24A /* IOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9ABCA32C5616BB007BA24A /* IOC.swift */; };
+		FAACC6412C6A0BD3000BB21F /* EnergyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACC6402C6A0BD3000BB21F /* EnergyType.swift */; };
 		FAC2292D2C4B33D7009498E1 /* PatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2292C2C4B33D7009498E1 /* PatternView.swift */; };
 		FAC229302C4B6460009498E1 /* SpellEnergy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2292E2C4B6460009498E1 /* SpellEnergy.swift */; };
 		FAC229322C4B6469009498E1 /* ForceComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC229312C4B6469009498E1 /* ForceComponents.swift */; };
@@ -78,6 +79,7 @@
 		FA9ABC992C56110A007BA24A /* SelectGemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGemView.swift; sourceTree = "<group>"; };
 		FA9ABC9B2C56120D007BA24A /* SelectGemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGemViewModel.swift; sourceTree = "<group>"; };
 		FA9ABCA32C5616BB007BA24A /* IOC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOC.swift; sourceTree = "<group>"; };
+		FAACC6402C6A0BD3000BB21F /* EnergyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyType.swift; sourceTree = "<group>"; };
 		FAC2292C2C4B33D7009498E1 /* PatternView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternView.swift; sourceTree = "<group>"; };
 		FAC2292E2C4B6460009498E1 /* SpellEnergy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpellEnergy.swift; sourceTree = "<group>"; };
 		FAC229312C4B6469009498E1 /* ForceComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceComponents.swift; sourceTree = "<group>"; };
@@ -171,6 +173,14 @@
 				FA9ABC952C560922007BA24A /* CircularButtonStyle.swift */,
 			);
 			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		FAACC63F2C6A0BCE000BB21F /* Energy */ = {
+			isa = PBXGroup;
+			children = (
+				FAACC6402C6A0BD3000BB21F /* EnergyType.swift */,
+			);
+			path = Energy;
 			sourceTree = "<group>";
 		};
 		FAC2292F2C4B6460009498E1 /* Cast */ = {
@@ -278,6 +288,7 @@
 		FAD929EA2C3E84DC00B86690 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FAACC63F2C6A0BCE000BB21F /* Energy */,
 				FAC2292F2C4B6460009498E1 /* Cast */,
 				FAD92A372C435D9200B86690 /* Pattern */,
 				FAD929ED2C3E858F00B86690 /* SpellPattern.swift */,
@@ -452,6 +463,7 @@
 				FA8F9B582C4365600004B88B /* CirclePattern.swift in Sources */,
 				FAD929E92C3D445E00B86690 /* ChildSizeReader.swift in Sources */,
 				FA8F9B652C4524FE0004B88B /* SpellContext.swift in Sources */,
+				FAACC6412C6A0BD3000BB21F /* EnergyType.swift in Sources */,
 				FA9ABC8D2C54A238007BA24A /* CastResult.swift in Sources */,
 				FAD929F92C3E958700B86690 /* SpellCastService.swift in Sources */,
 				FAD92A3B2C435E6500B86690 /* LinePattern.swift in Sources */,

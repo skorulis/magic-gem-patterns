@@ -12,8 +12,11 @@ struct SpellEnergy: Identifiable {
     var velocity: Vector2
     var power: Float
     
+    var energyDistribution: [EnergyType: Int]
+    
     var color: Color {
-        gemIDs.isEmpty ? .black : .orange
+        let type = energyDistribution.first?.key ?? .raw
+        return type.color
     }
     
 }
