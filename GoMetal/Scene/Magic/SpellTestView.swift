@@ -31,12 +31,16 @@ struct SpellTestView: View {
             }
             canvas
             buttonsView
-            Toggle(isOn: $simulation.active) {
-                Text("Active")
+            if viewModel.simulation.active {
+                Button(action: { viewModel.simulation.stop() }) {
+                    Text("Stop")
+                }
+            } else {
+                Button(action: { viewModel.simulation.start() }) {
+                    Text("Start")
+                }
             }
-            Button(action: { viewModel.simulation.start() }) {
-                Text("Start")
-            }
+            
         }
         .padding(.horizontal, 16)
         .sheet(isPresented: $viewModel.showingGems) {
@@ -79,7 +83,11 @@ struct SpellTestView: View {
                 )
             )
             .overlay(
-                GemPositionEditView(spell: $mainStore.spell, canvasSize: canvasSize)
+                GemPositionEditView(
+                    spell: $mainStore.spell,
+                    canvasSize: canvasSize,
+                    didRemoveGem: viewModel.removedGem
+                )
             )
             .overlay(maybeActiveSpell)
             .readSize(size: $canvasSize)

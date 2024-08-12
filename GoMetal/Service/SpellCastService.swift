@@ -13,6 +13,7 @@ final class SpellCastService {
             energy.position += (energy.velocity * delta)
             energy.velocity -= energy.velocity * 0.5 * delta
             energy.velocity += (force.total * delta)
+            energy.power += 3 * delta
             
             if let gem = hitGem(spell: context.spell, energy: energy) {
                 energy.gemIDs.insert(gem.id)
@@ -37,14 +38,11 @@ final class SpellCastService {
     
     private func split(pattern: PatternProtocol, energy: SpellEnergy, gem: GemPosition) -> [SpellEnergy] {
         let pos = energy.position
-        let speed = energy.velocity.length
-        let forward = pattern.forwardsDirection(at: pos)
-        let velocities = [
-            forward.rotated(by: -.pi/8) * speed,
-            forward.rotated(by: .pi/8) * speed
-        ]
-        return velocities.map { vel in
-            SpellEnergy(
+        let splitAngles = gem.gem.shape.splitAngles
+        
+        return splitAngles.map { angle in
+            let vel = energy.velocity.rotated(by: angle)
+            return SpellEnergy(
                 gemIDs: energy.gemIDs,
                 time: energy.time,
                 position: pos,

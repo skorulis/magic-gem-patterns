@@ -40,6 +40,10 @@ import QuartzCore
         active = true
     }
     
+    func stop() {
+        active = false
+    }
+    
     @objc func step(displaylink: CADisplayLink) {
         guard var context else { return }
         let t = displaylink.targetTimestamp

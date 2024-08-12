@@ -26,4 +26,8 @@ extension SpellTestViewModel {
         mainStore.inventory.remove(gem: gem)
         mainStore.spell.gems.append(.init(gem: gem, time: 0))
     }
+    
+    func removedGem(_ gem: Gem) {
+        mainStore.inventory.add(gem: gem)
+    }
 }

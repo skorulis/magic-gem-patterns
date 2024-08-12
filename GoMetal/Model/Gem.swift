@@ -27,6 +27,22 @@ enum GemShape: Codable {
             Polygon(numberOfSides: 6)
         }
     }
+    
+    var splitAngles: [Float] {
+        switch self {
+        case .diamond:
+            return [
+                -.pi/4,
+                 .pi/4,
+            ]
+        case .hexagon:
+            return [
+                -.pi/6,
+                 0,
+                 .pi/6,
+            ]
+        }
+    }
 }
 
 enum GemType: Codable {

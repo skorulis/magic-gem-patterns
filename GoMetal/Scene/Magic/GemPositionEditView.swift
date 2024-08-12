@@ -9,6 +9,8 @@ struct GemPositionEditView: View {
     @Binding var spell: Spell
     let canvasSize: CGSize
     @GestureState private var dragAmount: [Int: CGSize] = [:]
+    var didRemoveGem: (Gem) -> Void
+    
     var screenPattern: ScreenPattern {
         .init(pattern: spell.pattern, canvasSize: canvasSize)
     }
@@ -57,7 +59,8 @@ struct GemPositionEditView: View {
                     let time = screenPattern.time(position: endPosition)
                     spell.gems[index].time = time
                 } else {
-                    spell.gems.remove(at: index)
+                    let gem = spell.gems.remove(at: index)
+                    didRemoveGem(gem.gem)
                 }
             }
     }
