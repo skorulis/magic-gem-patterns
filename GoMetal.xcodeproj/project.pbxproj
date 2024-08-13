@@ -28,6 +28,8 @@
 		FA9ABC9C2C56120D007BA24A /* SelectGemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9ABC9B2C56120D007BA24A /* SelectGemViewModel.swift */; };
 		FA9ABCA42C5616BB007BA24A /* IOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9ABCA32C5616BB007BA24A /* IOC.swift */; };
 		FAACC6412C6A0BD3000BB21F /* EnergyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACC6402C6A0BD3000BB21F /* EnergyType.swift */; };
+		FAACC6432C6B361D000BB21F /* Vector2+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACC6422C6B361D000BB21F /* Vector2+Additions.swift */; };
+		FAACC6462C6B3716000BB21F /* Vector2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACC6452C6B3716000BB21F /* Vector2Tests.swift */; };
 		FAC2292D2C4B33D7009498E1 /* PatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2292C2C4B33D7009498E1 /* PatternView.swift */; };
 		FAC229302C4B6460009498E1 /* SpellEnergy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2292E2C4B6460009498E1 /* SpellEnergy.swift */; };
 		FAC229322C4B6469009498E1 /* ForceComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC229312C4B6469009498E1 /* ForceComponents.swift */; };
@@ -80,6 +82,8 @@
 		FA9ABC9B2C56120D007BA24A /* SelectGemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGemViewModel.swift; sourceTree = "<group>"; };
 		FA9ABCA32C5616BB007BA24A /* IOC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOC.swift; sourceTree = "<group>"; };
 		FAACC6402C6A0BD3000BB21F /* EnergyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyType.swift; sourceTree = "<group>"; };
+		FAACC6422C6B361D000BB21F /* Vector2+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vector2+Additions.swift"; sourceTree = "<group>"; };
+		FAACC6452C6B3716000BB21F /* Vector2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vector2Tests.swift; sourceTree = "<group>"; };
 		FAC2292C2C4B33D7009498E1 /* PatternView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternView.swift; sourceTree = "<group>"; };
 		FAC2292E2C4B6460009498E1 /* SpellEnergy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpellEnergy.swift; sourceTree = "<group>"; };
 		FAC229312C4B6469009498E1 /* ForceComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceComponents.swift; sourceTree = "<group>"; };
@@ -183,6 +187,14 @@
 			path = Energy;
 			sourceTree = "<group>";
 		};
+		FAACC6442C6B3710000BB21F /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				FAACC6452C6B3716000BB21F /* Vector2Tests.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		FAC2292F2C4B6460009498E1 /* Cast */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +293,7 @@
 			children = (
 				FAD929E82C3D445E00B86690 /* ChildSizeReader.swift */,
 				FAD929EF2C3E874700B86690 /* Math.swift */,
+				FAACC6422C6B361D000BB21F /* Vector2+Additions.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -324,6 +337,7 @@
 		FAD92A412C435F1000B86690 /* GoMetalTests */ = {
 			isa = PBXGroup;
 			children = (
+				FAACC6442C6B3710000BB21F /* Util */,
 				FAD92A4A2C435F1F00B86690 /* Model */,
 			);
 			path = GoMetalTests;
@@ -457,6 +471,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA9ABC962C560922007BA24A /* CircularButtonStyle.swift in Sources */,
+				FAACC6432C6B361D000BB21F /* Vector2+Additions.swift in Sources */,
 				FA9ABC982C5609B0007BA24A /* SpellTestViewModel.swift in Sources */,
 				FA9ABC9A2C56110A007BA24A /* SelectGemView.swift in Sources */,
 				FA9ABC912C55FAFF007BA24A /* GemInventoryView.swift in Sources */,
@@ -498,6 +513,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA8F9B5A2C436A560004B88B /* LinePatternTests.swift in Sources */,
+				FAACC6462C6B3716000BB21F /* Vector2Tests.swift in Sources */,
 				FAD92A4C2C435F6F00B86690 /* PatternSpaceTests.swift in Sources */,
 				FA8F9B632C43C1990004B88B /* CirclePatternTests.swift in Sources */,
 			);
