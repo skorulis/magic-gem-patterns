@@ -11,7 +11,7 @@ final class SpellCastService {
         for (i, var energy) in context.energy.enumerated() {
             let force = pattern.force(at: energy.position)
             energy.position += (energy.velocity * delta)
-            energy.velocity -= energy.velocity * 0.5 * delta
+            applyDrag(energy: &energy, force: force, delta: delta)
             energy.velocity += (force.total * delta)
             energy.power += 3 * delta
             
@@ -34,6 +34,10 @@ final class SpellCastService {
             context.energy.remove(at: i)
         }
         context.energy.append(contentsOf: newEnergy)
+    }
+    
+    private func applyDrag(energy: inout SpellEnergy, force: ForceComponents, delta: Float) {
+        energy.velocity = energy.velocity.drag(direction: force.towardsLine, pct: 5 * delta)
     }
     
     private func split(pattern: PatternProtocol, energy: SpellEnergy, gem: GemPosition) -> [SpellEnergy] {

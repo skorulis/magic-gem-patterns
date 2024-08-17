@@ -30,6 +30,9 @@
 		FAACC6412C6A0BD3000BB21F /* EnergyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACC6402C6A0BD3000BB21F /* EnergyType.swift */; };
 		FAACC6432C6B361D000BB21F /* Vector2+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACC6422C6B361D000BB21F /* Vector2+Additions.swift */; };
 		FAACC6462C6B3716000BB21F /* Vector2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACC6452C6B3716000BB21F /* Vector2Tests.swift */; };
+		FAACC6502C6F438E000BB21F /* SpellShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACC64F2C6F438E000BB21F /* SpellShape.swift */; };
+		FAACC6522C6F4B28000BB21F /* SpellShapeMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACC6512C6F4B28000BB21F /* SpellShapeMatcher.swift */; };
+		FAACC6552C6F4B85000BB21F /* SpellShapeMatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACC6542C6F4B85000BB21F /* SpellShapeMatcherTests.swift */; };
 		FAC2292D2C4B33D7009498E1 /* PatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2292C2C4B33D7009498E1 /* PatternView.swift */; };
 		FAC229302C4B6460009498E1 /* SpellEnergy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2292E2C4B6460009498E1 /* SpellEnergy.swift */; };
 		FAC229322C4B6469009498E1 /* ForceComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC229312C4B6469009498E1 /* ForceComponents.swift */; };
@@ -84,6 +87,9 @@
 		FAACC6402C6A0BD3000BB21F /* EnergyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyType.swift; sourceTree = "<group>"; };
 		FAACC6422C6B361D000BB21F /* Vector2+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vector2+Additions.swift"; sourceTree = "<group>"; };
 		FAACC6452C6B3716000BB21F /* Vector2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vector2Tests.swift; sourceTree = "<group>"; };
+		FAACC64F2C6F438E000BB21F /* SpellShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellShape.swift; sourceTree = "<group>"; };
+		FAACC6512C6F4B28000BB21F /* SpellShapeMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellShapeMatcher.swift; sourceTree = "<group>"; };
+		FAACC6542C6F4B85000BB21F /* SpellShapeMatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellShapeMatcherTests.swift; sourceTree = "<group>"; };
 		FAC2292C2C4B33D7009498E1 /* PatternView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternView.swift; sourceTree = "<group>"; };
 		FAC2292E2C4B6460009498E1 /* SpellEnergy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpellEnergy.swift; sourceTree = "<group>"; };
 		FAC229312C4B6469009498E1 /* ForceComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceComponents.swift; sourceTree = "<group>"; };
@@ -195,6 +201,22 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		FAACC64E2C6F4357000BB21F /* SpellOutput */ = {
+			isa = PBXGroup;
+			children = (
+				FAACC64F2C6F438E000BB21F /* SpellShape.swift */,
+			);
+			path = SpellOutput;
+			sourceTree = "<group>";
+		};
+		FAACC6532C6F4B40000BB21F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FAACC6542C6F4B85000BB21F /* SpellShapeMatcherTests.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		FAC2292F2C4B6460009498E1 /* Cast */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +323,7 @@
 		FAD929EA2C3E84DC00B86690 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FAACC64E2C6F4357000BB21F /* SpellOutput */,
 				FAACC63F2C6A0BCE000BB21F /* Energy */,
 				FAC2292F2C4B6460009498E1 /* Cast */,
 				FAD92A372C435D9200B86690 /* Pattern */,
@@ -319,6 +342,7 @@
 				FA34DAFA2C4A4DB700B5CDC9 /* App */,
 				FAD929F82C3E958700B86690 /* SpellCastService.swift */,
 				FA8F9B662C4527AA0004B88B /* SimulationService.swift */,
+				FAACC6512C6F4B28000BB21F /* SpellShapeMatcher.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -337,8 +361,9 @@
 		FAD92A412C435F1000B86690 /* GoMetalTests */ = {
 			isa = PBXGroup;
 			children = (
-				FAACC6442C6B3710000BB21F /* Util */,
 				FAD92A4A2C435F1F00B86690 /* Model */,
+				FAACC6532C6F4B40000BB21F /* Service */,
+				FAACC6442C6B3710000BB21F /* Util */,
 			);
 			path = GoMetalTests;
 			sourceTree = "<group>";
@@ -472,6 +497,7 @@
 			files = (
 				FA9ABC962C560922007BA24A /* CircularButtonStyle.swift in Sources */,
 				FAACC6432C6B361D000BB21F /* Vector2+Additions.swift in Sources */,
+				FAACC6502C6F438E000BB21F /* SpellShape.swift in Sources */,
 				FA9ABC982C5609B0007BA24A /* SpellTestViewModel.swift in Sources */,
 				FA9ABC9A2C56110A007BA24A /* SelectGemView.swift in Sources */,
 				FA9ABC912C55FAFF007BA24A /* GemInventoryView.swift in Sources */,
@@ -495,6 +521,7 @@
 				FA9ABC9C2C56120D007BA24A /* SelectGemViewModel.swift in Sources */,
 				FA34DB082C4A52C300B5CDC9 /* ContentView.swift in Sources */,
 				FA9ABC932C55FB1D007BA24A /* Inventory.swift in Sources */,
+				FAACC6522C6F4B28000BB21F /* SpellShapeMatcher.swift in Sources */,
 				FAD929EE2C3E858F00B86690 /* SpellPattern.swift in Sources */,
 				FAD92A4E2C43617A00B86690 /* PatternSpace.swift in Sources */,
 				FAD929E32C3D3B9100B86690 /* Shader1.metal in Sources */,
@@ -512,6 +539,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAACC6552C6F4B85000BB21F /* SpellShapeMatcherTests.swift in Sources */,
 				FA8F9B5A2C436A560004B88B /* LinePatternTests.swift in Sources */,
 				FAACC6462C6B3716000BB21F /* Vector2Tests.swift in Sources */,
 				FAD92A4C2C435F6F00B86690 /* PatternSpaceTests.swift in Sources */,
