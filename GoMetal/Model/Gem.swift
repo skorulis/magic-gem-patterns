@@ -28,21 +28,41 @@ enum GemShape: Codable {
         }
     }
     
-    var splitAngles: [Float] {
+    var splits: [GemSplit] {
         switch self {
         case .diamond:
             return [
-                -.pi/4,
-                 .pi/4,
+                .init(
+                    angle: -.pi/4,
+                    outputPosition: .init(0.5, 0.5)
+                ),
+                .init(
+                    angle: .pi/4,
+                    outputPosition: .init(-0.5, 0.5)
+                ),
             ]
         case .hexagon:
             return [
-                -.pi/6,
-                 0,
-                 .pi/6,
+                .init(
+                    angle: -.pi/6,
+                    outputPosition: .init(0.75, 0.5)
+                ),
+                .init(
+                    angle: 0,
+                    outputPosition: .init(0, 1)
+                ),
+                .init(
+                    angle: .pi/6,
+                    outputPosition: .init(-0.75, 0.5)
+                ),
             ]
         }
     }
+}
+
+public struct GemSplit {
+    let angle: Float
+    let outputPosition: Vector2
 }
 
 public struct Polygon: Shape {

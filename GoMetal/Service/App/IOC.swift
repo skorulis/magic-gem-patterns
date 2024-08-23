@@ -19,7 +19,13 @@ final class IOC: IOCService {
     }
     
     private func registerServices() {
-        container.register(SpellCastService.self) { _ in SpellCastService() }
+        container.register(SpellCastService.self) { r in
+            SpellCastService(shapeMatcher: r.resolve(SpellShapeMatcher.self)!)
+        }
+        
+        container.register(SpellShapeMatcher.self) { _ in
+            SpellShapeMatcher()
+        }
         
         container.register(SimulationService.self) { r in
             SimulationService(

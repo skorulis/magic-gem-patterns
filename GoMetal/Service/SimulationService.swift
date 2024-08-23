@@ -61,7 +61,7 @@ import QuartzCore
         if context.completeness >= 1 {
             let result = spellCastService.result(context: context)
             
-            print("FINISHED SPELL")
+            print("FINISHED SPELL \(result.shape)")
             print("RESULT = \(result)")
             
             start()
