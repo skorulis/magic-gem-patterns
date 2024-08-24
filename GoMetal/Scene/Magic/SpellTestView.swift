@@ -25,7 +25,12 @@ struct SpellTestView: View {
     }
     
     var body: some View {
-        PageTemplate(nav: nav, content: content)
+        VStack(spacing: 0) {
+            nav()
+            content()
+            Spacer()
+        }
+        .navigationBarHidden(true)
     }
     
     private func content() -> some View {

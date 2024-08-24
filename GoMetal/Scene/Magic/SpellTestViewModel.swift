@@ -6,21 +6,28 @@ import Foundation
 @Observable final class SpellTestViewModel: ResolverCoordinatorViewModel {
     let service: SpellCastService
     let mainStore: MainStore
+    let spellStore: SpellStore
     var simulation: SimulationService!
     
     var showingGems: Bool = false
     
-    var spell: Spell
+    var spell: Spell {
+        didSet {
+            spellStore.update(spell: spell)
+        }
+    }
     
     init(
         spell: Spell,
         service: SpellCastService,
         mainStore: MainStore,
+        spellStore: SpellStore,
         simulationFactory: SimulationServiceFactory
     ) {
         self.service = service
         self.spell = spell
         self.mainStore = mainStore
+        self.spellStore = spellStore
         super.init()
         self.simulation = simulationFactory.make(spellProvider: { self.spell })
     }

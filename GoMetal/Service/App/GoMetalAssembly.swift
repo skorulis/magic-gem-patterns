@@ -44,9 +44,10 @@ final class GoMetalAssembly: AutoInitModuleAssembly {
             mainActorFactory: { (r: Resolver, spell: Spell) in
                 SpellTestViewModel(
                     spell: spell,
-                    service: r.resolve(SpellCastService.self)!,
-                    mainStore: r.resolve(MainStore.self)!,
-                    simulationFactory: r.resolve(SimulationServiceFactory.self)!
+                    service: r.spellCastService(),
+                    mainStore: r.mainStore(),
+                    spellStore: r.spellStore(),
+                    simulationFactory: r.simulationServiceFactory()
                 )
             }
         )

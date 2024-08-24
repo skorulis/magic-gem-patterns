@@ -28,12 +28,16 @@ extension SpellListMenu: View {
     
     private func content() -> some View {
         VStack {
-            
+            ForEach(viewModel.spells) { spell in
+                Button(action: { viewModel.show(spell: spell)}) {
+                    Text(spell.name)
+                }
+            }
         }
     }
     
     private func addButton() -> some View {
-        Button(action: { viewModel.show(spell: .blank()) }) {
+        Button(action: viewModel.new) {
             Image(systemName: "plus")
                 .resizable()
                 .fontWeight(.bold)

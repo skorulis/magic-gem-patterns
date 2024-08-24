@@ -23,4 +23,11 @@ extension SpellListMenuViewModel {
     func show(spell: Spell) {
         coordinator.push(RootPath.spellEditor(spell))
     }
+    
+    func new() {
+        let spell = Spell.blank()
+        spellStore.update(spell: spell)
+        self.show(spell: spell)
+        
+    }
 }

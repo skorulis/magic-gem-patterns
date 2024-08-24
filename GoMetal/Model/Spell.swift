@@ -3,7 +3,11 @@
 import Foundation
 import VectorMath
 
-struct Spell: Equatable, Hashable {
+struct Spell: Equatable, Hashable, Identifiable {
+    
+    let id: UUID
+    var name: String
+    
     // The pattern this spell is built on
     var patternType: SpellPattern
     
@@ -15,7 +19,7 @@ struct Spell: Equatable, Hashable {
     var gems: [GemPosition]
     
     static func blank() -> Spell {
-        .init(patternType: .line, gems: [])
+        .init(id: UUID(), name: "New Spell", patternType: .line, gems: [])
     }
 }
 
