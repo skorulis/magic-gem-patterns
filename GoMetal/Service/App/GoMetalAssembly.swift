@@ -1,5 +1,6 @@
 //Created by Alexander Skorulis on 24/8/2024.
 
+import ASKCore
 import Knit
 
 final class GoMetalAssembly: AutoInitModuleAssembly {
@@ -18,8 +19,8 @@ final class GoMetalAssembly: AutoInitModuleAssembly {
         }
         .inObjectScope(.container)
         
-        container.register(SpellStore.self) { _ in
-            SpellStore()
+        container.register(SpellStore.self) { r in
+            SpellStore(store: r.resolve(PKeyValueStore.self)!)
         }
         .inObjectScope(.container)
     }

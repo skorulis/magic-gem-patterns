@@ -3,7 +3,7 @@
 import Foundation
 import SwiftUI
 
-enum EnergyType {
+enum EnergyType: Codable {
     case raw
     case fire
     case water

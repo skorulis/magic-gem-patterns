@@ -31,6 +31,10 @@ struct SpellTestView: View {
             Spacer()
         }
         .navigationBarHidden(true)
+        .alert("Enter spell name", isPresented: $viewModel.showingNameEdit) {
+            TextField("Enter spell name", text: $viewModel.spell.name)
+            Button("OK", action: {})
+        }
     }
     
     private func content() -> some View {
@@ -116,7 +120,29 @@ struct SpellTestView: View {
     }
     
     private func nav() -> some View {
-        NavBar(left: .back(viewModel.back), mid: .title("Spell"))
+        NavBar(
+            left: .back(viewModel.back),
+            mid: .title(viewModel.spell.name),
+            right: .customView(AnyView(rightMenu))
+        )
+    }
+    
+    private var rightMenu: some View {
+        Menu {
+            Button(action: viewModel.renameSpell) {
+                Label("Rename Spell", systemImage: "pencil")
+            }
+            Button(role: .destructive, action: viewModel.deleteSpell) {
+                Label("Delete Spell", systemImage: "trash")
+            }
+        } label: {
+            Label(
+                title: { EmptyView() },
+                icon: { Image(systemName: "ellipsis") }
+            )
+        }
+        .padding(.trailing, 16)
+
     }
 }
 

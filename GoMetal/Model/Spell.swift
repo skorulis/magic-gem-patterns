@@ -3,7 +3,7 @@
 import Foundation
 import VectorMath
 
-struct Spell: Equatable, Hashable, Identifiable {
+struct Spell: Equatable, Hashable, Identifiable, Codable {
     
     let id: UUID
     var name: String
@@ -23,7 +23,7 @@ struct Spell: Equatable, Hashable, Identifiable {
     }
 }
 
-struct GemPosition: Equatable, Hashable, Identifiable {
+struct GemPosition: Equatable, Hashable, Identifiable, Codable {
     let id = UUID()
     let gem: Gem
     var time: Float

@@ -3,12 +3,18 @@
 import SwiftUI
 import VectorMath
 
-struct Gem: Equatable, Hashable, Identifiable {
+struct Gem: Equatable, Hashable, Identifiable, Codable {
 
-    let id = UUID()
+    let id: UUID
     let shape: GemShape
     let type: EnergyType
     var size: Vector2 { .init(0.2, 0.2) }
+    
+    init(id: UUID = UUID(), shape: GemShape, type: EnergyType) {
+        self.id = id
+        self.shape = shape
+        self.type = type
+    }
     
     static var baseDiamond: Self { .init(shape: .diamond, type: .fire) }
     static var baseHexagon: Self { .init(shape: .hexagon, type: .water) }

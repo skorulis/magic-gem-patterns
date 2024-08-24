@@ -10,6 +10,7 @@ import Foundation
     var simulation: SimulationService!
     
     var showingGems: Bool = false
+    var showingNameEdit: Bool = false
     
     var spell: Spell {
         didSet {
@@ -46,5 +47,13 @@ extension SpellTestViewModel {
     
     func removedGem(_ gem: Gem) {
         mainStore.inventory.add(gem: gem)
+    }
+    
+    func deleteSpell() {
+        
+    }
+    
+    func renameSpell() {
+        self.showingNameEdit = true
     }
 }
