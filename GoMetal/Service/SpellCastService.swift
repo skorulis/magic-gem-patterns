@@ -1,6 +1,7 @@
 //  Created by Alexander Skorulis on 10/7/2024.
 
 import Foundation
+import VectorMath
 
 final class SpellCastService {
     
@@ -103,18 +104,24 @@ final class SpellCastService {
         var power: Float = 0
         var maxDistance: Float = 0
         let pattern = context.spell.pattern
+        var velocitySum = Vector2(0, 0)
         for energy in context.energy {
             power += energy.power
             let distance = (energy.position - pattern.position(time: 1)).length
             maxDistance = max(distance, maxDistance)
+            let absVelocity = Vector2(abs(energy.velocity.x), energy.velocity.y)
+            velocitySum += absVelocity * energy.power
         }
         
         let shape = shapeMatcher.bestMatch(points: context.energy.map { $0.position })
+        let target: SpellTarget = velocitySum.x >= 0.75 * velocitySum.y ? .caster : .enemy
         
         return .init(
             shape: shape,
+            target: target,
             power: power,
-            deviance: maxDistance
+            deviance: maxDistance,
+            velocitySum: velocitySum
         )
     }
     

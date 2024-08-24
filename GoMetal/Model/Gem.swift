@@ -12,19 +12,23 @@ struct Gem: Identifiable {
     
     static var baseDiamond: Self { .init(shape: .diamond, type: .fire) }
     static var baseHexagon: Self { .init(shape: .hexagon, type: .water) }
+    static var baseSquare: Self { .init(shape: .square, type: .raw) }
     
 }
 
 enum GemShape: Codable {
     case diamond
     case hexagon
+    case square
     
-    var displayShape: some Shape {
+    var displayShape: AnyShape {
         switch self {
         case .diamond:
-            Polygon(numberOfSides: 4)
+            return AnyShape(Polygon(numberOfSides: 4))
         case .hexagon:
-            Polygon(numberOfSides: 6)
+            return AnyShape(Polygon(numberOfSides: 6))
+        case .square:
+            return AnyShape(Rectangle())
         }
     }
     
@@ -54,6 +58,17 @@ enum GemShape: Codable {
                 .init(
                     angle: .pi/6,
                     outputPosition: .init(-0.75, 0.5)
+                ),
+            ]
+        case .square:
+            return [
+                .init(
+                    angle: -.pi/2,
+                    outputPosition: .init(1, 0)
+                ),
+                .init(
+                    angle: .pi/2,
+                    outputPosition: .init(-1, 0)
                 ),
             ]
         }
