@@ -38,6 +38,9 @@
 		FAAE8CB72C798F4500B19CBD /* MainMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE8CB62C798F4500B19CBD /* MainMenuViewModel.swift */; };
 		FAAE8CBA2C7990A900B19CBD /* RootPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE8CB92C7990A900B19CBD /* RootPath.swift */; };
 		FAAE8CBC2C79952400B19CBD /* SpellStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE8CBB2C79952400B19CBD /* SpellStore.swift */; };
+		FAAE8CBF2C799F4700B19CBD /* Knit in Frameworks */ = {isa = PBXBuildFile; productRef = FAAE8CBE2C799F4700B19CBD /* Knit */; };
+		FAAE8CC22C79A05900B19CBD /* knitconfig.json in Resources */ = {isa = PBXBuildFile; fileRef = FAAE8CC12C79A05900B19CBD /* knitconfig.json */; };
+		FAAE8CC42C79A07300B19CBD /* GoMetalAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE8CC32C79A07300B19CBD /* GoMetalAssembly.swift */; };
 		FAC2292D2C4B33D7009498E1 /* PatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2292C2C4B33D7009498E1 /* PatternView.swift */; };
 		FAC229302C4B6460009498E1 /* SpellEnergy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2292E2C4B6460009498E1 /* SpellEnergy.swift */; };
 		FAC229322C4B6469009498E1 /* ForceComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC229312C4B6469009498E1 /* ForceComponents.swift */; };
@@ -99,6 +102,8 @@
 		FAAE8CB62C798F4500B19CBD /* MainMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewModel.swift; sourceTree = "<group>"; };
 		FAAE8CB92C7990A900B19CBD /* RootPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPath.swift; sourceTree = "<group>"; };
 		FAAE8CBB2C79952400B19CBD /* SpellStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellStore.swift; sourceTree = "<group>"; };
+		FAAE8CC12C79A05900B19CBD /* knitconfig.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = knitconfig.json; sourceTree = "<group>"; };
+		FAAE8CC32C79A07300B19CBD /* GoMetalAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoMetalAssembly.swift; sourceTree = "<group>"; };
 		FAC2292C2C4B33D7009498E1 /* PatternView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternView.swift; sourceTree = "<group>"; };
 		FAC2292E2C4B6460009498E1 /* SpellEnergy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpellEnergy.swift; sourceTree = "<group>"; };
 		FAC229312C4B6469009498E1 /* ForceComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceComponents.swift; sourceTree = "<group>"; };
@@ -130,6 +135,7 @@
 			files = (
 				FAAE8CB52C798EC400B19CBD /* ASKDesignSystem in Frameworks */,
 				FA8F9B5E2C436E960004B88B /* VectorMath in Frameworks */,
+				FAAE8CBF2C799F4700B19CBD /* Knit in Frameworks */,
 				FA34DAFD2C4A4ECC00B5CDC9 /* ASKCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				FA9ABCA32C5616BB007BA24A /* IOC.swift */,
+				FAAE8CC32C79A07300B19CBD /* GoMetalAssembly.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -258,6 +265,7 @@
 		FAD929C32C3D384400B86690 = {
 			isa = PBXGroup;
 			children = (
+				FAAE8CC12C79A05900B19CBD /* knitconfig.json */,
 				FAD929CE2C3D384400B86690 /* GoMetal */,
 				FAD92A412C435F1000B86690 /* GoMetalTests */,
 				FAD929CD2C3D384400B86690 /* Products */,
@@ -430,12 +438,14 @@
 			buildRules = (
 			);
 			dependencies = (
+				FAAE8CC62C79A16D00B19CBD /* PBXTargetDependency */,
 			);
 			name = GoMetal;
 			packageProductDependencies = (
 				FA8F9B5D2C436E960004B88B /* VectorMath */,
 				FA34DAFC2C4A4ECC00B5CDC9 /* ASKCore */,
 				FAAE8CB42C798EC400B19CBD /* ASKDesignSystem */,
+				FAAE8CBE2C799F4700B19CBD /* Knit */,
 			);
 			productName = GoMetal;
 			productReference = FAD929CC2C3D384400B86690 /* GoMetal.app */;
@@ -492,6 +502,8 @@
 				FA8F9B5B2C436E760004B88B /* XCRemoteSwiftPackageReference "VectorMath" */,
 				FA34DAFB2C4A4ECC00B5CDC9 /* XCRemoteSwiftPackageReference "ASKCore" */,
 				FAAE8CB32C798EC400B19CBD /* XCLocalSwiftPackageReference "Frameworks/ASKDesignSystem" */,
+				FAAE8CBD2C799F4700B19CBD /* XCLocalSwiftPackageReference "Frameworks/knit" */,
+				FAAE8CC02C799F7D00B19CBD /* XCLocalSwiftPackageReference "Frameworks/knit/CLI" */,
 			);
 			productRefGroup = FAD929CD2C3D384400B86690 /* Products */;
 			projectDirPath = "";
@@ -508,6 +520,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAAE8CC22C79A05900B19CBD /* knitconfig.json in Resources */,
 				FAD929D72C3D384500B86690 /* Preview Assets.xcassets in Resources */,
 				FAD929D42C3D384500B86690 /* Assets.xcassets in Resources */,
 			);
@@ -538,6 +551,7 @@
 				FAAE8CBC2C79952400B19CBD /* SpellStore.swift in Sources */,
 				FA8F9B582C4365600004B88B /* CirclePattern.swift in Sources */,
 				FAD929E92C3D445E00B86690 /* ChildSizeReader.swift in Sources */,
+				FAAE8CC42C79A07300B19CBD /* GoMetalAssembly.swift in Sources */,
 				FA8F9B652C4524FE0004B88B /* SpellContext.swift in Sources */,
 				FAACC6412C6A0BD3000BB21F /* EnergyType.swift in Sources */,
 				FA9ABC8D2C54A238007BA24A /* CastResult.swift in Sources */,
@@ -586,6 +600,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		FAAE8CC62C79A16D00B19CBD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = FAAE8CC52C79A16D00B19CBD /* KnitBuildPlugin */;
+		};
 		FAD92A452C435F1000B86690 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FAD929CB2C3D384400B86690 /* GoMetal */;
@@ -847,6 +865,14 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Frameworks/ASKDesignSystem;
 		};
+		FAAE8CBD2C799F4700B19CBD /* XCLocalSwiftPackageReference "Frameworks/knit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Frameworks/knit;
+		};
+		FAAE8CC02C799F7D00B19CBD /* XCLocalSwiftPackageReference "Frameworks/knit/CLI" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Frameworks/knit/CLI;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -882,6 +908,15 @@
 		FAAE8CB42C798EC400B19CBD /* ASKDesignSystem */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ASKDesignSystem;
+		};
+		FAAE8CBE2C799F4700B19CBD /* Knit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Knit;
+		};
+		FAAE8CC52C79A16D00B19CBD /* KnitBuildPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAAE8CC02C799F7D00B19CBD /* XCLocalSwiftPackageReference "Frameworks/knit/CLI" */;
+			productName = "plugin:KnitBuildPlugin";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

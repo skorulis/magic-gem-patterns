@@ -1,5 +1,5 @@
 {
-  "originHash" : "0a4eeb1ea60d53d9929ba6e4edc7fdb3a9f5889baf28abc2a30f51a34e166d6c",
+  "originHash" : "51805d64b801a9adbd5975cb23e5dce946c70b8d1858597d012d40d4205c505d",
   "pins" : [
     {
       "identity" : "askcore",
@@ -11,11 +11,38 @@
       }
     },
     {
+      "identity" : "swift-argument-parser",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-argument-parser",
+      "state" : {
+        "revision" : "41982a3656a71c768319979febd796c6fd111d5c",
+        "version" : "1.5.0"
+      }
+    },
+    {
+      "identity" : "swift-syntax",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-syntax.git",
+      "state" : {
+        "revision" : "2bc86522d115234d1f588efe2bcb4ce4be8f8b82",
+        "version" : "510.0.3"
+      }
+    },
+    {
       "identity" : "swinject",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Swinject/Swinject.git",
       "state" : {
         "revision" : "be9dbcc7b86811bc131539a20c6f9c2d3e56919f",
+        "version" : "2.9.1"
+      }
+    },
+    {
+      "identity" : "swinjectautoregistration",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Swinject/SwinjectAutoregistration.git",
+      "state" : {
+        "revision" : "fd9ffae5f666d37b4b3c210af2e16a10598342e4",
         "version" : "2.9.1"
       }
     },
