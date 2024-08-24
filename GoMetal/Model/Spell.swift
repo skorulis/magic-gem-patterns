@@ -3,7 +3,7 @@
 import Foundation
 import VectorMath
 
-struct Spell {
+struct Spell: Equatable, Hashable {
     // The pattern this spell is built on
     var patternType: SpellPattern
     
@@ -19,7 +19,7 @@ struct Spell {
     }
 }
 
-struct GemPosition: Identifiable {
+struct GemPosition: Equatable, Hashable, Identifiable {
     let id = UUID()
     let gem: Gem
     var time: Float

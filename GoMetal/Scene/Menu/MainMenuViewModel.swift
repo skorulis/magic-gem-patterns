@@ -15,6 +15,6 @@ final class MainMenuViewModel: ResolverCoordinatorViewModel, ObservableObject {
 extension MainMenuViewModel {
     
     func editSpell() {
-        coordinator?.push(RootPath.spellEditor)
+        coordinator?.push(RootPath.spellList)
     }
 }

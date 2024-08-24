@@ -41,6 +41,8 @@
 		FAAE8CC22C79A05900B19CBD /* knitconfig.json in Resources */ = {isa = PBXBuildFile; fileRef = FAAE8CC12C79A05900B19CBD /* knitconfig.json */; };
 		FAAE8CC42C79A07300B19CBD /* GoMetalAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE8CC32C79A07300B19CBD /* GoMetalAssembly.swift */; };
 		FAAE8CCA2C79A84C00B19CBD /* ASKCore in Frameworks */ = {isa = PBXBuildFile; productRef = FAAE8CC92C79A84C00B19CBD /* ASKCore */; };
+		FAAE8CCE2C79B1AF00B19CBD /* SpellListMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE8CCD2C79B1AF00B19CBD /* SpellListMenu.swift */; };
+		FAAE8CD12C79B1D000B19CBD /* SpellListMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE8CD02C79B1D000B19CBD /* SpellListMenuViewModel.swift */; };
 		FAC2292D2C4B33D7009498E1 /* PatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2292C2C4B33D7009498E1 /* PatternView.swift */; };
 		FAC229302C4B6460009498E1 /* SpellEnergy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2292E2C4B6460009498E1 /* SpellEnergy.swift */; };
 		FAC229322C4B6469009498E1 /* ForceComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC229312C4B6469009498E1 /* ForceComponents.swift */; };
@@ -104,6 +106,8 @@
 		FAAE8CBB2C79952400B19CBD /* SpellStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellStore.swift; sourceTree = "<group>"; };
 		FAAE8CC12C79A05900B19CBD /* knitconfig.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = knitconfig.json; sourceTree = "<group>"; };
 		FAAE8CC32C79A07300B19CBD /* GoMetalAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoMetalAssembly.swift; sourceTree = "<group>"; };
+		FAAE8CCD2C79B1AF00B19CBD /* SpellListMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellListMenu.swift; sourceTree = "<group>"; };
+		FAAE8CD02C79B1D000B19CBD /* SpellListMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellListMenuViewModel.swift; sourceTree = "<group>"; };
 		FAC2292C2C4B33D7009498E1 /* PatternView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternView.swift; sourceTree = "<group>"; };
 		FAC2292E2C4B6460009498E1 /* SpellEnergy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpellEnergy.swift; sourceTree = "<group>"; };
 		FAC229312C4B6469009498E1 /* ForceComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceComponents.swift; sourceTree = "<group>"; };
@@ -240,6 +244,8 @@
 			children = (
 				FAAE8CB12C798CA000B19CBD /* MainMenuView.swift */,
 				FAAE8CB62C798F4500B19CBD /* MainMenuViewModel.swift */,
+				FAAE8CCD2C79B1AF00B19CBD /* SpellListMenu.swift */,
+				FAAE8CD02C79B1D000B19CBD /* SpellListMenuViewModel.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -540,6 +546,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAAE8CCE2C79B1AF00B19CBD /* SpellListMenu.swift in Sources */,
 				FAAE8CB22C798CA000B19CBD /* MainMenuView.swift in Sources */,
 				FA9ABC962C560922007BA24A /* CircularButtonStyle.swift in Sources */,
 				FAAE8CBA2C7990A900B19CBD /* RootPath.swift in Sources */,
@@ -547,6 +554,7 @@
 				FAACC6502C6F438E000BB21F /* SpellShape.swift in Sources */,
 				FA9ABC982C5609B0007BA24A /* SpellTestViewModel.swift in Sources */,
 				FA9ABC9A2C56110A007BA24A /* SelectGemView.swift in Sources */,
+				FAAE8CD12C79B1D000B19CBD /* SpellListMenuViewModel.swift in Sources */,
 				FA9ABC912C55FAFF007BA24A /* GemInventoryView.swift in Sources */,
 				FAAE8CBC2C79952400B19CBD /* SpellStore.swift in Sources */,
 				FA8F9B582C4365600004B88B /* CirclePattern.swift in Sources */,

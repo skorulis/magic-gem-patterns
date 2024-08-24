@@ -4,5 +4,5 @@ import Foundation
 
 final class SpellStore: ObservableObject {
     
-    var spells: [Spell] = []
+    @Published var spells: [Spell] = []
 }

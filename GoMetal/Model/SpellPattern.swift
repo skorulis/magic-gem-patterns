@@ -2,7 +2,7 @@
 
 import Foundation
 
-enum SpellPattern: String, CaseIterable, Identifiable {
+enum SpellPattern: String, CaseIterable, Equatable, Hashable, Identifiable {
     case circle
     case line
     

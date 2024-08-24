@@ -58,5 +58,9 @@ final class GoMetalAssembly: AutoInitModuleAssembly {
         container.register(MainMenuViewModel.self) { @MainActor r in
             MainMenuViewModel()
         }
+        
+        container.register(SpellListMenuViewModel.self) { @MainActor r in
+            SpellListMenuViewModel(spellStore: r.spellStore())
+        }
     }
 }

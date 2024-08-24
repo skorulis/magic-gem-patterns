@@ -5,15 +5,18 @@ import SwiftUI
 
 enum RootPath: BoundCoordinatorPath, Hashable {
     case main
-    case spellEditor
+    case spellList
+    case spellEditor(Spell)
     
     @MainActor @ViewBuilder
     func render(coordinator: ResolverCoordinator) -> some View {
         switch self {
         case .main:
             MainMenuView(viewModel: coordinator.make { $0.mainMenuViewModel() })
-        case .spellEditor:
-            SpellTestView(viewModel: coordinator.make { $0.spellTestViewModel(spell: .blank())}  )
+        case .spellList:
+            SpellListMenu(viewModel: coordinator.make { $0.spellListMenuViewModel() })
+        case let .spellEditor(spell):
+            SpellTestView(viewModel: coordinator.make { $0.spellTestViewModel(spell: spell)} )
         }
     }
     

@@ -1,5 +1,7 @@
 //  Created by Alexander Skorulis on 10/7/2024.
 
+import ASKCore
+import ASKDesignSystem
 import Foundation
 import SwiftUI
 
@@ -23,6 +25,10 @@ struct SpellTestView: View {
     }
     
     var body: some View {
+        PageTemplate(nav: nav, content: content)
+    }
+    
+    private func content() -> some View {
         VStack(spacing: 16) {
             Picker("Pattern", selection: $viewModel.spell.patternType) {
                 ForEach(SpellPattern.allCases) { pattern in
@@ -104,6 +110,9 @@ struct SpellTestView: View {
         }
     }
     
+    private func nav() -> some View {
+        NavBar(left: .back(viewModel.back), mid: .title("Spell"))
+    }
 }
 
 #Preview {
