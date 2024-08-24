@@ -11,7 +11,7 @@ struct GoMetalApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.factory, ioc)
+                .environment(\.resolver, ioc.container)
         }
     }
 }

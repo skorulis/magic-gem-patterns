@@ -7,13 +7,13 @@ import SwiftUI
 struct ContentView: View {
     
     let startDate = Date()
-    @Environment(\.factory) private var factory
+    @Environment(\.resolver) private var resolver
     
     var body: some View {
         CoordinatorView(
-            coordinator: StandardCoordinator(
+            coordinator: ResolverCoordinator(
                 root: RootPath.main,
-                factory: factory.main
+                resolver: resolver
             )
         )
     }

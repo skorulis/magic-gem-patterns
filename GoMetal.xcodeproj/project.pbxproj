@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		FA34DAF92C4A4CFF00B5CDC9 /* MainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34DAF82C4A4CFF00B5CDC9 /* MainStore.swift */; };
-		FA34DAFD2C4A4ECC00B5CDC9 /* ASKCore in Frameworks */ = {isa = PBXBuildFile; productRef = FA34DAFC2C4A4ECC00B5CDC9 /* ASKCore */; };
 		FA34DB082C4A52C300B5CDC9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34DB052C4A52C300B5CDC9 /* ContentView.swift */; };
 		FA34DB092C4A52C300B5CDC9 /* GoMetalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34DB062C4A52C300B5CDC9 /* GoMetalApp.swift */; };
 		FA8F9B582C4365600004B88B /* CirclePattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B572C4365600004B88B /* CirclePattern.swift */; };
@@ -41,6 +40,7 @@
 		FAAE8CBF2C799F4700B19CBD /* Knit in Frameworks */ = {isa = PBXBuildFile; productRef = FAAE8CBE2C799F4700B19CBD /* Knit */; };
 		FAAE8CC22C79A05900B19CBD /* knitconfig.json in Resources */ = {isa = PBXBuildFile; fileRef = FAAE8CC12C79A05900B19CBD /* knitconfig.json */; };
 		FAAE8CC42C79A07300B19CBD /* GoMetalAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE8CC32C79A07300B19CBD /* GoMetalAssembly.swift */; };
+		FAAE8CCA2C79A84C00B19CBD /* ASKCore in Frameworks */ = {isa = PBXBuildFile; productRef = FAAE8CC92C79A84C00B19CBD /* ASKCore */; };
 		FAC2292D2C4B33D7009498E1 /* PatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2292C2C4B33D7009498E1 /* PatternView.swift */; };
 		FAC229302C4B6460009498E1 /* SpellEnergy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2292E2C4B6460009498E1 /* SpellEnergy.swift */; };
 		FAC229322C4B6469009498E1 /* ForceComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC229312C4B6469009498E1 /* ForceComponents.swift */; };
@@ -136,7 +136,7 @@
 				FAAE8CB52C798EC400B19CBD /* ASKDesignSystem in Frameworks */,
 				FA8F9B5E2C436E960004B88B /* VectorMath in Frameworks */,
 				FAAE8CBF2C799F4700B19CBD /* Knit in Frameworks */,
-				FA34DAFD2C4A4ECC00B5CDC9 /* ASKCore in Frameworks */,
+				FAAE8CCA2C79A84C00B19CBD /* ASKCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,9 +443,9 @@
 			name = GoMetal;
 			packageProductDependencies = (
 				FA8F9B5D2C436E960004B88B /* VectorMath */,
-				FA34DAFC2C4A4ECC00B5CDC9 /* ASKCore */,
 				FAAE8CB42C798EC400B19CBD /* ASKDesignSystem */,
 				FAAE8CBE2C799F4700B19CBD /* Knit */,
+				FAAE8CC92C79A84C00B19CBD /* ASKCore */,
 			);
 			productName = GoMetal;
 			productReference = FAD929CC2C3D384400B86690 /* GoMetal.app */;
@@ -500,10 +500,10 @@
 			mainGroup = FAD929C32C3D384400B86690;
 			packageReferences = (
 				FA8F9B5B2C436E760004B88B /* XCRemoteSwiftPackageReference "VectorMath" */,
-				FA34DAFB2C4A4ECC00B5CDC9 /* XCRemoteSwiftPackageReference "ASKCore" */,
 				FAAE8CB32C798EC400B19CBD /* XCLocalSwiftPackageReference "Frameworks/ASKDesignSystem" */,
 				FAAE8CBD2C799F4700B19CBD /* XCLocalSwiftPackageReference "Frameworks/knit" */,
 				FAAE8CC02C799F7D00B19CBD /* XCLocalSwiftPackageReference "Frameworks/knit/CLI" */,
+				FAAE8CC82C79A84C00B19CBD /* XCLocalSwiftPackageReference "Frameworks/ASKCore" */,
 			);
 			productRefGroup = FAD929CD2C3D384400B86690 /* Products */;
 			projectDirPath = "";
@@ -873,17 +873,13 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Frameworks/knit/CLI;
 		};
+		FAAE8CC82C79A84C00B19CBD /* XCLocalSwiftPackageReference "Frameworks/ASKCore" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Frameworks/ASKCore;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FA34DAFB2C4A4ECC00B5CDC9 /* XCRemoteSwiftPackageReference "ASKCore" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/skorulis/ASKCore";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 		FA8F9B5B2C436E760004B88B /* XCRemoteSwiftPackageReference "VectorMath" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:nicklockwood/VectorMath.git";
@@ -895,11 +891,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FA34DAFC2C4A4ECC00B5CDC9 /* ASKCore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FA34DAFB2C4A4ECC00B5CDC9 /* XCRemoteSwiftPackageReference "ASKCore" */;
-			productName = ASKCore;
-		};
 		FA8F9B5D2C436E960004B88B /* VectorMath */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FA8F9B5B2C436E760004B88B /* XCRemoteSwiftPackageReference "VectorMath" */;
@@ -917,6 +908,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FAAE8CC02C799F7D00B19CBD /* XCLocalSwiftPackageReference "Frameworks/knit/CLI" */;
 			productName = "plugin:KnitBuildPlugin";
+		};
+		FAAE8CC92C79A84C00B19CBD /* ASKCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ASKCore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

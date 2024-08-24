@@ -4,3 +4,6 @@
 [submodule "Frameworks/knit"]
 	path = Frameworks/knit
 	url = git@github.com:cashapp/knit.git
+[submodule "Frameworks/ASKCore"]
+	path = Frameworks/ASKCore
+	url = git@github.com:skorulis/ASKCore.git

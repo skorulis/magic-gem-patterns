@@ -1,15 +1,6 @@
 {
-  "originHash" : "51805d64b801a9adbd5975cb23e5dce946c70b8d1858597d012d40d4205c505d",
+  "originHash" : "372d6b677d928d5dfa4fbe31556e557eaf63662b5eb00ebedb64292bd2943521",
   "pins" : [
-    {
-      "identity" : "askcore",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/skorulis/ASKCore",
-      "state" : {
-        "branch" : "main",
-        "revision" : "8dc123419197029e24b567c1fcfa4ebe78680def"
-      }
-    },
     {
       "identity" : "swift-argument-parser",
       "kind" : "remoteSourceControl",

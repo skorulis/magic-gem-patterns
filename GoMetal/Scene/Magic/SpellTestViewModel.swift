@@ -3,7 +3,7 @@
 import ASKCore
 import Foundation
 
-@Observable final class SpellTestViewModel: CoordinatedViewModel {
+@Observable final class SpellTestViewModel: ResolverCoordinatorViewModel {
     let service: SpellCastService
     let mainStore: MainStore
     var simulation: SimulationService!

@@ -3,7 +3,7 @@
 import ASKCore
 import Foundation
 
-final class MainMenuViewModel: CoordinatedViewModel, ObservableObject {
+final class MainMenuViewModel: ResolverCoordinatorViewModel, ObservableObject {
 
     override init() {
         

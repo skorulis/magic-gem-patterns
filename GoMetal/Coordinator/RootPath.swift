@@ -8,12 +8,12 @@ enum RootPath: BoundCoordinatorPath, Hashable {
     case spellEditor
     
     @MainActor @ViewBuilder
-    func render(coordinator: StandardCoordinator) -> some View {
+    func render(coordinator: ResolverCoordinator) -> some View {
         switch self {
         case .main:
-            MainMenuView(viewModel: coordinator.resolve(MainMenuViewModel.self))
+            MainMenuView(viewModel: coordinator.make { $0.mainMenuViewModel() })
         case .spellEditor:
-            SpellTestView(viewModel: coordinator.resolve(SpellTestViewModel.self, argument: Spell.blank()))
+            SpellTestView(viewModel: coordinator.make { $0.spellTestViewModel(spell: .blank())}  )
         }
     }
     
