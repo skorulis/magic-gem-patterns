@@ -3,12 +3,21 @@
 import Foundation
 import QuartzCore
 
+struct SimulationServiceFactory {
+    
+    let spellCastService: SpellCastService
+    
+    func make(spellProvider: @escaping () -> Spell) -> SimulationService {
+        return SimulationService(spellProvider: spellProvider, spellCastService: spellCastService)
+    }
+}
+
 @Observable final class SimulationService {
     
-    private let mainStore: MainStore
     private let spellCastService: SpellCastService
+    private let spellProvider: () -> Spell
     
-    var context: SpellContext? { mainStore.spellContext }
+    var context: SpellContext?
     var displaylink: CADisplayLink!
     var active: Bool = false {
         didSet {
@@ -16,11 +25,10 @@ import QuartzCore
         }
     }
     var lastTime: TimeInterval = 0
-    var spell: Spell { mainStore.spell }
     
-    init(mainStore: MainStore, spellCastService: SpellCastService) {
-        self.mainStore = mainStore
+    init(spellProvider: @escaping () -> Spell, spellCastService: SpellCastService) {
         self.spellCastService = spellCastService
+        self.spellProvider = spellProvider
         displaylink = .init(target: self, selector: #selector(step))
         displaylink.add(to: .current, forMode: .default)
         displaylink.isPaused = true
@@ -29,7 +37,7 @@ import QuartzCore
     
     func start() {
         lastTime = displaylink.targetTimestamp
-        let spell = mainStore.spell
+        let spell = spellProvider()
         let pos = spell.pattern.position(time: 0)
         let initialEnergy = SpellEnergy(
             time: 0,
@@ -38,7 +46,7 @@ import QuartzCore
             power: 20,
             energyDistribution: [.raw: 1]
         )
-        self.mainStore.spellContext = .init(
+        context = .init(
             spell: spell,
             startTime: Date(),
             energy: [initialEnergy]
@@ -66,7 +74,7 @@ import QuartzCore
             
             start()
         } else {
-            mainStore.spellContext = context
+            self.context = context
         }
     }
     

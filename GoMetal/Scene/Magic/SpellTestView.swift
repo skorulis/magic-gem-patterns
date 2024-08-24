@@ -3,6 +3,7 @@
 import Foundation
 import SwiftUI
 
+@MainActor
 struct SpellTestView: View {
     
     @State var viewModel: SpellTestViewModel
@@ -18,12 +19,12 @@ struct SpellTestView: View {
     @State private var canvasSize: CGSize = .zero
     
     var pattern: PatternProtocol {
-        return viewModel.mainStore.spell.pattern
+        return viewModel.spell.pattern
     }
     
     var body: some View {
         VStack(spacing: 16) {
-            Picker("Pattern", selection: $mainStore.spell.patternType) {
+            Picker("Pattern", selection: $viewModel.spell.patternType) {
                 ForEach(SpellPattern.allCases) { pattern in
                     Text(pattern.rawValue)
                         .tag(pattern)
@@ -77,14 +78,14 @@ struct SpellTestView: View {
             )
             .overlay(
                 DirectionalFieldView(
-                    pattern: mainStore.spell.pattern,
+                    pattern: viewModel.spell.pattern,
                     canvasSize: canvasSize,
                     forceType: .all
                 )
             )
             .overlay(
                 GemPositionEditView(
-                    spell: $mainStore.spell,
+                    spell: $viewModel.spell,
                     canvasSize: canvasSize,
                     didRemoveGem: viewModel.removedGem
                 )

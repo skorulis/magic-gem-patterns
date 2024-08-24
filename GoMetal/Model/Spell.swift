@@ -13,6 +13,10 @@ struct Spell {
     
     // Where the gems are placed
     var gems: [GemPosition]
+    
+    static func blank() -> Spell {
+        .init(patternType: .line, gems: [])
+    }
 }
 
 struct GemPosition: Identifiable {

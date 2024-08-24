@@ -13,7 +13,7 @@ enum RootPath: BoundCoordinatorPath, Hashable {
         case .main:
             MainMenuView(viewModel: coordinator.resolve(MainMenuViewModel.self))
         case .spellEditor:
-            SpellTestView(viewModel: coordinator.resolve())
+            SpellTestView(viewModel: coordinator.resolve(SpellTestViewModel.self, argument: Spell.blank()))
         }
     }
     

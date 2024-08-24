@@ -16,6 +16,11 @@ final class IOC: IOCService {
             MainStore()
         }
         .inObjectScope(.container)
+        
+        container.register(SpellStore.self) { _ in
+            SpellStore()
+        }
+        .inObjectScope(.container)
     }
     
     private func registerServices() {
@@ -27,22 +32,22 @@ final class IOC: IOCService {
             SpellShapeMatcher()
         }
         
-        container.register(SimulationService.self) { r in
-            SimulationService(
-                mainStore: r.resolve(MainStore.self)!,
-                spellCastService: r.resolve(SpellCastService.self)!
-            )
+        container.register(SimulationServiceFactory.self) { r in
+            SimulationServiceFactory(spellCastService: r.resolve(SpellCastService.self)!)
         }
     }
     
     private func registerViewModels() {
-        container.register(SpellTestViewModel.self) { r in
+        /*
+        container.register(SpellTestViewModel.self) { (r: Resolver, spell: Spell) in
             SpellTestViewModel(
+                spell: spell,
                 service: r.resolve(SpellCastService.self)!,
                 mainStore: r.resolve(MainStore.self)!,
-                simulation: r.resolve(SimulationService.self)!
+                simulationFactory: r.resolve(SimulationServiceFactory.self)!
             )
         }
+         */
         
         container.register(SelectGemViewModel.self) { r in
             SelectGemViewModel(mainView: r.resolve(MainStore.self)!)

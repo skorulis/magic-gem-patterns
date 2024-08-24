@@ -1,18 +1,28 @@
 //  Created by Alexander Skorulis on 28/7/2024.
 
+import ASKCore
 import Foundation
 
-@Observable final class SpellTestViewModel {
+@Observable final class SpellTestViewModel: CoordinatedViewModel {
     let service: SpellCastService
     let mainStore: MainStore
-    let simulation: SimulationService
+    var simulation: SimulationService!
     
     var showingGems: Bool = false
     
-    init(service: SpellCastService, mainStore: MainStore, simulation: SimulationService) {
+    var spell: Spell
+    
+    init(
+        spell: Spell,
+        service: SpellCastService,
+        mainStore: MainStore,
+        simulationFactory: SimulationServiceFactory
+    ) {
         self.service = service
+        self.spell = spell
         self.mainStore = mainStore
-        self.simulation = simulation
+        super.init()
+        self.simulation = simulationFactory.make(spellProvider: { self.spell })
     }
 }
 
@@ -24,7 +34,7 @@ extension SpellTestViewModel {
     func selectedGem(_ gem: Gem) {
         self.showingGems = false
         mainStore.inventory.remove(gem: gem)
-        mainStore.spell.gems.append(.init(gem: gem, time: 0))
+        spell.gems.append(.init(gem: gem, time: 0))
     }
     
     func removedGem(_ gem: Gem) {

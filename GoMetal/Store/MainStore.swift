@@ -4,15 +4,5 @@ import Foundation
 
 @Observable final class MainStore {
     
-    var spell: Spell = .init(
-        patternType: .line,
-        gems: [
-            .init(gem: .baseDiamond, time: 0.25),
-            .init(gem: .baseHexagon, time: 0.75)
-        ]
-    )
-    
-    var spellContext: SpellContext?
-    
     var inventory: Inventory = .starting
 }
