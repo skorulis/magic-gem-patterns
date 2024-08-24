@@ -47,5 +47,9 @@ final class IOC: IOCService {
         container.register(SelectGemViewModel.self) { r in
             SelectGemViewModel(mainView: r.resolve(MainStore.self)!)
         }
+        
+        container.register(MainMenuViewModel.self) { @MainActor r in
+            MainMenuViewModel()
+        }
     }
 }

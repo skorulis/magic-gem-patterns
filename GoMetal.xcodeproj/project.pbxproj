@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -33,6 +33,10 @@
 		FAACC6502C6F438E000BB21F /* SpellShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACC64F2C6F438E000BB21F /* SpellShape.swift */; };
 		FAACC6522C6F4B28000BB21F /* SpellShapeMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACC6512C6F4B28000BB21F /* SpellShapeMatcher.swift */; };
 		FAACC6552C6F4B85000BB21F /* SpellShapeMatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACC6542C6F4B85000BB21F /* SpellShapeMatcherTests.swift */; };
+		FAAE8CB22C798CA000B19CBD /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE8CB12C798CA000B19CBD /* MainMenuView.swift */; };
+		FAAE8CB52C798EC400B19CBD /* ASKDesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = FAAE8CB42C798EC400B19CBD /* ASKDesignSystem */; };
+		FAAE8CB72C798F4500B19CBD /* MainMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE8CB62C798F4500B19CBD /* MainMenuViewModel.swift */; };
+		FAAE8CBA2C7990A900B19CBD /* RootPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE8CB92C7990A900B19CBD /* RootPath.swift */; };
 		FAC2292D2C4B33D7009498E1 /* PatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2292C2C4B33D7009498E1 /* PatternView.swift */; };
 		FAC229302C4B6460009498E1 /* SpellEnergy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2292E2C4B6460009498E1 /* SpellEnergy.swift */; };
 		FAC229322C4B6469009498E1 /* ForceComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC229312C4B6469009498E1 /* ForceComponents.swift */; };
@@ -90,6 +94,9 @@
 		FAACC64F2C6F438E000BB21F /* SpellShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellShape.swift; sourceTree = "<group>"; };
 		FAACC6512C6F4B28000BB21F /* SpellShapeMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellShapeMatcher.swift; sourceTree = "<group>"; };
 		FAACC6542C6F4B85000BB21F /* SpellShapeMatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellShapeMatcherTests.swift; sourceTree = "<group>"; };
+		FAAE8CB12C798CA000B19CBD /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
+		FAAE8CB62C798F4500B19CBD /* MainMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewModel.swift; sourceTree = "<group>"; };
+		FAAE8CB92C7990A900B19CBD /* RootPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPath.swift; sourceTree = "<group>"; };
 		FAC2292C2C4B33D7009498E1 /* PatternView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternView.swift; sourceTree = "<group>"; };
 		FAC2292E2C4B6460009498E1 /* SpellEnergy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpellEnergy.swift; sourceTree = "<group>"; };
 		FAC229312C4B6469009498E1 /* ForceComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceComponents.swift; sourceTree = "<group>"; };
@@ -119,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAAE8CB52C798EC400B19CBD /* ASKDesignSystem in Frameworks */,
 				FA8F9B5E2C436E960004B88B /* VectorMath in Frameworks */,
 				FA34DAFD2C4A4ECC00B5CDC9 /* ASKCore in Frameworks */,
 			);
@@ -217,6 +225,23 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		FAAE8CB02C798C9300B19CBD /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				FAAE8CB12C798CA000B19CBD /* MainMenuView.swift */,
+				FAAE8CB62C798F4500B19CBD /* MainMenuViewModel.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		FAAE8CB82C79907800B19CBD /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				FAAE8CB92C7990A900B19CBD /* RootPath.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		FAC2292F2C4B6460009498E1 /* Cast */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +274,7 @@
 		FAD929CE2C3D384400B86690 /* GoMetal */ = {
 			isa = PBXGroup;
 			children = (
+				FAAE8CB82C79907800B19CBD /* Coordinator */,
 				FA9ABC942C56091A007BA24A /* DesignSystem */,
 				FA34DAF72C4A4CF400B5CDC9 /* Store */,
 				FAD929F72C3E957F00B86690 /* Service */,
@@ -280,6 +306,7 @@
 		FAD929DE2C3D386B00B86690 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				FAAE8CB02C798C9300B19CBD /* Menu */,
 				FA34DB072C4A52C300B5CDC9 /* App */,
 				FA8F9B5F2C438CA20004B88B /* Gem */,
 				FAD929E42C3D429B00B86690 /* Magic */,
@@ -405,6 +432,7 @@
 			packageProductDependencies = (
 				FA8F9B5D2C436E960004B88B /* VectorMath */,
 				FA34DAFC2C4A4ECC00B5CDC9 /* ASKCore */,
+				FAAE8CB42C798EC400B19CBD /* ASKDesignSystem */,
 			);
 			productName = GoMetal;
 			productReference = FAD929CC2C3D384400B86690 /* GoMetal.app */;
@@ -460,6 +488,7 @@
 			packageReferences = (
 				FA8F9B5B2C436E760004B88B /* XCRemoteSwiftPackageReference "VectorMath" */,
 				FA34DAFB2C4A4ECC00B5CDC9 /* XCRemoteSwiftPackageReference "ASKCore" */,
+				FAAE8CB32C798EC400B19CBD /* XCLocalSwiftPackageReference "Frameworks/ASKDesignSystem" */,
 			);
 			productRefGroup = FAD929CD2C3D384400B86690 /* Products */;
 			projectDirPath = "";
@@ -495,7 +524,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAAE8CB22C798CA000B19CBD /* MainMenuView.swift in Sources */,
 				FA9ABC962C560922007BA24A /* CircularButtonStyle.swift in Sources */,
+				FAAE8CBA2C7990A900B19CBD /* RootPath.swift in Sources */,
 				FAACC6432C6B361D000BB21F /* Vector2+Additions.swift in Sources */,
 				FAACC6502C6F438E000BB21F /* SpellShape.swift in Sources */,
 				FA9ABC982C5609B0007BA24A /* SpellTestViewModel.swift in Sources */,
@@ -529,6 +560,7 @@
 				FAD929F62C3E8F1900B86690 /* GemPositionEditView.swift in Sources */,
 				FA9ABCA42C5616BB007BA24A /* IOC.swift in Sources */,
 				FAD929FB2C3EA12600B86690 /* Spell.swift in Sources */,
+				FAAE8CB72C798F4500B19CBD /* MainMenuViewModel.swift in Sources */,
 				FAC229302C4B6460009498E1 /* SpellEnergy.swift in Sources */,
 				FAD929F22C3E885800B86690 /* SpellTestView.swift in Sources */,
 				FA9ABC8F2C54B965007BA24A /* Gem.swift in Sources */,
@@ -806,6 +838,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		FAAE8CB32C798EC400B19CBD /* XCLocalSwiftPackageReference "Frameworks/ASKDesignSystem" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Frameworks/ASKDesignSystem;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		FA34DAFB2C4A4ECC00B5CDC9 /* XCRemoteSwiftPackageReference "ASKCore" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -835,6 +874,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA8F9B5B2C436E760004B88B /* XCRemoteSwiftPackageReference "VectorMath" */;
 			productName = VectorMath;
+		};
+		FAAE8CB42C798EC400B19CBD /* ASKDesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ASKDesignSystem;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -1,5 +1,7 @@
 //  Created by Alexander Skorulis on 9/7/2024.
 
+import ASKCore
+import ASKDesignSystem
 import SwiftUI
 
 struct ContentView: View {
@@ -8,12 +10,12 @@ struct ContentView: View {
     @Environment(\.factory) private var factory
     
     var body: some View {
-        VStack {
-            SpellTestView(
-                viewModel: factory.resolve()
+        CoordinatorView(
+            coordinator: StandardCoordinator(
+                root: RootPath.main,
+                factory: factory.main
             )
-        }
-        .padding()
+        )
     }
 }
 
