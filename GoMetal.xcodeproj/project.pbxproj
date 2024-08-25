@@ -10,6 +10,8 @@
 		FA34DAF92C4A4CFF00B5CDC9 /* MainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34DAF82C4A4CFF00B5CDC9 /* MainStore.swift */; };
 		FA34DB082C4A52C300B5CDC9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34DB052C4A52C300B5CDC9 /* ContentView.swift */; };
 		FA34DB092C4A52C300B5CDC9 /* GoMetalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34DB062C4A52C300B5CDC9 /* GoMetalApp.swift */; };
+		FA51A4692C7AA71A0094C320 /* BattleTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51A4682C7AA71A0094C320 /* BattleTestView.swift */; };
+		FA51A46C2C7AA72C0094C320 /* BattleTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51A46B2C7AA72C0094C320 /* BattleTestViewModel.swift */; };
 		FA8F9B582C4365600004B88B /* CirclePattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B572C4365600004B88B /* CirclePattern.swift */; };
 		FA8F9B5A2C436A560004B88B /* LinePatternTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B592C436A560004B88B /* LinePatternTests.swift */; };
 		FA8F9B5E2C436E960004B88B /* VectorMath in Frameworks */ = {isa = PBXBuildFile; productRef = FA8F9B5D2C436E960004B88B /* VectorMath */; };
@@ -79,6 +81,8 @@
 		FA34DAF82C4A4CFF00B5CDC9 /* MainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStore.swift; sourceTree = "<group>"; };
 		FA34DB052C4A52C300B5CDC9 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FA34DB062C4A52C300B5CDC9 /* GoMetalApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoMetalApp.swift; sourceTree = "<group>"; };
+		FA51A4682C7AA71A0094C320 /* BattleTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleTestView.swift; sourceTree = "<group>"; };
+		FA51A46B2C7AA72C0094C320 /* BattleTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleTestViewModel.swift; sourceTree = "<group>"; };
 		FA8F9B572C4365600004B88B /* CirclePattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePattern.swift; sourceTree = "<group>"; };
 		FA8F9B592C436A560004B88B /* LinePatternTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinePatternTests.swift; sourceTree = "<group>"; };
 		FA8F9B602C438CB80004B88B /* GemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemView.swift; sourceTree = "<group>"; };
@@ -179,6 +183,15 @@
 				FA34DB062C4A52C300B5CDC9 /* GoMetalApp.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		FA51A4672C7AA7110094C320 /* Battle */ = {
+			isa = PBXGroup;
+			children = (
+				FA51A4682C7AA71A0094C320 /* BattleTestView.swift */,
+				FA51A46B2C7AA72C0094C320 /* BattleTestViewModel.swift */,
+			);
+			path = Battle;
 			sourceTree = "<group>";
 		};
 		FA8F9B5C2C436E960004B88B /* Frameworks */ = {
@@ -323,6 +336,7 @@
 		FAD929DE2C3D386B00B86690 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				FA51A4672C7AA7110094C320 /* Battle */,
 				FAAE8CB02C798C9300B19CBD /* Menu */,
 				FA34DB072C4A52C300B5CDC9 /* App */,
 				FA8F9B5F2C438CA20004B88B /* Gem */,
@@ -552,6 +566,7 @@
 				FAAE8CBA2C7990A900B19CBD /* RootPath.swift in Sources */,
 				FAACC6432C6B361D000BB21F /* Vector2+Additions.swift in Sources */,
 				FAACC6502C6F438E000BB21F /* SpellShape.swift in Sources */,
+				FA51A46C2C7AA72C0094C320 /* BattleTestViewModel.swift in Sources */,
 				FA9ABC982C5609B0007BA24A /* SpellTestViewModel.swift in Sources */,
 				FA9ABC9A2C56110A007BA24A /* SelectGemView.swift in Sources */,
 				FAAE8CD12C79B1D000B19CBD /* SpellListMenuViewModel.swift in Sources */,
@@ -583,6 +598,7 @@
 				FAD92A4E2C43617A00B86690 /* PatternSpace.swift in Sources */,
 				FAD929E32C3D3B9100B86690 /* Shader1.metal in Sources */,
 				FAD929F42C3E8AA800B86690 /* ActiveSpellView.swift in Sources */,
+				FA51A4692C7AA71A0094C320 /* BattleTestView.swift in Sources */,
 				FAD929F62C3E8F1900B86690 /* GemPositionEditView.swift in Sources */,
 				FA9ABCA42C5616BB007BA24A /* IOC.swift in Sources */,
 				FAD929FB2C3EA12600B86690 /* Spell.swift in Sources */,

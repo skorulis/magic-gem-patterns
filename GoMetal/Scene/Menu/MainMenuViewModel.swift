@@ -17,4 +17,8 @@ extension MainMenuViewModel {
     func editSpell() {
         coordinator?.push(RootPath.spellList)
     }
+    
+    func battle() {
+        coordinator?.push(RootPath.battleTest)
+    }
 }

@@ -15,9 +15,14 @@ struct MainMenuView: View {
     }
     
     private func content() -> some View {
-        VStack {
+        VStack(spacing: 16) {
             Button(action: viewModel.editSpell) {
                 Text("Edit Spells")
+            }
+            .buttonStyle(ASKButtonStyle())
+            
+            Button(action: viewModel.battle) {
+                Text("Battle")
             }
             .buttonStyle(ASKButtonStyle())
         }

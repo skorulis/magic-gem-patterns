@@ -7,6 +7,7 @@ enum RootPath: BoundCoordinatorPath, Hashable {
     case main
     case spellList
     case spellEditor(Spell)
+    case battleTest
     
     @MainActor @ViewBuilder
     func render(coordinator: ResolverCoordinator) -> some View {
@@ -17,6 +18,8 @@ enum RootPath: BoundCoordinatorPath, Hashable {
             SpellListMenu(viewModel: coordinator.make { $0.spellListMenuViewModel() })
         case let .spellEditor(spell):
             SpellTestView(viewModel: coordinator.make { $0.spellTestViewModel(spell: spell)} )
+        case .battleTest:
+            BattleTestView(viewModel: coordinator.make { $0.battleTestViewModel()} )
         }
     }
     
