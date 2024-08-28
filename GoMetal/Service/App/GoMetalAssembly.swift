@@ -8,9 +8,20 @@ final class GoMetalAssembly: AutoInitModuleAssembly {
     static var dependencies: [any Knit.ModuleAssembly.Type] = []
     
     func assemble(container: Container) {
+        registerFactories(container: container)
         registerStores(container: container)
         registerServices(container: container)
         registerViewModels(container: container)
+    }
+    
+    private func registerFactories(container: Container) {
+        container.register(BattleSimulationFactory.self) { r in
+            BattleSimulationFactory(resolver: r)
+        }
+        
+        container.register(SpellCastSimulationFactory.self) { r in
+            SpellCastSimulationFactory(spellCastService: r.spellCastService())
+        }
     }
     
     private func registerStores(container: Container) {
@@ -33,10 +44,6 @@ final class GoMetalAssembly: AutoInitModuleAssembly {
         container.register(SpellShapeMatcher.self) { _ in
             SpellShapeMatcher()
         }
-        
-        container.register(SimulationServiceFactory.self) { r in
-            SimulationServiceFactory(spellCastService: r.spellCastService())
-        }
     }
     
     private func registerViewModels(container: Container) {
@@ -48,7 +55,7 @@ final class GoMetalAssembly: AutoInitModuleAssembly {
                     service: r.spellCastService(),
                     mainStore: r.mainStore(),
                     spellStore: r.spellStore(),
-                    simulationFactory: r.simulationServiceFactory()
+                    simulationFactory: r.spellCastSimulationFactory()
                 )
             }
         )
@@ -65,8 +72,8 @@ final class GoMetalAssembly: AutoInitModuleAssembly {
             SpellListMenuViewModel(spellStore: r.spellStore())
         }
         
-        container.register(BattleTestViewModel.self) { @MainActor _ in
-            BattleTestViewModel()
+        container.register(BattleTestViewModel.self) { @MainActor r in
+            BattleTestViewModel(battleFactory: r.battleSimulationFactory())
         }
     }
 }

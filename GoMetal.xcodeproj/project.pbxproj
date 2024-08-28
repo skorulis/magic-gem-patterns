@@ -12,13 +12,18 @@
 		FA34DB092C4A52C300B5CDC9 /* GoMetalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34DB062C4A52C300B5CDC9 /* GoMetalApp.swift */; };
 		FA51A4692C7AA71A0094C320 /* BattleTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51A4682C7AA71A0094C320 /* BattleTestView.swift */; };
 		FA51A46C2C7AA72C0094C320 /* BattleTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51A46B2C7AA72C0094C320 /* BattleTestViewModel.swift */; };
+		FA51A46F2C7AB49B0094C320 /* BattleField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51A46E2C7AB49B0094C320 /* BattleField.swift */; };
+		FA51A4722C7AD36B0094C320 /* Battle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51A4712C7AD36B0094C320 /* Battle.swift */; };
+		FA51A4742C7AD3940094C320 /* Caster.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51A4732C7AD3940094C320 /* Caster.swift */; };
+		FA51A4772C7AD4680094C320 /* BattleSimulationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51A4762C7AD4680094C320 /* BattleSimulationFactory.swift */; };
+		FA51A4792C7AD4A60094C320 /* BattleSimulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51A4782C7AD4A60094C320 /* BattleSimulation.swift */; };
 		FA8F9B582C4365600004B88B /* CirclePattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B572C4365600004B88B /* CirclePattern.swift */; };
 		FA8F9B5A2C436A560004B88B /* LinePatternTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B592C436A560004B88B /* LinePatternTests.swift */; };
 		FA8F9B5E2C436E960004B88B /* VectorMath in Frameworks */ = {isa = PBXBuildFile; productRef = FA8F9B5D2C436E960004B88B /* VectorMath */; };
 		FA8F9B612C438CB80004B88B /* GemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B602C438CB80004B88B /* GemView.swift */; };
 		FA8F9B632C43C1990004B88B /* CirclePatternTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B622C43C1990004B88B /* CirclePatternTests.swift */; };
 		FA8F9B652C4524FE0004B88B /* SpellContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B642C4524FE0004B88B /* SpellContext.swift */; };
-		FA8F9B672C4527AA0004B88B /* SimulationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B662C4527AA0004B88B /* SimulationService.swift */; };
+		FA8F9B672C4527AA0004B88B /* SpellCastSimulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B662C4527AA0004B88B /* SpellCastSimulation.swift */; };
 		FA9ABC8D2C54A238007BA24A /* CastResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9ABC8C2C54A238007BA24A /* CastResult.swift */; };
 		FA9ABC8F2C54B965007BA24A /* Gem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9ABC8E2C54B965007BA24A /* Gem.swift */; };
 		FA9ABC912C55FAFF007BA24A /* GemInventoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9ABC902C55FAFF007BA24A /* GemInventoryView.swift */; };
@@ -83,12 +88,17 @@
 		FA34DB062C4A52C300B5CDC9 /* GoMetalApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoMetalApp.swift; sourceTree = "<group>"; };
 		FA51A4682C7AA71A0094C320 /* BattleTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleTestView.swift; sourceTree = "<group>"; };
 		FA51A46B2C7AA72C0094C320 /* BattleTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleTestViewModel.swift; sourceTree = "<group>"; };
+		FA51A46E2C7AB49B0094C320 /* BattleField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleField.swift; sourceTree = "<group>"; };
+		FA51A4712C7AD36B0094C320 /* Battle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battle.swift; sourceTree = "<group>"; };
+		FA51A4732C7AD3940094C320 /* Caster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caster.swift; sourceTree = "<group>"; };
+		FA51A4762C7AD4680094C320 /* BattleSimulationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleSimulationFactory.swift; sourceTree = "<group>"; };
+		FA51A4782C7AD4A60094C320 /* BattleSimulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleSimulation.swift; sourceTree = "<group>"; };
 		FA8F9B572C4365600004B88B /* CirclePattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePattern.swift; sourceTree = "<group>"; };
 		FA8F9B592C436A560004B88B /* LinePatternTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinePatternTests.swift; sourceTree = "<group>"; };
 		FA8F9B602C438CB80004B88B /* GemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemView.swift; sourceTree = "<group>"; };
 		FA8F9B622C43C1990004B88B /* CirclePatternTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePatternTests.swift; sourceTree = "<group>"; };
 		FA8F9B642C4524FE0004B88B /* SpellContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellContext.swift; sourceTree = "<group>"; };
-		FA8F9B662C4527AA0004B88B /* SimulationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationService.swift; sourceTree = "<group>"; };
+		FA8F9B662C4527AA0004B88B /* SpellCastSimulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellCastSimulation.swift; sourceTree = "<group>"; };
 		FA9ABC8C2C54A238007BA24A /* CastResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastResult.swift; sourceTree = "<group>"; };
 		FA9ABC8E2C54B965007BA24A /* Gem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gem.swift; sourceTree = "<group>"; };
 		FA9ABC902C55FAFF007BA24A /* GemInventoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemInventoryView.swift; sourceTree = "<group>"; };
@@ -190,6 +200,25 @@
 			children = (
 				FA51A4682C7AA71A0094C320 /* BattleTestView.swift */,
 				FA51A46B2C7AA72C0094C320 /* BattleTestViewModel.swift */,
+			);
+			path = Battle;
+			sourceTree = "<group>";
+		};
+		FA51A46D2C7AB4720094C320 /* Battle */ = {
+			isa = PBXGroup;
+			children = (
+				FA51A46E2C7AB49B0094C320 /* BattleField.swift */,
+				FA51A4712C7AD36B0094C320 /* Battle.swift */,
+				FA51A4732C7AD3940094C320 /* Caster.swift */,
+			);
+			path = Battle;
+			sourceTree = "<group>";
+		};
+		FA51A4752C7AD41B0094C320 /* Battle */ = {
+			isa = PBXGroup;
+			children = (
+				FA51A4762C7AD4680094C320 /* BattleSimulationFactory.swift */,
+				FA51A4782C7AD4A60094C320 /* BattleSimulation.swift */,
 			);
 			path = Battle;
 			sourceTree = "<group>";
@@ -381,6 +410,7 @@
 		FAD929EA2C3E84DC00B86690 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FA51A46D2C7AB4720094C320 /* Battle */,
 				FAACC64E2C6F4357000BB21F /* SpellOutput */,
 				FAACC63F2C6A0BCE000BB21F /* Energy */,
 				FAC2292F2C4B6460009498E1 /* Cast */,
@@ -397,9 +427,10 @@
 		FAD929F72C3E957F00B86690 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				FA51A4752C7AD41B0094C320 /* Battle */,
 				FA34DAFA2C4A4DB700B5CDC9 /* App */,
 				FAD929F82C3E958700B86690 /* SpellCastService.swift */,
-				FA8F9B662C4527AA0004B88B /* SimulationService.swift */,
+				FA8F9B662C4527AA0004B88B /* SpellCastSimulation.swift */,
 				FAACC6512C6F4B28000BB21F /* SpellShapeMatcher.swift */,
 			);
 			path = Service;
@@ -576,8 +607,11 @@
 				FAD929E92C3D445E00B86690 /* ChildSizeReader.swift in Sources */,
 				FAAE8CC42C79A07300B19CBD /* GoMetalAssembly.swift in Sources */,
 				FA8F9B652C4524FE0004B88B /* SpellContext.swift in Sources */,
+				FA51A4792C7AD4A60094C320 /* BattleSimulation.swift in Sources */,
 				FAACC6412C6A0BD3000BB21F /* EnergyType.swift in Sources */,
 				FA9ABC8D2C54A238007BA24A /* CastResult.swift in Sources */,
+				FA51A46F2C7AB49B0094C320 /* BattleField.swift in Sources */,
+				FA51A4742C7AD3940094C320 /* Caster.swift in Sources */,
 				FAD929F92C3E958700B86690 /* SpellCastService.swift in Sources */,
 				FAD92A3B2C435E6500B86690 /* LinePattern.swift in Sources */,
 				FAC2292D2C4B33D7009498E1 /* PatternView.swift in Sources */,
@@ -588,12 +622,14 @@
 				FA34DAF92C4A4CFF00B5CDC9 /* MainStore.swift in Sources */,
 				FAD929E02C3D387200B86690 /* MetalView.swift in Sources */,
 				FAC229322C4B6469009498E1 /* ForceComponents.swift in Sources */,
-				FA8F9B672C4527AA0004B88B /* SimulationService.swift in Sources */,
+				FA8F9B672C4527AA0004B88B /* SpellCastSimulation.swift in Sources */,
+				FA51A4772C7AD4680094C320 /* BattleSimulationFactory.swift in Sources */,
 				FAD929F02C3E874700B86690 /* Math.swift in Sources */,
 				FA9ABC9C2C56120D007BA24A /* SelectGemViewModel.swift in Sources */,
 				FA34DB082C4A52C300B5CDC9 /* ContentView.swift in Sources */,
 				FA9ABC932C55FB1D007BA24A /* Inventory.swift in Sources */,
 				FAACC6522C6F4B28000BB21F /* SpellShapeMatcher.swift in Sources */,
+				FA51A4722C7AD36B0094C320 /* Battle.swift in Sources */,
 				FAD929EE2C3E858F00B86690 /* SpellPattern.swift in Sources */,
 				FAD92A4E2C43617A00B86690 /* PatternSpace.swift in Sources */,
 				FAD929E32C3D3B9100B86690 /* Shader1.metal in Sources */,

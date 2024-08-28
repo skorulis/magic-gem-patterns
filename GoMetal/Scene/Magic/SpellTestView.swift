@@ -10,7 +10,7 @@ struct SpellTestView: View {
     
     @State var viewModel: SpellTestViewModel
     @State var mainStore: MainStore
-    @State var simulation: SimulationService
+    @State var simulation: SpellCastSimulation
     
     init(viewModel: SpellTestViewModel) {
         self.viewModel = viewModel

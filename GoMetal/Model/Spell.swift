@@ -24,7 +24,13 @@ struct Spell: Equatable, Hashable, Identifiable, Codable {
 }
 
 struct GemPosition: Equatable, Hashable, Identifiable, Codable {
-    let id = UUID()
+    let id: UUID
     let gem: Gem
     var time: Float
+    
+    init(gem: Gem, time: Float) {
+        self.id = UUID()
+        self.gem = gem
+        self.time = time
+    }
 }

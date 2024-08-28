@@ -7,7 +7,7 @@ import Foundation
     let service: SpellCastService
     let mainStore: MainStore
     let spellStore: SpellStore
-    var simulation: SimulationService!
+    var simulation: SpellCastSimulation!
     
     var showingGems: Bool = false
     var showingNameEdit: Bool = false
@@ -23,7 +23,7 @@ import Foundation
         service: SpellCastService,
         mainStore: MainStore,
         spellStore: SpellStore,
-        simulationFactory: SimulationServiceFactory
+        simulationFactory: SpellCastSimulationFactory
     ) {
         self.service = service
         self.spell = spell

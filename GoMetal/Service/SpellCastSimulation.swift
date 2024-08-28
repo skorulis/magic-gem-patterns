@@ -3,33 +3,34 @@
 import Foundation
 import QuartzCore
 
-struct SimulationServiceFactory {
+struct SpellCastSimulationFactory {
     
     let spellCastService: SpellCastService
     
-    func make(spellProvider: @escaping () -> Spell) -> SimulationService {
-        return SimulationService(spellProvider: spellProvider, spellCastService: spellCastService)
+    func make(spellProvider: @escaping () -> Spell) -> SpellCastSimulation {
+        return SpellCastSimulation(spellProvider: spellProvider, spellCastService: spellCastService)
     }
 }
 
-@Observable final class SimulationService {
+@Observable final class SpellCastSimulation {
     
     private let spellCastService: SpellCastService
     private let spellProvider: () -> Spell
+    var didFinishCast: ((CastResult) -> Void)?
     
-    var context: SpellContext?
-    var displaylink: CADisplayLink!
+    private(set) var context: SpellContext?
+    private var displaylink: CADisplayLink!
     var active: Bool = false {
         didSet {
             displaylink.isPaused = !active
         }
     }
-    var lastTime: TimeInterval = 0
+    private var lastTime: TimeInterval = 0
     
     init(spellProvider: @escaping () -> Spell, spellCastService: SpellCastService) {
         self.spellCastService = spellCastService
         self.spellProvider = spellProvider
-        displaylink = .init(target: self, selector: #selector(step))
+        displaylink = .init(target: self, selector: #selector(step(displaylink:)))
         displaylink.add(to: .current, forMode: .default)
         displaylink.isPaused = true
         lastTime = displaylink.targetTimestamp
@@ -59,11 +60,15 @@ struct SimulationServiceFactory {
     }
     
     @objc func step(displaylink: CADisplayLink) {
-        guard var context else { return }
         let t = displaylink.targetTimestamp
         let delta = Float(t - lastTime)
         lastTime = t
         guard delta < 0.5 else { return }
+        step(delta: delta)
+    }
+    
+    func step(delta: Float) {
+        guard var context else { return }
         spellCastService.update(context: &context, delta: delta)
         
         if context.completeness >= 1 {
@@ -71,7 +76,7 @@ struct SimulationServiceFactory {
             
             print("FINISHED SPELL \(result.shape)")
             print("RESULT = \(result)")
-            
+            didFinishCast?(result)
             start()
         } else {
             self.context = context

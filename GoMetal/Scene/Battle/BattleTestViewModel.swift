@@ -5,4 +5,11 @@ import Foundation
 
 @Observable final class BattleTestViewModel: ResolverCoordinatorViewModel {
     
+    let battleFactory: BattleSimulationFactory
+    var simulation: BattleSimulation
+    
+    init(battleFactory: BattleSimulationFactory) {
+        self.battleFactory = battleFactory
+        self.simulation = battleFactory.make()
+    }
 }
