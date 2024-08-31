@@ -8,6 +8,7 @@ import SwiftUI
 @MainActor
 struct BattleTestView {
     @State var viewModel: BattleTestViewModel
+    @State private var canvasSize: CGSize = .zero
 }
 
 // MARK: - Rendering
@@ -17,9 +18,24 @@ extension BattleTestView: View {
     var body: some View {
         VStack(spacing: 0) {
             nav
+            
+            Circle()
+                .fill(Color.clear)
+                .readSize(size: $canvasSize)
+                .overlay(arena)
+            
+            
+            
             Spacer()
         }
         .navigationBarHidden(true)
+    }
+    
+    private var arena: some View {
+        ZStack {
+            ArenaLayoutView()
+        }
+        .frame(width: canvasSize.width, height: canvasSize.height)
     }
     
     private var nav: some View {

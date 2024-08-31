@@ -7,7 +7,7 @@ struct GemView: View {
     let gem: Gem
     let canvasSize: CGSize
     
-    var space: PatternSpace { PatternSpace(canvasSize: canvasSize) }
+    var space: NormalizedSpace { NormalizedSpace(canvasSize: canvasSize) }
     
     var body: some View {
         gem.shape.displayShape

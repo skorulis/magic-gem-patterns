@@ -117,6 +117,7 @@ final class SpellCastService {
         let target: SpellTarget = velocitySum.x >= 0.75 * velocitySum.y ? .caster : .enemy
         
         return .init(
+            energy: context.energy,
             shape: shape,
             target: target,
             power: power,

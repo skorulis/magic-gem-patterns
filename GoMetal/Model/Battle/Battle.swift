@@ -5,5 +5,5 @@ import Foundation
 struct Battle {
     
     var caster: Caster
-    
+    var particles: [BattleParticle] = []
 }

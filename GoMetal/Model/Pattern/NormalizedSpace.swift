@@ -3,13 +3,13 @@
 import Foundation
 import VectorMath
 
-// Patterns are normalised into a -1...1 square.
-struct PatternSpace {
+// Space normalised into a -1...1 square.
+struct NormalizedSpace {
     
     let canvasSize: CGSize
     
-    func toPatternSpace(point: Vector2) -> Vector2 {
-        return Self.toPatternSpace(point: point, size: canvasSize)
+    func toNormalSpace(point: Vector2) -> Vector2 {
+        return Self.toNormalSpace(point: point, size: canvasSize)
     }
     
     func toScreenSpace(point: Vector2) -> Vector2 {
@@ -20,7 +20,7 @@ struct PatternSpace {
         return Self.toScreenSpace(size: size, screenSize: canvasSize)
     }
     
-    static func toPatternSpace(point: Vector2, size: CGSize) -> Vector2 {
+    static func toNormalSpace(point: Vector2, size: CGSize) -> Vector2 {
         let x = 2 * point.x / Float(size.width) - 1
         let y = -2 * point.y / Float(size.height) + 1
         return .init(x, y)

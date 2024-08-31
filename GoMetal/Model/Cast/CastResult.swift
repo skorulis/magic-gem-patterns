@@ -11,6 +11,8 @@ enum SpellTarget {
 // What a spell pattern spits out when finished
 struct CastResult {
     
+    let energy: [SpellEnergy]
+    
     let shape: SpellShape
     
     let target: SpellTarget

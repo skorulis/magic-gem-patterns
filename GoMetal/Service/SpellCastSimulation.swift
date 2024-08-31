@@ -1,7 +1,6 @@
 //  Created by Alexander Skorulis on 15/7/2024.
 
 import Foundation
-import QuartzCore
 
 struct SpellCastSimulationFactory {
     
@@ -19,10 +18,13 @@ struct SpellCastSimulationFactory {
     var didFinishCast: ((CastResult) -> Void)?
     
     private(set) var context: SpellContext?
-    private var displaylink: CADisplayLink!
-    var active: Bool = false {
-        didSet {
-            displaylink.isPaused = !active
+    private let deltaProvider = DeltaProvider()
+    var active: Bool {
+        get {
+            deltaProvider.active
+        }
+        set {
+            deltaProvider.active = newValue
         }
     }
     private var lastTime: TimeInterval = 0
@@ -30,14 +32,12 @@ struct SpellCastSimulationFactory {
     init(spellProvider: @escaping () -> Spell, spellCastService: SpellCastService) {
         self.spellCastService = spellCastService
         self.spellProvider = spellProvider
-        displaylink = .init(target: self, selector: #selector(step(displaylink:)))
-        displaylink.add(to: .current, forMode: .default)
-        displaylink.isPaused = true
-        lastTime = displaylink.targetTimestamp
+        deltaProvider.onStep = { [weak self] in
+            self?.step(delta: $0)
+        }
     }
     
     func start() {
-        lastTime = displaylink.targetTimestamp
         let spell = spellProvider()
         let pos = spell.pattern.position(time: 0)
         let initialEnergy = SpellEnergy(
@@ -52,19 +52,11 @@ struct SpellCastSimulationFactory {
             startTime: Date(),
             energy: [initialEnergy]
         )
-        active = true
+        deltaProvider.start()
     }
     
     func stop() {
         active = false
-    }
-    
-    @objc func step(displaylink: CADisplayLink) {
-        let t = displaylink.targetTimestamp
-        let delta = Float(t - lastTime)
-        lastTime = t
-        guard delta < 0.5 else { return }
-        step(delta: delta)
     }
     
     func step(delta: Float) {

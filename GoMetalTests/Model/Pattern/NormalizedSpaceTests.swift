@@ -4,10 +4,10 @@ import Foundation
 import XCTest
 @testable import GoMetal
 
-final class PatternSpaceTests: XCTestCase {
+final class NormalizedSpaceTests: XCTestCase {
     
     func testScreenSpaceConversion() {
-        let space = PatternSpace(canvasSize: .init(width: 100, height: 200))
+        let space = NormalizedSpace(canvasSize: .init(width: 100, height: 200))
         
         XCTAssertEqual(
             space.toScreenSpace(point: .zero),
@@ -30,26 +30,26 @@ final class PatternSpaceTests: XCTestCase {
         )
     }
     
-    func testPatternSpaceConversion() {
-        let space = PatternSpace(canvasSize: .init(width: 100, height: 200))
+    func testNormalSpaceConversion() {
+        let space = NormalizedSpace(canvasSize: .init(width: 100, height: 200))
         XCTAssertEqual(
-            space.toPatternSpace(point: .zero),
+            space.toNormalSpace(point: .zero),
             .init(-1, 1)
         )
         
         XCTAssertEqual(
-            space.toPatternSpace(point: .init(100, 200)),
+            space.toNormalSpace(point: .init(100, 200)),
             .init(1, -1)
         )
         
         XCTAssertEqual(
-            space.toPatternSpace(point: .init(50, 50)),
+            space.toNormalSpace(point: .init(50, 50)),
             .init(0, 0.5)
         )
     }
     
     func testScreenSpaceSizeConversion() {
-        let space = PatternSpace(canvasSize: .init(width: 100, height: 200))
+        let space = NormalizedSpace(canvasSize: .init(width: 100, height: 200))
         XCTAssertEqual(
             space.toScreenSpace(size: .zero),
             .zero

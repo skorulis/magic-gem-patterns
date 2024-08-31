@@ -35,7 +35,7 @@ extension PatternProtocol {
 }
 
 struct ScreenPattern {
-    let space: PatternSpace
+    let space: NormalizedSpace
     let pattern: PatternProtocol
     
     init(pattern: PatternProtocol, canvasSize: CGSize) {
@@ -50,22 +50,22 @@ struct ScreenPattern {
     
     // Return the force in screen coordinates
     func force(at point: Vector2) -> ForceComponents {
-        let f = pattern.force(at: space.toPatternSpace(point: point))
+        let f = pattern.force(at: space.toNormalSpace(point: point))
         let ss = CGSize(width: 2, height: 2)
         return .init(
-            towardsEnd: PatternSpace.toScreenSpace(size: f.towardsEnd, screenSize: ss),
-            towardsLine: PatternSpace.toScreenSpace(size: f.towardsLine, screenSize: ss)
+            towardsEnd: NormalizedSpace.toScreenSpace(size: f.towardsEnd, screenSize: ss),
+            towardsLine: NormalizedSpace.toScreenSpace(size: f.towardsLine, screenSize: ss)
         )
     }
     
     func closestPoint(to: Vector2) -> Vector2 {
-        let patternPoint = space.toPatternSpace(point: to)
+        let patternPoint = space.toNormalSpace(point: to)
         let result = pattern.closestPoint(to: patternPoint)
         return space.toScreenSpace(point: result)
     }
     
     func time(position: Vector2) -> Float {
-        let patternPoint = space.toPatternSpace(point: position)
+        let patternPoint = space.toNormalSpace(point: position)
         return pattern.time(position: patternPoint)
     }
 }
