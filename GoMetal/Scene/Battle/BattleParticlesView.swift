@@ -4,8 +4,15 @@ import SwiftUI
 
 struct BattleParticlesView: View {
     
-    let canvasSize: CGSize
-    let battle: Battle
+    private let canvasSize: CGSize
+    private let battle: Battle
+    private let normalSpace: NormalizedSpace
+    
+    init(canvasSize: CGSize, battle: Battle) {
+        self.canvasSize = canvasSize
+        self.battle = battle
+        self.normalSpace = .init(canvasSize: canvasSize)
+    }
     
     var body: some View {
         ZStack {
@@ -20,6 +27,6 @@ struct BattleParticlesView: View {
         Image(systemName: "arrow.up.circle.fill")
             .resizable()
             .frame(width: CGFloat(particle.power), height: CGFloat(particle.power))
-            //.offset(screenPattern.space.toScreenSpace(point: energy.position).viewOffset(canvasSize))
+            .offset(normalSpace.toScreenSpace(point: particle.position).viewOffset(canvasSize))
     }
 }

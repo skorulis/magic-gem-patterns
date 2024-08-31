@@ -14,7 +14,6 @@
 		FA34DB092C4A52C300B5CDC9 /* GoMetalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34DB062C4A52C300B5CDC9 /* GoMetalApp.swift */; };
 		FA51A4692C7AA71A0094C320 /* BattleTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51A4682C7AA71A0094C320 /* BattleTestView.swift */; };
 		FA51A46C2C7AA72C0094C320 /* BattleTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51A46B2C7AA72C0094C320 /* BattleTestViewModel.swift */; };
-		FA51A46F2C7AB49B0094C320 /* BattleField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51A46E2C7AB49B0094C320 /* BattleField.swift */; };
 		FA51A4722C7AD36B0094C320 /* Battle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51A4712C7AD36B0094C320 /* Battle.swift */; };
 		FA51A4742C7AD3940094C320 /* Caster.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51A4732C7AD3940094C320 /* Caster.swift */; };
 		FA51A4772C7AD4680094C320 /* BattleSimulationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51A4762C7AD4680094C320 /* BattleSimulationFactory.swift */; };
@@ -94,7 +93,6 @@
 		FA34DB062C4A52C300B5CDC9 /* GoMetalApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoMetalApp.swift; sourceTree = "<group>"; };
 		FA51A4682C7AA71A0094C320 /* BattleTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleTestView.swift; sourceTree = "<group>"; };
 		FA51A46B2C7AA72C0094C320 /* BattleTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleTestViewModel.swift; sourceTree = "<group>"; };
-		FA51A46E2C7AB49B0094C320 /* BattleField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleField.swift; sourceTree = "<group>"; };
 		FA51A4712C7AD36B0094C320 /* Battle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battle.swift; sourceTree = "<group>"; };
 		FA51A4732C7AD3940094C320 /* Caster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caster.swift; sourceTree = "<group>"; };
 		FA51A4762C7AD4680094C320 /* BattleSimulationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleSimulationFactory.swift; sourceTree = "<group>"; };
@@ -217,7 +215,6 @@
 		FA51A46D2C7AB4720094C320 /* Battle */ = {
 			isa = PBXGroup;
 			children = (
-				FA51A46E2C7AB49B0094C320 /* BattleField.swift */,
 				FA51A4712C7AD36B0094C320 /* Battle.swift */,
 				FA51A4732C7AD3940094C320 /* Caster.swift */,
 				FA044CE92C82880E00CFC0EA /* BattleParticle.swift */,
@@ -624,7 +621,6 @@
 				FAACC6412C6A0BD3000BB21F /* EnergyType.swift in Sources */,
 				FA9ABC8D2C54A238007BA24A /* CastResult.swift in Sources */,
 				FAC73DA02C7F09B0006BDE96 /* DeltaProvider.swift in Sources */,
-				FA51A46F2C7AB49B0094C320 /* BattleField.swift in Sources */,
 				FA51A4742C7AD3940094C320 /* Caster.swift in Sources */,
 				FAD929F92C3E958700B86690 /* SpellCastService.swift in Sources */,
 				FAD92A3B2C435E6500B86690 /* LinePattern.swift in Sources */,

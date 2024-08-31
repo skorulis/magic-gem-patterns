@@ -33,7 +33,8 @@ extension BattleTestView: View {
     
     private var arena: some View {
         ZStack {
-            ArenaLayoutView()
+            ArenaLayoutView(battle: viewModel.battle, canvasSize: canvasSize)
+            BattleParticlesView(canvasSize: canvasSize, battle: viewModel.battle)
         }
         .frame(width: canvasSize.width, height: canvasSize.height)
     }

@@ -7,6 +7,7 @@ import Foundation
     
     let battleFactory: BattleSimulationFactory
     var simulation: BattleSimulation
+    var battle: Battle { simulation.battle }
     
     init(battleFactory: BattleSimulationFactory) {
         self.battleFactory = battleFactory

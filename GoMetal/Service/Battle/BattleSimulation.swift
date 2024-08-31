@@ -2,7 +2,7 @@
 
 import Foundation
 
-final class BattleSimulation {
+@Observable final class BattleSimulation {
     
     private let deltaProvider = DeltaProvider()
     private let castFactory: SpellCastSimulationFactory
@@ -13,7 +13,7 @@ final class BattleSimulation {
         self.castFactory = castFactory
         self.battle = Battle(caster: caster)
         spellSimulation = castFactory.make(spellProvider: { caster.activeSpell})
-        spellSimulation.didFinishCast = { [weak self] in self?.didCast(spell: $0) }
+        spellSimulation.didFinishCast = { [weak self] in self?.didCast(spell: $0, caster: caster) }
         deltaProvider.onStep = { [weak self] in self?.step(delta: $0) }
         spellSimulation.start()
         deltaProvider.start()
@@ -25,20 +25,21 @@ final class BattleSimulation {
     
     func step(delta: Float) {
         spellSimulation.step(delta: delta)
-        for var particle in battle.particles {
+        for (index, var particle) in battle.particles.enumerated() {
             particle.position += (particle.velocity * delta)
+            battle.particles[index] = particle
         }
         battle.particles = battle.particles.filter { $0.position.length < 1 }
     }
     
-    func didCast(spell: CastResult) {
-        print("Battle cast")
+    func didCast(spell: CastResult, caster: Caster) {
         for energy in spell.energy {
             let particle = BattleParticle(
-                position: .zero,
+                position: caster.position,
                 velocity: energy.velocity,
                 power: energy.power
             )
+            self.battle.particles.append(particle)
         }
     }
 }

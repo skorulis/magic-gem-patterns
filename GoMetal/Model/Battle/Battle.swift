@@ -7,3 +7,9 @@ struct Battle {
     var caster: Caster
     var particles: [BattleParticle] = []
 }
+
+extension Battle {
+    enum Constants {
+        static let casterSize: Float = 0.1
+    }
+}
