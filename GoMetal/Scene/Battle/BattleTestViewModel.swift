@@ -3,7 +3,7 @@
 import ASKCore
 import Foundation
 
-@Observable final class BattleTestViewModel: ResolverCoordinatorViewModel {
+final class BattleTestViewModel: ResolverCoordinatorViewModel, ObservableObject {
     
     let battleFactory: BattleSimulationFactory
     var simulation: BattleSimulation
@@ -12,6 +12,11 @@ import Foundation
     init(battleFactory: BattleSimulationFactory) {
         self.battleFactory = battleFactory
         self.simulation = battleFactory.make()
+        super.init()
+        simulation.objectWillChange.sink { _ in
+            self.objectWillChange.send()
+        }
+        .store(in: &subscribers)
     }
 }
 
@@ -27,8 +32,12 @@ extension BattleTestViewModel {
 // MARK: - Logic
 
 extension BattleTestViewModel {
+    
+    func selectSpell() {
+        coordinator.present(RootPath.selectSpell(setSpell), style: .sheet)
+    }
         
     func setSpell(spell: Spell) {
-        
+        simulation.change(spell: spell)
     }
 }

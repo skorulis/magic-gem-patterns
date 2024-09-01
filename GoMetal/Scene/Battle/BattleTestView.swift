@@ -7,7 +7,7 @@ import SwiftUI
 
 @MainActor
 struct BattleTestView {
-    @State var viewModel: BattleTestViewModel
+    @StateObject var viewModel: BattleTestViewModel
     @State private var canvasSize: CGSize = .zero
 }
 
@@ -35,8 +35,8 @@ extension BattleTestView: View {
     }
     
     private var activeSpell: some View {
-        Button(action: {}) {
-            SpellIcon(spell: .blank(), size: 60)
+        Button(action: viewModel.selectSpell) {
+            SpellIcon(spell: viewModel.casterSpell, size: 60)
         }
     }
     

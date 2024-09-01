@@ -2,19 +2,24 @@
 
 import Foundation
 
-@Observable final class BattleSimulation {
+final class BattleSimulation: ObservableObject {
     
     private let deltaProvider = DeltaProvider()
     private let castFactory: SpellCastSimulationFactory
-    var battle: Battle
-    private var spellSimulations: [SpellCastSimulation]
+    @Published var battle: Battle
+    private var spellSimulations: [SpellCastSimulation] = []
     
     init(castFactory: SpellCastSimulationFactory, casters: [Caster]) {
         self.castFactory = castFactory
         self.battle = Battle(casters: casters)
-        self.spellSimulations = casters.map { caster in
-            castFactory.make(spellProvider: { caster.activeSpell})
+        
+        for i in 0..<casters.count {
+            let simulation = castFactory.make(
+                spellProvider: { [unowned self] in self.battle.casters[i].activeSpell }
+            )
+            spellSimulations.append(simulation)
         }
+        
         deltaProvider.onStep = { [weak self] in self?.step(delta: $0) }
         for i in 0..<casters.count {
             spellSimulations[i].didFinishCast = { [weak self] in self?.didCast(spell: $0, caster: casters[i]) }
@@ -22,6 +27,11 @@ import Foundation
         }
         
         deltaProvider.start()
+    }
+    
+    func change(spell: Spell) {
+        battle.casters[0].activeSpell = spell
+        spellSimulations[0].start()
     }
     
     func start() {

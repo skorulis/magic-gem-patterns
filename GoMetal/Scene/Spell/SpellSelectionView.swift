@@ -23,7 +23,10 @@ extension SpellSelectionView: View {
     }
     
     private func nav() -> some View {
-        NavBar(left: .back(viewModel.back), mid: .title("Spells"))
+        NavBar(
+            mid: .title("Select Spell"),
+            right: .close(viewModel.dismiss)
+        )
     }
     
     private func content() -> some View {
@@ -36,7 +39,7 @@ extension SpellSelectionView: View {
     }
     
     private func spellButton(spell: Spell) -> some View {
-        Button(action: { onSelect(spell) }) {
+        Button(action: { didSelect(spell) }) {
             HStack {
                 SpellIcon(spell: spell, size: 60)
                 Text(spell.name)
@@ -44,12 +47,21 @@ extension SpellSelectionView: View {
             }
         }
     }
+    
+    private func didSelect(_ spell: Spell) {
+        onSelect(spell)
+        viewModel.dismiss()
+    }
 }
 
 // MARK: - Previews
 
 #Preview {
     let ioc = IOC()
+    let spellStore = ioc.container.spellStore()
+    spellStore.update(spell: .blank())
+    spellStore.update(spell: .singleGem())
+    
     return SpellSelectionView(
         viewModel: ioc.resolve(),
         onSelect: { _ in }
