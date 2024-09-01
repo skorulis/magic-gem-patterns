@@ -4,12 +4,13 @@ import Foundation
 
 struct Battle {
     
-    var caster: Caster
+    var casters: [Caster]
     var particles: [BattleParticle] = []
 }
 
 extension Battle {
     enum Constants {
         static let casterSize: Float = 0.1
+        static let spellToBattleSpeed: Float = 0.3
     }
 }

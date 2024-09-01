@@ -11,15 +11,19 @@ struct PatternView: View {
     var body: some View {
         ZStack {
             AnyShape(pattern.shape)
-                .stroke(style: StrokeStyle(lineWidth: 4))
+                .stroke(style: StrokeStyle(lineWidth: lineWidth))
                 .foregroundColor(.black)
             
             AnyShape(pattern.shape)
                 .trim(from: 0, to: CGFloat(fillPct))
-                .stroke(style: StrokeStyle(lineWidth: 4))
+                .stroke(style: StrokeStyle(lineWidth: lineWidth))
                 .foregroundColor(.red)
         }
         .frame(width: canvasSize.width, height: canvasSize.height)
+    }
+    
+    private var lineWidth: CGFloat {
+        return ceil(canvasSize.width / 100)
     }
 }
 

@@ -7,15 +7,20 @@ import Foundation
     private let deltaProvider = DeltaProvider()
     private let castFactory: SpellCastSimulationFactory
     var battle: Battle
-    private var spellSimulation: SpellCastSimulation
+    private var spellSimulations: [SpellCastSimulation]
     
-    init(castFactory: SpellCastSimulationFactory, caster: Caster) {
+    init(castFactory: SpellCastSimulationFactory, casters: [Caster]) {
         self.castFactory = castFactory
-        self.battle = Battle(caster: caster)
-        spellSimulation = castFactory.make(spellProvider: { caster.activeSpell})
-        spellSimulation.didFinishCast = { [weak self] in self?.didCast(spell: $0, caster: caster) }
+        self.battle = Battle(casters: casters)
+        self.spellSimulations = casters.map { caster in
+            castFactory.make(spellProvider: { caster.activeSpell})
+        }
         deltaProvider.onStep = { [weak self] in self?.step(delta: $0) }
-        spellSimulation.start()
+        for i in 0..<casters.count {
+            spellSimulations[i].didFinishCast = { [weak self] in self?.didCast(spell: $0, caster: casters[i]) }
+            spellSimulations[i].start()
+        }
+        
         deltaProvider.start()
     }
     
@@ -24,7 +29,7 @@ import Foundation
     }
     
     func step(delta: Float) {
-        spellSimulation.step(delta: delta)
+        spellSimulations.forEach { $0.step(delta: delta) }
         for (index, var particle) in battle.particles.enumerated() {
             particle.position += (particle.velocity * delta)
             battle.particles[index] = particle
@@ -34,9 +39,10 @@ import Foundation
     
     func didCast(spell: CastResult, caster: Caster) {
         for energy in spell.energy {
+            let vel = energy.velocity.rotated(by: caster.heading) * Battle.Constants.spellToBattleSpeed
             let particle = BattleParticle(
                 position: caster.position,
-                velocity: energy.velocity,
+                velocity: vel,
                 power: energy.power
             )
             self.battle.particles.append(particle)

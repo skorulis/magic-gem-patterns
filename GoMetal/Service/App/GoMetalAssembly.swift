@@ -31,7 +31,7 @@ final class GoMetalAssembly: AutoInitModuleAssembly {
         .inObjectScope(.container)
         
         container.register(SpellStore.self) { r in
-            SpellStore(store: r.resolve(PKeyValueStore.self)!)
+            RealSpellStore(store: r.resolve(PKeyValueStore.self)!)
         }
         .inObjectScope(.container)
     }
@@ -74,6 +74,10 @@ final class GoMetalAssembly: AutoInitModuleAssembly {
         
         container.register(BattleTestViewModel.self) { @MainActor r in
             BattleTestViewModel(battleFactory: r.battleSimulationFactory())
+        }
+        
+        container.register(SpellSelectionViewModel.self) { @MainActor r in
+            SpellSelectionViewModel(spellStore: r.spellStore())
         }
     }
 }

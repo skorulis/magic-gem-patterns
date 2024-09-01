@@ -31,7 +31,9 @@ extension ArenaLayoutView: View {
     }
     
     private var casters: some View {
-        return casterView(caster: battle.caster)
+        ForEach(battle.casters) { caster in
+            casterView(caster: caster)
+        }
     }
     
     private func casterView(caster: Caster) -> some View {
@@ -46,7 +48,9 @@ extension ArenaLayoutView: View {
                 width: CGFloat(size.x),
                 height: CGFloat(abs(size.y))
             )
+            .rotationEffect(.radians(CGFloat(caster.heading)))
             .offset(x: CGFloat(offset.x), y: CGFloat(offset.y))
+            
     }
 }
 
@@ -56,9 +60,10 @@ extension ArenaLayoutView: View {
     let caster1 = Caster(
         health: 1,
         activeSpell: .blank(),
-        position: .init(0, -0.5)
+        position: .init(0, -0.5),
+        heading: 0.5
     )
-    let battle = Battle(caster: caster1)
+    let battle = Battle(casters: [caster1])
     return ArenaLayoutView(
         battle: battle,
         canvasSize: .init(width: 300, height: 300)

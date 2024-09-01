@@ -18,6 +18,9 @@
 		FA51A4742C7AD3940094C320 /* Caster.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51A4732C7AD3940094C320 /* Caster.swift */; };
 		FA51A4772C7AD4680094C320 /* BattleSimulationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51A4762C7AD4680094C320 /* BattleSimulationFactory.swift */; };
 		FA51A4792C7AD4A60094C320 /* BattleSimulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51A4782C7AD4A60094C320 /* BattleSimulation.swift */; };
+		FA701B2C2C83DAB600344057 /* SpellIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA701B2B2C83DAB600344057 /* SpellIcon.swift */; };
+		FA701B2F2C83E70400344057 /* SpellSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA701B2E2C83E70400344057 /* SpellSelectionView.swift */; };
+		FA701B322C83E7B100344057 /* SpellSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA701B312C83E7B100344057 /* SpellSelectionViewModel.swift */; };
 		FA8F9B582C4365600004B88B /* CirclePattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B572C4365600004B88B /* CirclePattern.swift */; };
 		FA8F9B5A2C436A560004B88B /* LinePatternTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F9B592C436A560004B88B /* LinePatternTests.swift */; };
 		FA8F9B5E2C436E960004B88B /* VectorMath in Frameworks */ = {isa = PBXBuildFile; productRef = FA8F9B5D2C436E960004B88B /* VectorMath */; };
@@ -97,6 +100,9 @@
 		FA51A4732C7AD3940094C320 /* Caster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caster.swift; sourceTree = "<group>"; };
 		FA51A4762C7AD4680094C320 /* BattleSimulationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleSimulationFactory.swift; sourceTree = "<group>"; };
 		FA51A4782C7AD4A60094C320 /* BattleSimulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleSimulation.swift; sourceTree = "<group>"; };
+		FA701B2B2C83DAB600344057 /* SpellIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellIcon.swift; sourceTree = "<group>"; };
+		FA701B2E2C83E70400344057 /* SpellSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellSelectionView.swift; sourceTree = "<group>"; };
+		FA701B312C83E7B100344057 /* SpellSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellSelectionViewModel.swift; sourceTree = "<group>"; };
 		FA8F9B572C4365600004B88B /* CirclePattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePattern.swift; sourceTree = "<group>"; };
 		FA8F9B592C436A560004B88B /* LinePatternTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinePatternTests.swift; sourceTree = "<group>"; };
 		FA8F9B602C438CB80004B88B /* GemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemView.swift; sourceTree = "<group>"; };
@@ -229,6 +235,16 @@
 				FA51A4782C7AD4A60094C320 /* BattleSimulation.swift */,
 			);
 			path = Battle;
+			sourceTree = "<group>";
+		};
+		FA701B2A2C83DA8000344057 /* Spell */ = {
+			isa = PBXGroup;
+			children = (
+				FA701B2B2C83DAB600344057 /* SpellIcon.swift */,
+				FA701B2E2C83E70400344057 /* SpellSelectionView.swift */,
+				FA701B312C83E7B100344057 /* SpellSelectionViewModel.swift */,
+			);
+			path = Spell;
 			sourceTree = "<group>";
 		};
 		FA8F9B5C2C436E960004B88B /* Frameworks */ = {
@@ -373,6 +389,7 @@
 		FAD929DE2C3D386B00B86690 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				FA701B2A2C83DA8000344057 /* Spell */,
 				FA51A4672C7AA7110094C320 /* Battle */,
 				FAAE8CB02C798C9300B19CBD /* Menu */,
 				FA34DB072C4A52C300B5CDC9 /* App */,
@@ -611,6 +628,8 @@
 				FA044CED2C82928000CFC0EA /* BattleParticlesView.swift in Sources */,
 				FA9ABC9A2C56110A007BA24A /* SelectGemView.swift in Sources */,
 				FAAE8CD12C79B1D000B19CBD /* SpellListMenuViewModel.swift in Sources */,
+				FA701B2C2C83DAB600344057 /* SpellIcon.swift in Sources */,
+				FA701B2F2C83E70400344057 /* SpellSelectionView.swift in Sources */,
 				FA9ABC912C55FAFF007BA24A /* GemInventoryView.swift in Sources */,
 				FAAE8CBC2C79952400B19CBD /* SpellStore.swift in Sources */,
 				FA8F9B582C4365600004B88B /* CirclePattern.swift in Sources */,
@@ -642,6 +661,7 @@
 				FA51A4722C7AD36B0094C320 /* Battle.swift in Sources */,
 				FAD929EE2C3E858F00B86690 /* SpellPattern.swift in Sources */,
 				FAD92A4E2C43617A00B86690 /* NormalizedSpace.swift in Sources */,
+				FA701B322C83E7B100344057 /* SpellSelectionViewModel.swift in Sources */,
 				FAD929E32C3D3B9100B86690 /* Shader1.metal in Sources */,
 				FAD929F42C3E8AA800B86690 /* ActiveSpellView.swift in Sources */,
 				FA51A4692C7AA71A0094C320 /* BattleTestView.swift in Sources */,

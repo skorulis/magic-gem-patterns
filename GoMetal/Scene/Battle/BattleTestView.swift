@@ -24,11 +24,20 @@ extension BattleTestView: View {
                 .readSize(size: $canvasSize)
                 .overlay(arena)
             
-            
+            HStack {
+                activeSpell
+                Spacer()
+            }
             
             Spacer()
         }
         .navigationBarHidden(true)
+    }
+    
+    private var activeSpell: some View {
+        Button(action: {}) {
+            SpellIcon(spell: .blank(), size: 60)
+        }
     }
     
     private var arena: some View {

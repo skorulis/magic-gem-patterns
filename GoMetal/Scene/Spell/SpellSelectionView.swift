@@ -1,24 +1,24 @@
-//Created by Alexander Skorulis on 24/8/2024.
+//Created by Alexander Skorulis on 1/9/2024.
 
 import ASKDesignSystem
+import Foundation
 import SwiftUI
 
 // MARK: - Memory footprint
 
 @MainActor
-struct SpellListMenu {
-    
-    @State var viewModel: SpellListMenuViewModel
+struct SpellSelectionView {
+    @State var viewModel: SpellSelectionViewModel
+    let onSelect: (Spell) -> Void
 }
 
 // MARK: - Rendering
 
-extension SpellListMenu: View {
+extension SpellSelectionView: View {
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             PageTemplate(nav: nav, content: content)
-            addButton()
         }
     }
     
@@ -36,7 +36,7 @@ extension SpellListMenu: View {
     }
     
     private func spellButton(spell: Spell) -> some View {
-        Button(action: { viewModel.show(spell: spell)}) {
+        Button(action: { onSelect(spell) }) {
             HStack {
                 SpellIcon(spell: spell, size: 60)
                 Text(spell.name)
@@ -44,15 +44,15 @@ extension SpellListMenu: View {
             }
         }
     }
-    
-    private func addButton() -> some View {
-        Button(action: viewModel.new) {
-            Image(systemName: "plus")
-                .resizable()
-                .fontWeight(.bold)
-                .padding(16)
-        }
-        .buttonStyle(CircularButtonStyle())
-        .padding(.trailing, 16)
-    }
 }
+
+// MARK: - Previews
+
+#Preview {
+    let ioc = IOC()
+    return SpellSelectionView(
+        viewModel: ioc.resolve(),
+        onSelect: { _ in }
+    )
+}
+

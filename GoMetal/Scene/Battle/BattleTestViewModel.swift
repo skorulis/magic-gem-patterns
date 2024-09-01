@@ -14,3 +14,21 @@ import Foundation
         self.simulation = battleFactory.make()
     }
 }
+
+// MARK: - Computed values
+
+extension BattleTestViewModel {
+    
+    var casterSpell: Spell {
+        battle.casters[0].activeSpell
+    }
+}
+
+// MARK: - Logic
+
+extension BattleTestViewModel {
+        
+    func setSpell(spell: Spell) {
+        
+    }
+}

@@ -11,7 +11,7 @@ import Foundation
     init(spellStore: SpellStore) {
         self.spellStore = spellStore
         super.init()
-        spellStore.$spells.sink { spells in
+        spellStore.spellsPublisher.sink { spells in
             self.spells = spells
         }
         .store(in: &subscribers)

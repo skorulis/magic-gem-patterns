@@ -3,11 +3,20 @@
 import ASKCore
 import Foundation
 
-final class SpellStore: ObservableObject {
+protocol SpellStore {
+    var spells: [Spell] { get }
+    var spellsPublisher: Published<[Spell]>.Publisher { get }
+    func update(spell: Spell)
+    
+}
+
+final class RealSpellStore: SpellStore, ObservableObject {
     
     private let store: PKeyValueStore
     @Published private(set) var spells: [Spell] = []
     private static let storageKey = "SpellStore.storageKey"
+    
+    var spellsPublisher: Published<[Spell]>.Publisher { $spells }
     
     init(store: PKeyValueStore) {
         self.store = store
@@ -25,13 +34,13 @@ final class SpellStore: ObservableObject {
     }
 }
 
-private extension SpellStore {
+private extension RealSpellStore {
     struct DiskStorage: Codable {
         let spells: [Spell]
     }
 }
 
-extension SpellStore {
+extension RealSpellStore {
     func writeToDisk() {
         let storage = DiskStorage(spells: spells)
         try! store.set(codable: storage, forKey: Self.storageKey)

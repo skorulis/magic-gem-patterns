@@ -21,6 +21,15 @@ struct Spell: Equatable, Hashable, Identifiable, Codable {
     static func blank() -> Spell {
         .init(id: UUID(), name: "New Spell", patternType: .line, gems: [])
     }
+    
+    static func singleGem() -> Spell {
+        .init(
+            id: UUID(),
+            name: "Single Gem",
+            patternType: .line,
+            gems: [.init(gem: .baseDiamond, time: 1)]
+        )
+    }
 }
 
 struct GemPosition: Equatable, Hashable, Identifiable, Codable {
