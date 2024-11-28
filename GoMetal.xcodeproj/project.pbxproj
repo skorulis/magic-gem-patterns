@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FA044CEA2C82880E00CFC0EA /* BattleParticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA044CE92C82880E00CFC0EA /* BattleParticle.swift */; };
 		FA044CED2C82928000CFC0EA /* BattleParticlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA044CEC2C82928000CFC0EA /* BattleParticlesView.swift */; };
+		FA1FF8602C8BD8A70094E4D9 /* SwinjectMacros in Frameworks */ = {isa = PBXBuildFile; productRef = FA1FF85F2C8BD8A70094E4D9 /* SwinjectMacros */; };
 		FA34DAF92C4A4CFF00B5CDC9 /* MainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34DAF82C4A4CFF00B5CDC9 /* MainStore.swift */; };
 		FA34DB082C4A52C300B5CDC9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34DB052C4A52C300B5CDC9 /* ContentView.swift */; };
 		FA34DB092C4A52C300B5CDC9 /* GoMetalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34DB062C4A52C300B5CDC9 /* GoMetalApp.swift */; };
@@ -59,6 +60,7 @@
 		FAC229322C4B6469009498E1 /* ForceComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC229312C4B6469009498E1 /* ForceComponents.swift */; };
 		FAC73DA02C7F09B0006BDE96 /* DeltaProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC73D9F2C7F09B0006BDE96 /* DeltaProvider.swift */; };
 		FAC73DA32C8074D4006BDE96 /* ArenaLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC73DA22C8074D4006BDE96 /* ArenaLayoutView.swift */; };
+		FAD151EC2CF84DCE00E96862 /* Knit in Frameworks */ = {isa = PBXBuildFile; productRef = FAD151EB2CF84DCE00E96862 /* Knit */; };
 		FAD929D42C3D384500B86690 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD929D32C3D384500B86690 /* Assets.xcassets */; };
 		FAD929D72C3D384500B86690 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD929D62C3D384500B86690 /* Preview Assets.xcassets */; };
 		FAD929E02C3D387200B86690 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929DF2C3D387200B86690 /* MetalView.swift */; };
@@ -164,6 +166,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAAE8CB52C798EC400B19CBD /* ASKDesignSystem in Frameworks */,
+				FA1FF8602C8BD8A70094E4D9 /* SwinjectMacros in Frameworks */,
+				FAD151EC2CF84DCE00E96862 /* Knit in Frameworks */,
 				FA8F9B5E2C436E960004B88B /* VectorMath in Frameworks */,
 				FAAE8CBF2C799F4700B19CBD /* Knit in Frameworks */,
 				FAAE8CCA2C79A84C00B19CBD /* ASKCore in Frameworks */,
@@ -515,7 +519,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				FAAE8CC62C79A16D00B19CBD /* PBXTargetDependency */,
+				FAD151EE2CF84DDA00E96862 /* PBXTargetDependency */,
 			);
 			name = GoMetal;
 			packageProductDependencies = (
@@ -523,6 +527,8 @@
 				FAAE8CB42C798EC400B19CBD /* ASKDesignSystem */,
 				FAAE8CBE2C799F4700B19CBD /* Knit */,
 				FAAE8CC92C79A84C00B19CBD /* ASKCore */,
+				FA1FF85F2C8BD8A70094E4D9 /* SwinjectMacros */,
+				FAD151EB2CF84DCE00E96862 /* Knit */,
 			);
 			productName = GoMetal;
 			productReference = FAD929CC2C3D384400B86690 /* GoMetal.app */;
@@ -578,9 +584,9 @@
 			packageReferences = (
 				FA8F9B5B2C436E760004B88B /* XCRemoteSwiftPackageReference "VectorMath" */,
 				FAAE8CB32C798EC400B19CBD /* XCLocalSwiftPackageReference "Frameworks/ASKDesignSystem" */,
-				FAAE8CBD2C799F4700B19CBD /* XCLocalSwiftPackageReference "Frameworks/knit" */,
-				FAAE8CC02C799F7D00B19CBD /* XCLocalSwiftPackageReference "Frameworks/knit/CLI" */,
 				FAAE8CC82C79A84C00B19CBD /* XCLocalSwiftPackageReference "Frameworks/ASKCore" */,
+				FA1FF85E2C8BD8A70094E4D9 /* XCLocalSwiftPackageReference "Frameworks/SwinjectMacros" */,
+				FAD151EA2CF84DCE00E96862 /* XCLocalSwiftPackageReference "Frameworks/knit" */,
 			);
 			productRefGroup = FAD929CD2C3D384400B86690 /* Products */;
 			projectDirPath = "";
@@ -692,9 +698,9 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		FAAE8CC62C79A16D00B19CBD /* PBXTargetDependency */ = {
+		FAD151EE2CF84DDA00E96862 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			productRef = FAAE8CC52C79A16D00B19CBD /* KnitBuildPlugin */;
+			productRef = FAD151ED2CF84DDA00E96862 /* KnitBuildPlugin */;
 		};
 		FAD92A452C435F1000B86690 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -953,21 +959,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
+		FA1FF85E2C8BD8A70094E4D9 /* XCLocalSwiftPackageReference "Frameworks/SwinjectMacros" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Frameworks/SwinjectMacros;
+		};
 		FAAE8CB32C798EC400B19CBD /* XCLocalSwiftPackageReference "Frameworks/ASKDesignSystem" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Frameworks/ASKDesignSystem;
 		};
-		FAAE8CBD2C799F4700B19CBD /* XCLocalSwiftPackageReference "Frameworks/knit" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = Frameworks/knit;
-		};
-		FAAE8CC02C799F7D00B19CBD /* XCLocalSwiftPackageReference "Frameworks/knit/CLI" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = Frameworks/knit/CLI;
-		};
 		FAAE8CC82C79A84C00B19CBD /* XCLocalSwiftPackageReference "Frameworks/ASKCore" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Frameworks/ASKCore;
+		};
+		FAD151EA2CF84DCE00E96862 /* XCLocalSwiftPackageReference "Frameworks/knit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Frameworks/knit;
 		};
 /* End XCLocalSwiftPackageReference section */
 
@@ -983,6 +989,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FA1FF85F2C8BD8A70094E4D9 /* SwinjectMacros */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwinjectMacros;
+		};
 		FA8F9B5D2C436E960004B88B /* VectorMath */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FA8F9B5B2C436E760004B88B /* XCRemoteSwiftPackageReference "VectorMath" */;
@@ -996,14 +1006,18 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Knit;
 		};
-		FAAE8CC52C79A16D00B19CBD /* KnitBuildPlugin */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FAAE8CC02C799F7D00B19CBD /* XCLocalSwiftPackageReference "Frameworks/knit/CLI" */;
-			productName = "plugin:KnitBuildPlugin";
-		};
 		FAAE8CC92C79A84C00B19CBD /* ASKCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ASKCore;
+		};
+		FAD151EB2CF84DCE00E96862 /* Knit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Knit;
+		};
+		FAD151ED2CF84DDA00E96862 /* KnitBuildPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAD151EA2CF84DCE00E96862 /* XCLocalSwiftPackageReference "Frameworks/knit" */;
+			productName = "plugin:KnitBuildPlugin";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -2,11 +2,14 @@
 
 import Foundation
 import VectorMath
+import Swinject
+import SwinjectMacros
 
 final class SpellCastService {
     
     private let shapeMatcher: SpellShapeMatcher
     
+    @Resolvable<Resolver>()
     init(shapeMatcher: SpellShapeMatcher) {
         self.shapeMatcher = shapeMatcher
     }

@@ -2,6 +2,8 @@
 
 import ASKCore
 import Foundation
+import Swinject
+import SwinjectMacros
 
 protocol SpellStore {
     var spells: [Spell] { get }
@@ -18,6 +20,7 @@ final class RealSpellStore: SpellStore, ObservableObject {
     
     var spellsPublisher: Published<[Spell]>.Publisher { $spells }
     
+    @Resolvable<Resolver>()
     init(store: PKeyValueStore) {
         self.store = store
         self.spells = Self.readFromDisk(store: store).spells

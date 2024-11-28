@@ -30,16 +30,12 @@ final class GoMetalAssembly: AutoInitModuleAssembly {
         }
         .inObjectScope(.container)
         
-        container.register(SpellStore.self) { r in
-            RealSpellStore(store: r.resolve(PKeyValueStore.self)!)
-        }
-        .inObjectScope(.container)
+        container.register(SpellStore.self, factory: RealSpellStore.make)
+            .inObjectScope(.container)
     }
     
     private func registerServices(container: Container) {
-        container.register(SpellCastService.self) { r in
-            SpellCastService(shapeMatcher: r.spellShapeMatcher())
-        }
+        container.register(SpellCastService.self, factory: SpellCastService.make)
         
         container.register(SpellShapeMatcher.self) { _ in
             SpellShapeMatcher()
@@ -50,13 +46,7 @@ final class GoMetalAssembly: AutoInitModuleAssembly {
         container.register(
             SpellTestViewModel.self,
             mainActorFactory: { (r: Resolver, spell: Spell) in
-                SpellTestViewModel(
-                    spell: spell,
-                    service: r.spellCastService(),
-                    mainStore: r.mainStore(),
-                    spellStore: r.spellStore(),
-                    simulationFactory: r.spellCastSimulationFactory()
-                )
+                SpellTestViewModel.make(resolver: r, spell: spell)
             }
         )
         
@@ -79,5 +69,11 @@ final class GoMetalAssembly: AutoInitModuleAssembly {
         container.register(SpellSelectionViewModel.self) { @MainActor r in
             SpellSelectionViewModel(spellStore: r.spellStore())
         }
+    }
+}
+
+extension Resolver {
+    func pKeyValueStore() -> PKeyValueStore {
+        self.resolve(PKeyValueStore.self)!
     }
 }

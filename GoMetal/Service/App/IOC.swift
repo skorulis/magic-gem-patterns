@@ -6,7 +6,8 @@ import Swinject
 final class IOC: IOCService {
     override init(purpose: IOCPurpose = .testing) {
         super.init(purpose: purpose)
-        
-        GoMetalAssembly().assemble(container: self.container)
+        MainActor.assumeIsolated {
+            GoMetalAssembly().assemble(container: self.container)
+        }
     }
 }

@@ -7,3 +7,6 @@
 [submodule "Frameworks/ASKCore"]
 	path = Frameworks/ASKCore
 	url = git@github.com:skorulis/ASKCore.git
+[submodule "Frameworks/SwinjectMacros"]
+	path = Frameworks/SwinjectMacros
+	url = git@github.com:skorulis/SwinjectMacros.git

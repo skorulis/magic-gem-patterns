@@ -12,5 +12,6 @@ extension Battle {
     enum Constants {
         static let casterSize: Float = 0.1
         static let spellToBattleSpeed: Float = 0.3
+        static let attractionMultiplier: Float = 0.1
     }
 }

@@ -2,6 +2,8 @@
 
 import ASKCore
 import Foundation
+import Swinject
+import SwinjectMacros
 
 @Observable final class SpellTestViewModel: ResolverCoordinatorViewModel {
     let service: SpellCastService
@@ -18,6 +20,7 @@ import Foundation
         }
     }
     
+    @Resolvable<Resolver>(arguments: ["spell"])
     init(
         spell: Spell,
         service: SpellCastService,
